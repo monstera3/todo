@@ -3,11 +3,10 @@ import './App.css';
 import { Header } from './components/Header';
 import { InputForm } from './components/InputForm';
 import { Card } from './components/Card';
-import any = jasmine.any;
 
 function App() {
   const [inputText,setInputText] = useState('');
-  const [taskList,setTaskList] = useState('');
+  const [taskList,setTaskList] = useState(['aa', 'bb']);
 
   const onChangeInputText = (e:any) =>{
     setInputText(e.target.value)
@@ -25,7 +24,7 @@ function App() {
       <Header />
       <InputForm
         inputText={inputText} onChange={onChangeInputText} onClick={onClickAdd}/>
-      <Card/>
+      <Card tasks={taskList}/>
     </div>
   );
 }
