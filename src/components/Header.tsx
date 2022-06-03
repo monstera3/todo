@@ -1,9 +1,10 @@
 import React from 'react';
 
-export const Header = () => {
+export const Header = (props: {toggleMenuIsOpen:any}) => {
   return(
     <div>
       <header className="flex border-b border-gray-300 p-2">
+        <button onClick={props.toggleMenuIsOpen}>menu</button>
         <h1 className="text-3xl font-bold">
           TODO
         </h1>
