@@ -25,7 +25,7 @@ function App() {
   };
 
   const drawerWidth = () => {
-    return menuIsOpen ? "w-1/6" : "w-2";
+    return menuIsOpen ? "w-2/6" : "w-1";
   }
 
   const toggleMenuIsOpen = () => {
@@ -37,13 +37,13 @@ function App() {
       <Header toggleMenuIsOpen={toggleMenuIsOpen}/>
       <div className="flex flex-row w-screen">
         <div className={drawerWidth()}>
-          <div><MdOutlineLightbulb size='1.5rem'/>メモ</div>
-          <div><BiBell size='1.5rem'/>リマインダー</div>
-          <div><BiTag size='1.5rem'/>メモ</div>
-          <div><BiTag size='1.5rem'/>料理</div>
-          <div><BsPencil size='1.5rem'/>ラベルの編集</div>
-          <div><RiInboxArchiveLine size='1.5rem'/>アーカイブ</div>
-          <div><BiTrash size='1.5rem'/>ゴミ箱</div>
+          <div className='flex m-2'><MdOutlineLightbulb className='mr-4' size='1.5rem'/><span>メモ</span></div>
+          <div className='flex m-2'><BiBell className='mr-4' size='1.5rem'/>リマインダー</div>
+          <div className='flex m-2'><BiTag className='mr-4' size='1.5rem'/>メモ</div>
+          <div className='flex m-2'><BiTag className='mr-4' size='1.5rem'/>料理</div>
+          <div className='flex m-2'><BsPencil className='mr-4' size='1.5rem'/>ラベルの編集</div>
+          <div className='flex m-2'><RiInboxArchiveLine className='mr-4' size='1.5rem'/>アーカイブ</div>
+          <div className='flex m-2'><BiTrash className='mr-4' size='1.5rem'/>ゴミ箱</div>
         </div>
       <div className="flex flex-col w-full justify-items-center">
       <InputForm
