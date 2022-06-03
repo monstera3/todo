@@ -22,9 +22,16 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <div className="flex flex-row w-screen">
+      <div className="w-1/6">
+        drawer
+      </div>
+      <div className="flex flex-col w-full justify-items-center">
       <InputForm
         inputText={inputText} onChange={onChangeInputText} onClick={onClickAdd}/>
       <Card tasks={taskList}/>
+        </div>
+      </div>
     </div>
   );
 }
