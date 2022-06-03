@@ -1,10 +1,13 @@
 import React from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 export const Header = (props: {toggleMenuIsOpen:any}) => {
   return(
     <div>
       <header className="flex border-b border-gray-300 p-2">
-        <button onClick={props.toggleMenuIsOpen}>menu</button>
+        <button onClick={props.toggleMenuIsOpen}>
+          <GiHamburgerMenu size='1.5rem'/>
+        </button>
         <h1 className="text-3xl font-bold">
           TODO
         </h1>
