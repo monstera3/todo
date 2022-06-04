@@ -25,7 +25,7 @@ function App() {
   };
 
   const drawerWidth = () => {
-    return menuIsOpen ? "w-40" : "w-0 text-transparent";
+    return menuIsOpen ? "w-40" : "w-40 text-transparent ";
   }
 
 
@@ -39,14 +39,11 @@ function App() {
       <div className="flex flex-row w-screen">
         <div >
           <div className='flex m-4'><MdOutlineLightbulb className='mr-4' size='1.5rem'/><p className={drawerWidth()}>メモ</p></div>
-
-          {/*<div className='flex m-2'><MdOutlineLightbulb className='mr-4' size='1.5rem'/><span>メモ</span></div>*/}
-          {/*<div className='flex m-2'><BiBell className='mr-4' size='1.5rem'/>リマインダー</div>*/}
-          {/*<div className='flex m-2'><BiTag className='mr-4' size='1.5rem'/>メモ</div>*/}
-          {/*<div className='flex m-2'><BiTag className='mr-4' size='1.5rem'/>料理</div>*/}
-          {/*<div className='flex m-2'><BsPencil className='mr-4' size='1.5rem'/>ラベルの編集</div>*/}
-          {/*<div className='flex m-2'><RiInboxArchiveLine className='mr-4' size='1.5rem'/>アーカイブ</div>*/}
-          {/*<div className='flex m-2'><BiTrash className='mr-4' size='1.5rem'/>ゴミ箱</div>*/}
+          <div className='flex m-4'><BiBell className='mr-4' size='1.5rem'/><p className={drawerWidth()}>リマインダー</p></div>
+          <div className='flex m-4'><BiTag className='mr-4' size='1.5rem'/><p className={drawerWidth()}>料理</p></div>
+          <div className='flex m-4'><BsPencil className='mr-4' size='1.5rem'/><p className={drawerWidth()}>ラベルの編集</p></div>
+          <div className='flex m-4'><RiInboxArchiveLine className='mr-4' size='1.5rem'/><p className={drawerWidth()}>アーカイブ</p></div>
+          <div className='flex m-4'><BiTrash className='mr-4' size='1.5rem'/><p className={drawerWidth()}>ゴミ箱</p></div>
         </div>
       <div className="flex flex-col w-full justify-items-center">
       <InputForm
