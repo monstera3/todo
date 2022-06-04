@@ -25,8 +25,9 @@ function App() {
   };
 
   const drawerWidth = () => {
-    return menuIsOpen ? "w-2/6" : "w-1";
+    return menuIsOpen ? "w-40" : "w-0 text-transparent";
   }
+
 
   const toggleMenuIsOpen = () => {
     setMenuIsOpen(!menuIsOpen);
@@ -36,14 +37,16 @@ function App() {
     <div className="App">
       <Header toggleMenuIsOpen={toggleMenuIsOpen}/>
       <div className="flex flex-row w-screen">
-        <div className={drawerWidth()}>
-          <div className='flex m-2'><MdOutlineLightbulb className='mr-4' size='1.5rem'/><span>メモ</span></div>
-          <div className='flex m-2'><BiBell className='mr-4' size='1.5rem'/>リマインダー</div>
-          <div className='flex m-2'><BiTag className='mr-4' size='1.5rem'/>メモ</div>
-          <div className='flex m-2'><BiTag className='mr-4' size='1.5rem'/>料理</div>
-          <div className='flex m-2'><BsPencil className='mr-4' size='1.5rem'/>ラベルの編集</div>
-          <div className='flex m-2'><RiInboxArchiveLine className='mr-4' size='1.5rem'/>アーカイブ</div>
-          <div className='flex m-2'><BiTrash className='mr-4' size='1.5rem'/>ゴミ箱</div>
+        <div >
+          <div className='flex m-4'><MdOutlineLightbulb className='mr-4' size='1.5rem'/><p className={drawerWidth()}>メモ</p></div>
+
+          {/*<div className='flex m-2'><MdOutlineLightbulb className='mr-4' size='1.5rem'/><span>メモ</span></div>*/}
+          {/*<div className='flex m-2'><BiBell className='mr-4' size='1.5rem'/>リマインダー</div>*/}
+          {/*<div className='flex m-2'><BiTag className='mr-4' size='1.5rem'/>メモ</div>*/}
+          {/*<div className='flex m-2'><BiTag className='mr-4' size='1.5rem'/>料理</div>*/}
+          {/*<div className='flex m-2'><BsPencil className='mr-4' size='1.5rem'/>ラベルの編集</div>*/}
+          {/*<div className='flex m-2'><RiInboxArchiveLine className='mr-4' size='1.5rem'/>アーカイブ</div>*/}
+          {/*<div className='flex m-2'><BiTrash className='mr-4' size='1.5rem'/>ゴミ箱</div>*/}
         </div>
       <div className="flex flex-col w-full justify-items-center">
       <InputForm
