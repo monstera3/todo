@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export const Fixed = (props:any) => {
+export const MemoList = (props:any) => {
   return(
     <div>
       <p>固定済み</p>

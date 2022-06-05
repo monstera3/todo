@@ -3,7 +3,7 @@ import { Drawer } from './components/Drawer';
 import './App.css';
 import { Header } from './components/Header';
 import { InputForm } from './components/InputForm';
-import { Fixed } from './components/Fixed';
+import { MemoList } from './components/MemoList';
 
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
         <div className="flex flex-col w-full justify-items-center">
           <InputForm
             inputText={inputText} onChange={onChangeInputText} onClick={onClickAdd}/>
-          <Fixed tasks={taskList}/>
+          <MemoList tasks={taskList}/>
         </div>
       </div>
     </div>
