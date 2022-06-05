@@ -8,7 +8,7 @@ import { MemoList } from './components/MemoList';
 
 function App() {
   const [inputText,setInputText] = useState('');
-  const [memoList,setMemoList] = useState(['aa', 'bb', 'cc', 'dd', 'ee']);
+  const [memoList,setMemoList] = useState(['aa', 'bb', 'cc', 'dd', 'ee','ff','gg']);
   const [menuIsOpen, setMenuIsOpen] = useState(true);
   const [displayIsList, setDisplayIsList] = useState<boolean>(true);
 

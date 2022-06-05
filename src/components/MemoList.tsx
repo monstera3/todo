@@ -3,18 +3,18 @@ import React from 'react';
 
 export const MemoList = (props: {memoList: string[], displayIsList: boolean}) => {
   const gridCols = () => {
-    return props.displayIsList ? 'grid-cols-1' : 'grid-cols-3';
+    return props.displayIsList ? 'grid-cols-1' : 'sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6';
   }
 
   const listWidth = () => {
-    return props.displayIsList ? 'w-2/3 ' : 'w-full';
+    return props.displayIsList ? 'w-2/3 ' : 'w-11/12 ';
 
   }
 
   return(
     <div>
       <p>固定済み</p>
-      <div className={ listWidth() +' grid gap-4 mr-4 ' + gridCols()  }>
+      <div className={ listWidth() +' grid gap-4 ' + gridCols()  }>
         {props.memoList.map((memo:string) => {
           return(
             <div key={memo}>
