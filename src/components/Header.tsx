@@ -6,8 +6,8 @@ import { GrClose } from 'react-icons/gr';
 export const Header = (props: {toggleMenuIsOpen:any}) => {
   return(
     <div>
-      <header className="flex border-b border-gray-300 p-2">
-        <button onClick={props.toggleMenuIsOpen}>
+      <header className="flex border-b border-gray-300 p-2 items-center	">
+        <button onClick={props.toggleMenuIsOpen} className="m-1 p-2 hover:bg-slate-200 rounded-full">
           <GiHamburgerMenu size='1.5rem'/>
         </button>
         <h1 className="text-3xl font-bold">

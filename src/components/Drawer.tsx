@@ -53,11 +53,11 @@ export const Drawer = (props:{menuIsOpen:boolean}) => {
         menuList.map((menu:Menu)=>{
           if(props.menuIsOpen){
             return(
-              <div key={menu.key} className='flex m-4'>{menu.icon}<p className="w-40">{menu.label}</p></div>
+              <div key={menu.key} className='flex m-3 p-2'>{menu.icon}<p className="w-40">{menu.label}</p></div>
             )
           }else {
             return(
-              <div key={menu.key} className='flex m-4'>{menu.icon}</div>
+              <div key={menu.key} className='flex m-3 p-2'>{menu.icon}</div>
             )
           }
 
