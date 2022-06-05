@@ -8,7 +8,7 @@ import { MemoList } from './components/MemoList';
 
 function App() {
   const [inputText,setInputText] = useState('');
-  const [taskList,setTaskList] = useState(['aa', 'bb', 'cc', 'dd', 'ee']);
+  const [memoList,setMemoList] = useState(['aa', 'bb', 'cc', 'dd', 'ee']);
   const [menuIsOpen, setMenuIsOpen] = useState(true);
   const [displayIsList, setDisplayIsList] = useState<boolean>(true);
 
@@ -18,8 +18,8 @@ function App() {
 
   const onClickAdd = () => {
     if (inputText === '')return;
-    const newTasks = [...taskList, inputText];
-    setTaskList(newTasks);
+    const newTasks = [...memoList, inputText];
+    setMemoList(newTasks);
     setInputText('');
   };
 
@@ -40,7 +40,7 @@ function App() {
         <div className="flex flex-col w-full justify-items-center">
           <InputForm
             inputText={inputText} onChange={onChangeInputText} onClick={onClickAdd}/>
-          <MemoList tasks={taskList}/>
+          <MemoList tasks={memoList}/>
         </div>
       </div>
     </div>
