@@ -45,10 +45,10 @@ function App() {
           <div className='flex m-4'><RiInboxArchiveLine className='mr-4' size='1.5rem'/><p className={drawerWidth()}>アーカイブ</p></div>
           <div className='flex m-4'><BiTrash className='mr-4' size='1.5rem'/><p className={drawerWidth()}>ゴミ箱</p></div>
         </div>
-      <div className="flex flex-col w-full justify-items-center">
-      <InputForm
-        inputText={inputText} onChange={onChangeInputText} onClick={onClickAdd}/>
-      <Card tasks={taskList}/>
+        <div className="flex flex-col w-full justify-items-center">
+          <InputForm
+            inputText={inputText} onChange={onChangeInputText} onClick={onClickAdd}/>
+          <Card tasks={taskList}/>
         </div>
       </div>
     </div>
