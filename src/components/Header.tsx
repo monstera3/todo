@@ -1,5 +1,7 @@
 import React from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { GrClose } from 'react-icons/gr';
 
 export const Header = (props: {toggleMenuIsOpen:any}) => {
   return(
@@ -11,8 +13,10 @@ export const Header = (props: {toggleMenuIsOpen:any}) => {
         <h1 className="text-3xl font-bold">
           TODO
         </h1>
-        <div className="flex box  w-96 justify-between px-5 py-2 rounded-md mx-auto	border border-gray-300  shadow-md shadow-gray-300/50 ">
-          <input type="text" placeholder="検索" className=" px-8 rounded-full"/>
+        <div className="flex box px-2 w-1/2 rounded-md mx-auto bg-slate-100	">
+          <button className="m-1 p-2 hover:bg-slate-200 rounded-full" ><AiOutlineSearch  size='1.3rem'/></button>
+          <input type="text" placeholder="検索" className=" w-full mx-1"/>
+          <button className="m-1 p-2 hover:bg-slate-200 rounded-full"><GrClose size='1rem'/></button>
         </div>
         
 
