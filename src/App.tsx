@@ -49,17 +49,22 @@ const menuList: Menu[] = [
 
 
 const Drawer = (props:{menuIsOpen:boolean}) => {
-  const drawerWidth = () => {
-    return props.menuIsOpen ? "w-40" : "w-40 text-transparent ";
-  }
+
   return(
 
     <div >
       {
         menuList.map((menu:Menu)=>{
-          return(
-            <div key={menu.key} className='flex m-4'>{menu.icon}<p className={drawerWidth()}>{menu.label}</p></div>
-          )
+          if(props.menuIsOpen){
+            return(
+              <div key={menu.key} className='flex m-4'>{menu.icon}<p className="w-40">{menu.label}</p></div>
+            )
+          }else {
+           return(
+              <div key={menu.key} className='flex m-4'>{menu.icon}</div>
+            )
+          }
+
           })
       }
     </div>
