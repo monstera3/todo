@@ -38,7 +38,7 @@ function App() {
         <div className="flex flex-col w-full justify-items-center">
           <InputForm
             inputText={inputText} onChange={onChangeInputText} onClick={onClickAdd}/>
-          <Fixed />
+          <Fixed tasks={taskList}/>
           <Others tasks={taskList}/>
         </div>
       </div>
