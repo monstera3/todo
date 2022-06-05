@@ -3,7 +3,6 @@ import { Drawer } from './components/Drawer';
 import './App.css';
 import { Header } from './components/Header';
 import { InputForm } from './components/InputForm';
-import { Others } from './components/Others';
 import { Fixed } from './components/Fixed';
 
 
@@ -42,7 +41,6 @@ function App() {
           <InputForm
             inputText={inputText} onChange={onChangeInputText} onClick={onClickAdd}/>
           <Fixed tasks={taskList}/>
-          <Others tasks={taskList}/>
         </div>
       </div>
     </div>
