@@ -11,6 +11,7 @@ function App() {
   const [inputText,setInputText] = useState('');
   const [taskList,setTaskList] = useState(['aa', 'bb']);
   const [menuIsOpen, setMenuIsOpen] = useState(true);
+  const [displayIsList, setDisplayIsList] = useState<boolean>(true);
 
   const onChangeInputText = (e:any) =>{
     setInputText(e.target.value)
@@ -23,7 +24,9 @@ function App() {
     setInputText('');
   };
 
-
+  const toggleDisplayIsList = () => {
+    setDisplayIsList(!displayIsList);
+  }
 
 
   const toggleMenuIsOpen = () => {
@@ -32,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header toggleMenuIsOpen={toggleMenuIsOpen}/>
+      <Header toggleMenuIsOpen={toggleMenuIsOpen} toggleDisplayIsList={toggleDisplayIsList} displayIsList={displayIsList}/>
       <div className="flex flex-row w-screen">
         <Drawer menuIsOpen={menuIsOpen}/>
         <div className="flex flex-col w-full justify-items-center">
