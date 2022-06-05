@@ -40,7 +40,7 @@ function App() {
         <div className="flex flex-col w-full justify-items-center">
           <InputForm
             inputText={inputText} onChange={onChangeInputText} onClick={onClickAdd}/>
-          <MemoList memoList={memoList}/>
+          <MemoList memoList={memoList} displayIsList={displayIsList}/>
         </div>
       </div>
     </div>
