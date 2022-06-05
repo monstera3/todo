@@ -3,7 +3,8 @@ import { Drawer } from './components/Drawer';
 import './App.css';
 import { Header } from './components/Header';
 import { InputForm } from './components/InputForm';
-import { Card } from './components/Card';
+import { Others } from './components/Others';
+import { Fixed } from './components/Fixed';
 
 
 function App() {
@@ -37,7 +38,8 @@ function App() {
         <div className="flex flex-col w-full justify-items-center">
           <InputForm
             inputText={inputText} onChange={onChangeInputText} onClick={onClickAdd}/>
-          <Card tasks={taskList}/>
+          <Fixed />
+          <Others tasks={taskList}/>
         </div>
       </div>
     </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Card = (props:any) => {
+export const Others = (props:any) => {
   return(
-    <>
-        <p className=" w-96 justify-between  mx-auto my-8 text-center">未完了のTODO</p>
+    < >
+      <p>その他</p>
         {props.tasks.map((tasks:string) => {
           return(
             <div key={tasks}>
