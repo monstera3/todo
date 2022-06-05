@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export const MemoList = (props:any) => {
+export const MemoList = (props: {tasks: string[]}) => {
   return(
     <div>
       <p>固定済み</p>
