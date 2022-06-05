@@ -5,7 +5,7 @@ import { GrClose, GrUpdate } from 'react-icons/gr';
 import { VscAccount, VscSettingsGear } from 'react-icons/vsc';
 import { TbLayoutGrid, TbLayoutList } from 'react-icons/tb';
 
-export const Header = (props: {toggleMenuIsOpen:any}) => {
+export const Header = (props: {toggleMenuIsOpen: any, toggleDisplayIsList: any, displayIsList: boolean}) => {
   return(
     <div>
       <header className="flex border-b border-gray-300 p-2 items-center	">
@@ -17,13 +17,16 @@ export const Header = (props: {toggleMenuIsOpen:any}) => {
         </h1>
         <SearchBar/>
         <button className="m-1 p-2 hover:bg-slate-200 rounded-full"> <GrUpdate size='1.2rem'/></button>
-        <button className="m-1 p-2 hover:bg-slate-200 rounded-full"> <TbLayoutList size='1.2rem'/></button>
-        <button className="m-1 p-2 hover:bg-slate-200 rounded-full"> <TbLayoutGrid size='1.2rem'/></button>
+        <button onClick={props.toggleDisplayIsList} className="m-1 p-2 hover:bg-slate-200 rounded-full">{DisplayTypeIcon(props.displayIsList)} </button>
         <button className="m-1 p-2 hover:bg-slate-200 rounded-full"> <VscSettingsGear size='1.2rem'/></button>
         <button className="m-1 p-2 hover:bg-slate-200 rounded-full"> <VscAccount size='1.5rem'/></button>
       </header>
     </div>
   );
+}
+
+const DisplayTypeIcon = (isList: boolean) => {
+  return isList ? (<TbLayoutList size='1.2rem'/>) : (<TbLayoutGrid size='1.2rem'/>)
 }
 
 const SearchBar = () => {
