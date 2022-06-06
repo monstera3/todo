@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Drawer } from './components/Drawer';
+import { Drawer } from './components/templates/Drawer';
 import './App.css';
 import { Header } from './components/Header';
 import { InputForm } from './components/InputForm';
