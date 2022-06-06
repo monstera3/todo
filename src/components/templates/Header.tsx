@@ -16,10 +16,14 @@ export const Header = (props: {toggleMenuIsOpen: any, toggleDisplayIsList: any, 
           TODO
         </h1>
         <SearchBar/>
-        <button className=" p-3 hover:bg-slate-200 rounded-full"> <GrUpdate size='1.2rem'/></button>
+        <button className=" p-3 group hover:bg-slate-200 rounded-full relative">
+          <GrUpdate size='1.2rem'/>
+          <span className="opacity-0  w-[74px] rounded text-[12px] font-bold text-white py-1 bg-slate-600
+          group-hover:opacity-100 absolute top-11 -left-3">更新します</span>
+        </button>
         <button onClick={props.toggleDisplayIsList} className=" p-3 group hover:bg-slate-200 rounded-full relative">
           {DisplayTypeIcon(props.displayIsList)}
-          <span className="opacity-0  w-24 mx-auto rounded text-[12px] font-bold text-white p-1 bg-slate-600
+          <span className="opacity-0 py-1 w-[95px] rounded text-[12px] font-bold text-white bg-slate-600
           group-hover:opacity-100 absolute top-11 -left-6">{DisplayTypeMessage(props.displayIsList)}</span>
         </button>
         <button className=" p-3  group hover:bg-slate-200 rounded-full relative">
