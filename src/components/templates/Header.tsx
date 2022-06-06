@@ -17,8 +17,10 @@ export const Header = (props: {toggleMenuIsOpen: any, toggleDisplayIsList: any, 
         </h1>
         <SearchBar/>
         <button className=" p-3 hover:bg-slate-200 rounded-full"> <GrUpdate size='1.2rem'/></button>
-        <button onClick={props.toggleDisplayIsList} className=" p-3 hover:bg-slate-200 rounded-full">
+        <button onClick={props.toggleDisplayIsList} className=" p-3 group hover:bg-slate-200 rounded-full relative">
           {DisplayTypeIcon(props.displayIsList)}
+          <span className="opacity-0  w-24 mx-auto rounded text-[12px] font-bold text-white p-1 bg-slate-600
+          group-hover:opacity-100 absolute top-11 -left-6">{DisplayTypeMessage(props.displayIsList)}</span>
         </button>
         <button className=" p-3  group hover:bg-slate-200 rounded-full relative">
           <VscSettingsGear size='1.2rem'/>
@@ -34,6 +36,10 @@ export const Header = (props: {toggleMenuIsOpen: any, toggleDisplayIsList: any, 
 
 const DisplayTypeIcon = (isList: boolean) => {
   return isList ? (<TbLayoutGrid size='1.2rem'/>) : (<TbLayoutList size='1.2rem'/>)
+}
+
+const DisplayTypeMessage = (isList: boolean) => {
+  return isList ? "ギャラリー表示" : "リスト表示"
 }
 
 const SearchBar = () => {
