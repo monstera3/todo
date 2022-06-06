@@ -19,7 +19,7 @@ export const MemoList = (props: {memoList: Memo[], displayIsList: boolean}) => {
         {props.memoList.map((memo: Memo) => {
           return(
             <div key={memo.title}>
-              <div className="flex flex-col p-2 rounded-md mx-auto my-8 border border-gray-40 ">
+              <div className="flex flex-col p-2 rounded-md mx-auto my-8 border border-gray-40 hover:shadow">
                 <div>{memo.title}</div>
                 <div>{memo.body}</div>
                 <button >完了</button>
