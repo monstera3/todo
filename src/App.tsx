@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Drawer } from './components/templates/Drawer';
 import './App.css';
 import { Header } from './components/templates/Header';
-import { InputForm } from './components/InputForm';
+import { InputForm } from './components/organisms/InputForm';
 import { MemoList } from './components/templates/MemoList';
 
 
