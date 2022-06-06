@@ -8,9 +8,10 @@ import { MemoList } from './components/MemoList';
 
 function App() {
   const [inputText,setInputText] = useState('');
+  const [inputTitle,setInputTitle] = useState('');
   const [memoList,setMemoList] = useState(['aa', 'bb', 'cc', 'dd', 'ee','ff','gg']);
   const [menuIsOpen, setMenuIsOpen] = useState(true);
-  const [displayIsList, setDisplayIsList] = useState<boolean>(true);
+  const [displayIsList, setDisplayIsList] = useState<boolean>(false);
 
   const onChangeInputText = (e:any) =>{
     setInputText(e.target.value)
