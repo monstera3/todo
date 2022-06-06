@@ -6,10 +6,17 @@ import { InputForm } from './components/InputForm';
 import { MemoList } from './components/MemoList';
 
 
+
+export type Memo = {
+  title: string
+  body: string
+}
 function App() {
   const [inputText,setInputText] = useState('');
-  const [inputTitle,setInputTitle] = useState('');
-  const [memoList,setMemoList] = useState(['aa', 'bb', 'cc', 'dd', 'ee','ff','gg']);
+  const [memoList,setMemoList] = useState<Memo[]>([{
+    title:'',
+    body:'',
+}]);
   const [menuIsOpen, setMenuIsOpen] = useState(true);
   const [displayIsList, setDisplayIsList] = useState<boolean>(false);
 
@@ -19,7 +26,7 @@ function App() {
 
   const onClickAdd = () => {
     if (inputText === '')return;
-    const newTasks = [...memoList, inputText];
+    const newTasks = [...memoList, { title: inputText, body: inputText }];
     setMemoList(newTasks);
     setInputText('');
   };
@@ -40,7 +47,8 @@ function App() {
         <Drawer menuIsOpen={menuIsOpen}/>
         <div className="flex flex-col w-full justify-items-center">
           <InputForm
-            inputText={inputText} onChange={onChangeInputText} onClick={onClickAdd}/>
+            inputText={inputText} onChange={onChangeInputText} onClick={onClickAdd}
+          />
           <MemoList memoList={memoList} displayIsList={displayIsList}/>
         </div>
       </div>
