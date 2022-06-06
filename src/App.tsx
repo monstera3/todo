@@ -26,8 +26,8 @@ function App() {
 
   const onClickAdd = () => {
     if (inputText === '')return;
-    const newTasks = [...memoList, { title: inputText, body: inputText }];
-    setMemoList(newTasks);
+    const newMemos = [...memoList, { title: inputText, body: inputText }];
+    setMemoList(newMemos);
     setInputText('');
   };
 
