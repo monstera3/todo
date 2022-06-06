@@ -13,6 +13,7 @@ export type Memo = {
 }
 function App() {
   const [inputText,setInputText] = useState('');
+  const [inputTitle,setInputTitle] = useState('');
   const [memoList,setMemoList] = useState<Memo[]>([{
     title:'タイトル',
     body:'body',
@@ -24,11 +25,14 @@ function App() {
     setInputText(e.target.value)
   }
 
+  const onChangeInputTitle = (e:any) => {
+    setInputTitle(e.target.value)
+  }
   const onClickAdd = () => {
-    if (inputText === '')return;
-    const newMemos = [...memoList, { title: inputText, body: inputText }];
+    const newMemos = [...memoList, { title: inputTitle, body: inputText }];
     setMemoList(newMemos);
     setInputText('');
+    setInputTitle('');
   };
 
   const toggleDisplayIsList = () => {
@@ -47,7 +51,8 @@ function App() {
         <Drawer menuIsOpen={menuIsOpen}/>
         <div className="flex flex-col w-full justify-items-center">
           <InputForm
-            inputText={inputText} onChange={onChangeInputText} onClick={onClickAdd}
+            inputText={inputText} onChangeInputText={onChangeInputText} onClick={onClickAdd}
+            inputTitle={inputTitle} onChangeInputTitle={onChangeInputTitle}
           />
           <MemoList memoList={memoList} displayIsList={displayIsList}/>
         </div>
