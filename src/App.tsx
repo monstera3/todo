@@ -14,8 +14,8 @@ export type Memo = {
 function App() {
   const [inputText,setInputText] = useState('');
   const [memoList,setMemoList] = useState<Memo[]>([{
-    title:'',
-    body:'',
+    title:'タイトル',
+    body:'body',
 }]);
   const [menuIsOpen, setMenuIsOpen] = useState(true);
   const [displayIsList, setDisplayIsList] = useState<boolean>(false);
