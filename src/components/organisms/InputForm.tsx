@@ -5,7 +5,7 @@ export const InputForm = (props:any) => {
   return(
     <div
       className="flex w-1/2 justify-between px-5 rounded-md
-      mx-auto	border border-gray-300 m-8 shadow-lg shadow-gray-300/50 ">
+      mx-auto	border-2 border-gray-300 m-8 shadow-md shadow-gray-200 ">
       <div className="flex flex-col">
         <input type="text" value={inputTitle} onChange={onChangeInputTitle}  placeholder="タイトル"/>
         <input type="text" value={inputText} onChange={onChangeInputText} placeholder="メモを入力" />
