@@ -3,7 +3,7 @@ import { Drawer } from './components/Drawer';
 import './App.css';
 import { Header } from './components/Header';
 import { InputForm } from './components/InputForm';
-import { MemoList } from './components/MemoList';
+import { MemoList } from './components/templates/MemoList';
 
 
 

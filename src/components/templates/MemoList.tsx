@@ -1,5 +1,5 @@
 import React from 'react';
-import { Memo } from '../App';
+import { Memo } from '../../App';
 
 
 export const MemoList = (props: {memoList: Memo[], displayIsList: boolean}) => {
