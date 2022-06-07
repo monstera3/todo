@@ -15,9 +15,9 @@ function App() {
   const [inputText,setInputText] = useState('');
   const [inputTitle,setInputTitle] = useState('');
   const [memoList,setMemoList] = useState<Memo[]>([{
-    title:'タイトル',
-    body:'body',
-}]);
+    title:'',
+    body:'',
+  }]);
   const [menuIsOpen, setMenuIsOpen] = useState(true);
   const [displayIsList, setDisplayIsList] = useState<boolean>(false);
 
@@ -31,6 +31,7 @@ function App() {
   const onClickAdd = () => {
     const newMemos = [...memoList, { title: inputTitle, body: inputText }];
     setMemoList(newMemos);
+    updateStoredMemos(newMemos);
     setInputText('');
     setInputTitle('');
   };
@@ -42,6 +43,11 @@ function App() {
 
   const toggleMenuIsOpen = () => {
     setMenuIsOpen(!menuIsOpen);
+  }
+
+  //ローカルストレージのキーのstoredMemosに追加される
+  const updateStoredMemos = (updatedMemos:string) => {
+    localStorage.setItem('storedMemos', JSON.stringify(updatedMemos));
   }
 
   return (
