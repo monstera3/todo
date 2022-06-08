@@ -25,7 +25,7 @@ export const MemoList = (props: {memoList: Memo[], displayIsList: boolean,onClic
               hover:shadow-gray-300 ">
                 <div>{memo.title}</div>
                 <div>{memo.body}</div>
-                <button onClick={()=>onClickDelete(index)} >削除</button>
+                <button onClick={() => props.onClickDelete(index)} >削除</button>
               </div>
             </div>
           );

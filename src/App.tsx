@@ -37,6 +37,7 @@ function App(props: { memoList: Memo[] }) {
   const onClickDelete = (index:number) => {
     const newMemos = [...memoList];
     newMemos.splice(index,1);
+    setMemoList(newMemos);
     updateStoredMemos(newMemos);
   }
 
