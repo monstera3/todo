@@ -26,6 +26,7 @@ function App(props: { memoList: Memo[] }) {
     setInputTitle(e.target.value)
   }
   const onClickAdd = () => {
+    if (inputText === '' && inputTitle === '') return;
     const newMemos = [...memoList, { title: inputTitle, body: inputText }];
     setMemoList(newMemos);
     updateStoredMemos(newMemos);
