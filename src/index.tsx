@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-let memoCard = [];
-let memoList = localStorage.getItem('storedMemos');
-if (memoList){
-  memoCard = JSON.parse(memoList);
+let memoList = [];
+let storedMemoList: string | null;
+storedMemoList  = localStorage.getItem('storedMemos');
+if (storedMemoList){
+  memoList = JSON.parse(storedMemoList);
 }
 
 
@@ -16,7 +17,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App memoList={memoCard} />
+    <App memoList={memoList} />
   </React.StrictMode>
 );
 

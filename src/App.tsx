@@ -11,13 +11,10 @@ export type Memo = {
   title: string
   body: string
 }
-function App() {
+function App(props: { memoList: Memo[] }) {
   const [inputText,setInputText] = useState('');
   const [inputTitle,setInputTitle] = useState('');
-  const [memoList,setMemoList] = useState<Memo[]>([{
-    title:'',
-    body:'',
-  }]);
+  const [memoList,setMemoList] = useState<Memo[]>(props.memoList);
   const [menuIsOpen, setMenuIsOpen] = useState(true);
   const [displayIsList, setDisplayIsList] = useState<boolean>(false);
 
@@ -46,7 +43,7 @@ function App() {
   }
 
   //ローカルストレージのキーのstoredMemosに追加される
-  const updateStoredMemos = (updatedMemos:string) => {
+  const updateStoredMemos = (updatedMemos: Memo[]) => {
     localStorage.setItem('storedMemos', JSON.stringify(updatedMemos));
   }
 
