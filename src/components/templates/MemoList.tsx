@@ -2,7 +2,7 @@ import React from 'react';
 import { Memo } from '../../App';
 
 
-export const MemoList = (props: {memoList: Memo[], displayIsList: boolean}) => {
+export const MemoList = (props: {memoList: Memo[], displayIsList: boolean,onClickDelete:any}) => {
   const gridCols = () => {
     return props.displayIsList ? 'grid-cols-1' : 'sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6';
   }
@@ -12,11 +12,12 @@ export const MemoList = (props: {memoList: Memo[], displayIsList: boolean}) => {
 
   }
 
+
   return(
     <div>
       <p>固定済み</p>
       <div className={ listWidth() +' grid gap-4 ' + gridCols()  }>
-        {props.memoList.map((memo: Memo) => {
+        {props.memoList.map((memo: Memo,index:number) => {
           return(
             <div key={memo.title}>
               <div className="flex flex-col p-2 rounded-md mx-auto my-8 border border-gray-40
@@ -24,7 +25,7 @@ export const MemoList = (props: {memoList: Memo[], displayIsList: boolean}) => {
               hover:shadow-gray-300 ">
                 <div>{memo.title}</div>
                 <div>{memo.body}</div>
-                <button >完了</button>
+                <button onClick={()=>onClickDelete(index)} >削除</button>
               </div>
             </div>
           );

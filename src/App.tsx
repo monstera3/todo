@@ -34,6 +34,12 @@ function App(props: { memoList: Memo[] }) {
     setInputTitle('');
   };
 
+  const onClickDelete = (index:number) => {
+    const newMemos = [...memoList];
+    newMemos.splice(index,1);
+    updateStoredMemos(newMemos);
+  }
+
   const toggleDisplayIsList = () => {
     setDisplayIsList(!displayIsList);
   }
@@ -58,7 +64,10 @@ function App(props: { memoList: Memo[] }) {
             inputText={inputText} onChangeInputText={onChangeInputText} onClick={onClickAdd}
             inputTitle={inputTitle} onChangeInputTitle={onChangeInputTitle}
           />
-          <MemoList memoList={memoList} displayIsList={displayIsList}/>
+          <MemoList
+            memoList={memoList}
+            displayIsList={displayIsList}
+            onClickDelete={onClickDelete}/>
         </div>
       </div>
     </div>
