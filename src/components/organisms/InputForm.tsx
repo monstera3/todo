@@ -1,6 +1,14 @@
 import React from 'react';
 
-export const InputForm = (props:any) => {
+type InputFormType = {
+  inputText: string,
+  onChangeInputText: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  onClick: () => void,
+  inputTitle: string,
+  onChangeInputTitle: (e: React.ChangeEvent<HTMLInputElement>) => void,
+}
+
+export const InputForm = (props:InputFormType) => {
   const {inputText,onChangeInputText,onClick,inputTitle,onChangeInputTitle} = props;
   return(
     <div

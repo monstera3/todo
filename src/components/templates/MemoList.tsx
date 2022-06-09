@@ -2,7 +2,13 @@ import React from 'react';
 import { Memo } from '../../App';
 
 
-export const MemoList = (props: {memoList: Memo[], displayIsList: boolean,onClickDelete:any}) => {
+type MemoListProps = {
+  memoList: Memo[],
+  displayIsList: boolean,
+  onClickDelete: (index: number) => void
+}
+
+export const MemoList = (props: MemoListProps) => {
   const gridCols = () => {
     return props.displayIsList ? 'grid-cols-1' : 'sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6';
   }

@@ -5,7 +5,14 @@ import { GrClose, GrUpdate } from 'react-icons/gr';
 import { VscAccount, VscSettingsGear } from 'react-icons/vsc';
 import { TbLayoutGrid, TbLayoutList } from 'react-icons/tb';
 
-export const Header = (props: {toggleMenuIsOpen: any, toggleDisplayIsList: any, displayIsList: boolean}) => {
+
+type HeaderProps = {
+  toggleMenuIsOpen: () => void,
+  toggleDisplayIsList: () => void,
+  displayIsList: boolean,
+}
+
+export const Header = (props:HeaderProps) => {
   return(
     <div>
       <header className="flex border-b border-gray-300 p-2 items-center	">

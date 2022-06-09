@@ -18,11 +18,11 @@ function App(props: { memoList: Memo[] }) {
   const [menuIsOpen, setMenuIsOpen] = useState(true);
   const [displayIsList, setDisplayIsList] = useState<boolean>(false);
 
-  const onChangeInputText = (e:any) =>{
+  const onChangeInputText = (e:React.ChangeEvent<HTMLInputElement>) =>{
     setInputText(e.target.value)
   }
 
-  const onChangeInputTitle = (e:any) => {
+  const onChangeInputTitle = (e:React.ChangeEvent<HTMLInputElement>) => {
     setInputTitle(e.target.value)
   }
   const onClickAdd = () => {
