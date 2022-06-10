@@ -4,6 +4,7 @@ import './App.css';
 import { Header } from './components/templates/Header';
 import { InputForm } from './components/organisms/InputForm';
 import { MemoList } from './components/templates/MemoList';
+import { MemoDetail } from './components/pages/MemoDetail';
 
 
 
@@ -69,6 +70,7 @@ function App(props: { memoList: Memo[] }) {
             memoList={memoList}
             displayIsList={displayIsList}
             onClickDelete={onClickDelete}/>
+          <MemoDetail />
         </div>
       </div>
     </div>
