@@ -5,10 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 let memoList = [];
-let storedMemoList: string | null;
-storedMemoList  = localStorage.getItem('storedMemos');
-if (storedMemoList){
-  memoList = JSON.parse(storedMemoList);
+let storedMemoListStr: string | null;
+storedMemoListStr  = localStorage.getItem('storedMemos');
+if (storedMemoListStr){
+  memoList = JSON.parse(storedMemoListStr);
 }
 
 
