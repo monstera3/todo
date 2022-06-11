@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { MemoDetail } from './components/pages/MemoDetail';
 import { Home } from './components/templates/Home';
 import { Routes,Route } from "react-router-dom"
 
@@ -17,7 +16,6 @@ export const App = (props: {memoList:Memo[]})=>{
       <Routes>
         <Route path="/" element={<Home memoList={props.memoList}/>}/>
       </Routes>
-      <MemoDetail />
     </div>
   );
 }
