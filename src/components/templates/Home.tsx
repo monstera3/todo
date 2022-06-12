@@ -2,7 +2,6 @@ import { Header } from './Header';
 import { Drawer } from './Drawer';
 import { InputForm } from '../organisms/InputForm';
 import { MemoList } from './MemoList';
-import { MemoDetail } from '../pages/MemoDetail';
 import React, { useState } from 'react';
 import { Memo } from '../../App';
 
@@ -66,7 +65,6 @@ import { Memo } from '../../App';
               memoList={memoList}
               displayIsList={displayIsList}
               onClickDelete={onClickDelete}/>
-            <MemoDetail />
           </div>
         </div>
       </>

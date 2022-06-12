@@ -6,11 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 
 
-let memoList = [];
+let storedMemoList = [];
 let storedMemoListStr: string | null;
 storedMemoListStr  = localStorage.getItem('storedMemos');
 if (storedMemoListStr){
-  memoList = JSON.parse(storedMemoListStr);
+  storedMemoList = JSON.parse(storedMemoListStr);
 }
 
 
@@ -20,7 +20,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App memoList={memoList} />
+      <App storedMemoList={storedMemoList} />
     </BrowserRouter>
   </React.StrictMode>
 );
