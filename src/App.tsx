@@ -15,7 +15,7 @@ export const App = (props: {storedMemoList:Memo[]})=>{
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home memoList={props.storedMemoList}/>}/>
+        <Route path="/" element={<Home storedMemoList={props.storedMemoList}/>}/>
         <Route path="/memo" element={<MemoDetail />} />
       </Routes>
     </div>
