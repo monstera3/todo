@@ -3,6 +3,8 @@ import './App.css';
 import { Home } from './components/templates/Home';
 import { Routes,Route } from "react-router-dom"
 import { MemoDetail } from './components/pages/MemoDetail';
+import { Reminders } from './components/templates/Reminders';
+import { Trash } from './components/templates/Trash';
 
 
 
@@ -19,6 +21,8 @@ export const App = (props: {storedMemoList:Memo[]})=>{
       <Routes>
         <Route path="/" element={<Home memoList={memoList}  setMemoList={setMemoList}/>}/>
         <Route path="/memo" element={<MemoDetail />} />
+        <Route path="/reminders" element={<Reminders />} />
+        <Route path="/trash" element={<Trash />} />
       </Routes>
     </div>
   );
