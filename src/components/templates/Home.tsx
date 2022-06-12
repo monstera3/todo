@@ -6,10 +6,11 @@ import React, { useState } from 'react';
 import { Memo } from '../../App';
 
 
-  export const Home = (props: { storedMemoList: Memo[] }) => {
+  export const Home = (props: { memoList: Memo[], setMemoList:any }) => {
+    const { memoList, setMemoList } = props;
     const [inputText,setInputText] = useState('');
     const [inputTitle,setInputTitle] = useState('');
-    const [memoList,setMemoList] = useState<Memo[]>(props.storedMemoList);
+
     const [menuIsOpen, setMenuIsOpen] = useState(true);
     const [displayIsList, setDisplayIsList] = useState<boolean>(false);
 
