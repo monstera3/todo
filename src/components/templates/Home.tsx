@@ -2,9 +2,10 @@ import { Header } from './Header';
 import { Drawer } from './Drawer';
 import { InputForm } from '../organisms/InputForm';
 import { MemoList } from './MemoList';
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Memo } from '../../App';
-
+import { Dialog, Transition } from '@headlessui/react';
+import { MemoDetail } from '../pages/MemoDetail';
 
   export const Home = (props: { memoList: Memo[], setMemoList:any }) => {
     const { memoList, setMemoList } = props;
@@ -13,6 +14,15 @@ import { Memo } from '../../App';
 
     const [menuIsOpen, setMenuIsOpen] = useState(true);
     const [displayIsList, setDisplayIsList] = useState<boolean>(false);
+    const [modalIsOpen, setModalIsIsOpen] = useState(true);
+
+    const closeModal = () => {
+      setModalIsIsOpen(false);
+    }
+
+    const openModal = () => {
+      setModalIsIsOpen(true);
+    }
 
     const onChangeInputText = (e:React.ChangeEvent<HTMLInputElement>) =>{
       setInputText(e.target.value)
@@ -66,6 +76,26 @@ import { Memo } from '../../App';
               memoList={memoList}
               displayIsList={displayIsList}
               onClickDelete={onClickDelete}/>
+            <button onClick={openModal}>Open dialog</button>
+            <Transition appear show={modalIsOpen} as={Fragment}>
+              <Dialog as="div" className="relative z-10" onClose={closeModal}>
+                <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0" enterTo="opacity-100" leave="ease-in duration-200" leaveFrom="opacity-100" leaveTo="opacity-0">
+                  <div className="fixed inset-0 bg-black bg-opacity-25" />
+                </Transition.Child>
+                <div className="fixed inset-0 overflow-y-auto">
+                  <div className="flex min-h-full items-center justify-center p-4 text-center">
+                    <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="ease-in duration-200" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
+                      <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                        <MemoDetail />
+                        <div>
+                          <button type="button" onClick={closeModal}>close</button>
+                        </div>
+                      </Dialog.Panel>
+                    </Transition.Child>
+                  </div>
+                </div>
+              </Dialog>
+            </Transition>
           </div>
         </div>
       </>
