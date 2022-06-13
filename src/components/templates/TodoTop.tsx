@@ -6,9 +6,8 @@ import React, { Fragment, useState } from 'react';
 import { Memo } from '../../App';
 import { Dialog, Transition } from '@headlessui/react';
 import { MemoDetail } from '../pages/MemoDetail';
-import { Home } from './Home';
 
-  export const TodoTop = (props: { memoList: Memo[], setMemoList:any, }) => {
+  export const TodoTop = (props:{ memoList: Memo[], setMemoList:any, }) => {
     const { memoList, setMemoList } = props;
     const [inputText,setInputText] = useState('');
     const [inputTitle,setInputTitle] = useState('');
@@ -56,7 +55,7 @@ import { Home } from './Home';
       setMenuIsOpen(!menuIsOpen);
     }
 
-    //ローカルストレージのキーのstoredMemosに追加される
+    // ローカルストレージのキーのstoredMemosに追加される
     const updateStoredMemos = (updatedMemos: Memo[]) => {
       localStorage.setItem('storedMemos', JSON.stringify(updatedMemos));
     }
@@ -67,7 +66,6 @@ import { Home } from './Home';
         <Header toggleMenuIsOpen={toggleMenuIsOpen} toggleDisplayIsList={toggleDisplayIsList} displayIsList={displayIsList}/>
         <div className="flex flex-row w-screen">
           <Drawer menuIsOpen={menuIsOpen}/>
-          <Home />
           <div className="flex flex-col w-full justify-items-center">
             <InputForm
               inputText={inputText} onChangeInputText={onChangeInputText} onClick={onClickAdd}
