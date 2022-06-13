@@ -5,7 +5,8 @@ import { Memo } from '../../App';
 type MemoListProps = {
   memoList: Memo[],
   displayIsList: boolean,
-  onClickDelete: (index: number) => void
+  onClickDelete: (index: number) => void,
+  openModal:any
 }
 
 export const MemoList = (props: MemoListProps) => {
@@ -22,16 +23,18 @@ export const MemoList = (props: MemoListProps) => {
   return(
     <div>
       <p>固定済み</p>
-      <div className={ listWidth() +' grid gap-4 ' + gridCols()  }>
+      <div className={ listWidth() +' grid gap-4 ' + gridCols()} >
         {props.memoList.map((memo: Memo,index:number) => {
           return(
-            <div key={index}>
+            <div key={index} onClick={props.openModal}>
               <div className="flex flex-col p-2 rounded-md mx-auto my-8 border border-gray-40
               hover:shadow-md
               hover:shadow-gray-300 ">
-                <div>{memo.title}</div>
-                <div>{memo.body}</div>
-                <button onClick={() => props.onClickDelete(index)} >削除</button>
+                  <div>{memo.title}</div>
+                  <div>{memo.body}</div>
+                <button
+                  className="bg-red-200"
+                  onClick={() => props.onClickDelete(index)} >削除</button>
               </div>
             </div>
           );

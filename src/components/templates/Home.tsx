@@ -75,7 +75,8 @@ import { MemoDetail } from '../pages/MemoDetail';
             <MemoList
               memoList={memoList}
               displayIsList={displayIsList}
-              onClickDelete={onClickDelete}/>
+              onClickDelete={onClickDelete}
+              openModal={openModal}/>
             <button onClick={openModal}>Open dialog</button>
             <Transition appear show={modalIsOpen} as={Fragment}>
               <Dialog as="div" className="relative z-10" onClose={closeModal}>
