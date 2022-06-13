@@ -14,7 +14,7 @@ import { MemoDetail } from '../pages/MemoDetail';
 
     const [menuIsOpen, setMenuIsOpen] = useState(true);
     const [displayIsList, setDisplayIsList] = useState<boolean>(false);
-    const [modalIsOpen, setModalIsIsOpen] = useState(true);
+    const [modalIsOpen, setModalIsIsOpen] = useState(false);
 
     const closeModal = () => {
       setModalIsIsOpen(false);
