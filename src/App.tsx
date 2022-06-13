@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Home } from './components/templates/Home';
+import { TodoTop } from './components/templates/TodoTop';
 import { Routes,Route } from "react-router-dom"
 import { MemoDetail } from './components/pages/MemoDetail';
 import { Reminders } from './components/templates/Reminders';
@@ -19,7 +19,7 @@ export const App = (props: {storedMemoList:Memo[]})=>{
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home memoList={memoList}  setMemoList={setMemoList} />}/>
+        <Route path="/" element={<TodoTop memoList={memoList} setMemoList={setMemoList} />}/>
         <Route path="/memo" element={<MemoDetail />} />
         <Route path="/reminders" element={<Reminders />} />
         <Route path="/trash" element={<Trash />} />
