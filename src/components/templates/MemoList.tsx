@@ -33,7 +33,7 @@ export const MemoList = (props: MemoListProps) => {
                   <div>{memo.title}</div>
                   <div>{memo.body}</div>
                 <button
-                  className="bg-red-200"
+                  className="hover:bg-gray-300"
                   onClick={() => props.onClickDelete(index)} >削除</button>
               </div>
             </div>
