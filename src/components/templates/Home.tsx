@@ -7,7 +7,7 @@ import { Memo } from '../../App';
 import { Dialog, Transition } from '@headlessui/react';
 import { MemoDetail } from '../pages/MemoDetail';
 
-  export const Home = (props: { memoList: Memo[], setMemoList:any }) => {
+  export const Home = (props: { memoList: Memo[], setMemoList:any, }) => {
     const { memoList, setMemoList } = props;
     const [inputText,setInputText] = useState('');
     const [inputTitle,setInputTitle] = useState('');
