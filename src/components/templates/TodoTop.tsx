@@ -5,6 +5,7 @@ import { MemoList } from './MemoList';
 import React, { useState } from 'react';
 import { Memo } from '../../App';
 import { Home } from './Home';
+import { FixedMemoList } from './FixedMemoList';
 
   export const TodoTop = (props:{ memoList: Memo[], setMemoList:any, }) => {
     const { memoList, setMemoList } = props;
@@ -66,6 +67,7 @@ import { Home } from './Home';
               displayIsList={displayIsList}
               onClickDelete={onClickDelete}
              />
+            <FixedMemoList />
           </div>
         </div>
         <Home />
