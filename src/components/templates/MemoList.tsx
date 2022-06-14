@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Memo } from '../../App';
+import { MemoDetailModal } from '../pages/MemoDetailModal';
 
 
 type MemoListProps = {
@@ -9,6 +10,16 @@ type MemoListProps = {
 }
 
 export const MemoList = (props: MemoListProps) => {
+  const [modalIsOpen, setModalIsIsOpen] = useState(false);
+
+  const closeModal = () => {
+    setModalIsIsOpen(false);
+  }
+
+  const openModal = () => {
+    setModalIsIsOpen(true);
+  }
+
   const gridCols = () => {
     return props.displayIsList ? 'grid-cols-1' : 'sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6';
   }
@@ -25,7 +36,7 @@ export const MemoList = (props: MemoListProps) => {
       <div className={ listWidth() +' grid gap-4 ' + gridCols()} >
         {props.memoList.map((memo: Memo,index:number) => {
           return(
-            <div key={index} >
+            <div key={index} onClick={openModal}>
               <div className="flex flex-col p-2 rounded-md mx-auto my-8 border border-gray-40
               hover:shadow-md
               hover:shadow-gray-300 ">
@@ -39,6 +50,7 @@ export const MemoList = (props: MemoListProps) => {
           );
         })}
       </div>
+      <MemoDetailModal modalIsOpen={modalIsOpen} closeModal={closeModal} />
     </div>
   );
 }

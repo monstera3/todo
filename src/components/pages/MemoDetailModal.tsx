@@ -1,17 +1,10 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
 
-export const MemoDetailModal = () => {
-  const [modalIsOpen, setModalIsIsOpen] = useState(false);
+export const MemoDetailModal = (props:{ modalIsOpen: boolean, closeModal: () => void }) => {
+  const { modalIsOpen, closeModal } = props;
 
-  const closeModal = () => {
-    setModalIsIsOpen(false);
-  }
-
-  const openModal = () => {
-    setModalIsIsOpen(true);
-  }
 
   return(
     <Transition appear show={modalIsOpen} as={Fragment}>
