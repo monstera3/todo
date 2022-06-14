@@ -10,14 +10,14 @@ type MemoListProps = {
 }
 
 export const MemoList = (props: MemoListProps) => {
-  const [modalIsOpen, setModalIsIsOpen] = useState(false);
+  const [modalMemo, setModalMemo] = useState<Memo | null>(null);
 
   const closeModal = () => {
-    setModalIsIsOpen(false);
+    setModalMemo(null);
   }
 
-  const openModal = () => {
-    setModalIsIsOpen(true);
+  const openModal = (memo:Memo) => {
+    setModalMemo(memo);
   }
 
   const gridCols = () => {
@@ -36,7 +36,7 @@ export const MemoList = (props: MemoListProps) => {
       <div className={ listWidth() +' grid gap-4 ' + gridCols()} >
         {props.memoList.map((memo: Memo,index:number) => {
           return(
-            <div key={index} onClick={openModal}>
+            <div key={index} onClick={() => openModal(memo)}>
               <div className="flex flex-col p-2 rounded-md mx-auto my-8 border border-gray-40
               hover:shadow-md
               hover:shadow-gray-300 ">
@@ -50,7 +50,7 @@ export const MemoList = (props: MemoListProps) => {
           );
         })}
       </div>
-      <MemoDetailModal modalIsOpen={modalIsOpen} closeModal={closeModal} />
+      <MemoDetailModal memo={modalMemo} closeModal={closeModal} />
     </div>
   );
 }

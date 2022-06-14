@@ -1,13 +1,17 @@
 import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
+import { Memo } from '../../App';
 
 
-export const MemoDetailModal = (props:{ modalIsOpen: boolean, closeModal: () => void }) => {
-  const { modalIsOpen, closeModal } = props;
+export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void }) => {
+  const { memo, closeModal } = props;
 
+  const modalIsOpen = (): boolean => {
+    return !!memo;
+  }
 
   return(
-    <Transition appear show={modalIsOpen} as={Fragment}>
+    <Transition appear show={modalIsOpen()} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
         <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0" enterTo="opacity-100" leave="ease-in duration-200" leaveFrom="opacity-100" leaveTo="opacity-0">
           <div className="fixed inset-0 bg-black bg-opacity-25" />
@@ -17,6 +21,8 @@ export const MemoDetailModal = (props:{ modalIsOpen: boolean, closeModal: () => 
             <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="ease-in duration-200" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
               <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                 <div>
+                  <div>{memo?.title}</div>
+                  <div>{memo?.body}</div>
                   <button type="button" onClick={closeModal}>close</button>
                 </div>
               </Dialog.Panel>
