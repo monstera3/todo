@@ -6,7 +6,6 @@ type MemoListProps = {
   memoList: Memo[],
   displayIsList: boolean,
   onClickDelete: (index: number) => void,
-  openModal:any
 }
 
 export const MemoList = (props: MemoListProps) => {
@@ -26,7 +25,7 @@ export const MemoList = (props: MemoListProps) => {
       <div className={ listWidth() +' grid gap-4 ' + gridCols()} >
         {props.memoList.map((memo: Memo,index:number) => {
           return(
-            <div key={index} onClick={props.openModal}>
+            <div key={index} >
               <div className="flex flex-col p-2 rounded-md mx-auto my-8 border border-gray-40
               hover:shadow-md
               hover:shadow-gray-300 ">
