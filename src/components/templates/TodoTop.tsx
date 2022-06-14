@@ -4,6 +4,7 @@ import { InputForm } from '../organisms/InputForm';
 import { MemoList } from './MemoList';
 import React, { useState } from 'react';
 import { Memo } from '../../App';
+import { Home } from './Home';
 
   export const TodoTop = (props:{ memoList: Memo[], setMemoList:any, }) => {
     const { memoList, setMemoList } = props;
@@ -67,6 +68,7 @@ import { Memo } from '../../App';
              />
           </div>
         </div>
+        <Home />
       </>
   );
 }

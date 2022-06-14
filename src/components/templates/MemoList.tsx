@@ -46,11 +46,11 @@ export const MemoList = (props: MemoListProps) => {
                   className="hover:bg-gray-300"
                   onClick={() => props.onClickDelete(index)} >削除</button>
               </div>
+              <MemoDetailModal memo={modalMemo} closeModal={closeModal} />
             </div>
           );
         })}
       </div>
-      <MemoDetailModal memo={modalMemo} closeModal={closeModal} />
     </div>
   );
 }
