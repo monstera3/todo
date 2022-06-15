@@ -20,13 +20,22 @@ export const InputForm = (props:InputFormType) => {
   }
 
   const FormType = (isForm:boolean) => {
-    return( isForm ? " ":<FormTypeOpen/>);
+    return( isForm ? <FormTypeClose/>:<FormTypeOpen/>);
   }
 
-  const FormTypeOpen = () => {
+  const FormTypeClose = () => {
     return(
+      <>
+
+      </>
+    );
+  }
+
+    const FormTypeOpen = () => {
+     return(
       <div>
         <div className="flex ">
+          //TODO タイトルの文字を連続で入力したい
           <input type="text" value={inputTitle} onChange={onChangeInputTitle}  placeholder="タイトル"/>
           <button className=" p-2 group hover:bg-slate-200 rounded-full relative">
             <BsPin size='1.2rem'/>
@@ -34,7 +43,7 @@ export const InputForm = (props:InputFormType) => {
                       group-hover:opacity-100 absolute top-9 -right-4">メモを固定</span>
           </button>
         </div>
-        <input type="text" value={inputText} onChange={onChangeInputText} placeholder="メモを入力" />
+
         <button onClick={onClick} className=" py-2 px-4 rounded hover:bg-gray-300">作成</button>
         <div className="flex justify-between">
           <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
