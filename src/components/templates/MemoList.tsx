@@ -33,7 +33,7 @@ export const MemoList = (props: MemoListProps) => {
 
   return(
     <div>
-      <p>固定済み</p>
+      <p>その他</p>
       <div className={ listWidth() +' grid gap-4 ' + gridCols()} >
         {props.memoList.map((memo: Memo,index:number) => {
           return(

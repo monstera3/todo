@@ -21,11 +21,11 @@ export const Home = (props:HomeType) => {
   return(
     <div>
       Home
-      <FixedMemoList />
       <InputForm
         inputText={inputText} onChangeInputText={onChangeInputText} onClick={onClickAdd}
         inputTitle={inputTitle} onChangeInputTitle={onChangeInputTitle}
       />
+      <FixedMemoList />
       <MemoList
         memoList={memoList}
         displayIsList={displayIsList}

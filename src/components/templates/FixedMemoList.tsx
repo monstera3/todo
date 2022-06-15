@@ -2,6 +2,6 @@
 
 export const FixedMemoList = () => {
   return(
-    <div>Fixed</div>
+    <div>固定済み</div>
   );
 }
