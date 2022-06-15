@@ -1,11 +1,8 @@
 import { Header } from './Header';
 import { Drawer } from './Drawer';
-import { InputForm } from '../organisms/InputForm';
-import { MemoList } from './MemoList';
 import React, { useState } from 'react';
 import { Memo } from '../../App';
 import { Home } from './Home';
-import { FixedMemoList } from './FixedMemoList';
 
   export const TodoTop = (props:{ memoList: Memo[], setMemoList:any, }) => {
     const { memoList, setMemoList } = props;
@@ -58,19 +55,13 @@ import { FixedMemoList } from './FixedMemoList';
         <div className="flex flex-row w-screen">
           <Drawer menuIsOpen={menuIsOpen}/>
           <div className="flex flex-col w-full justify-items-center">
-            <InputForm
-              inputText={inputText} onChangeInputText={onChangeInputText} onClick={onClickAdd}
-              inputTitle={inputTitle} onChangeInputTitle={onChangeInputTitle}
-            />
-            <MemoList
-              memoList={memoList}
-              displayIsList={displayIsList}
-              onClickDelete={onClickDelete}
-             />
-            <FixedMemoList />
+            <Home inputText={inputText} onChangeInputText={onChangeInputText} onClickAdd={onClickAdd}
+                  inputTitle={inputTitle} onChangeInputTitle={onChangeInputTitle}
+                  memoList={memoList}
+                  displayIsList={displayIsList}
+                  onClickDelete={onClickDelete}/>
           </div>
         </div>
-        <Home />
       </>
   );
 }
