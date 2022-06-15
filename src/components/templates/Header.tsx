@@ -30,7 +30,7 @@ export const Header = (props:HeaderProps) => {
         </button>
         <button onClick={props.toggleDisplayIsList} className=" p-3 group hover:bg-slate-200 rounded-full relative">
           {DisplayTypeIcon(props.displayIsList)}
-          <span className="opacity-0 py-1 w-[95px] rounded text-[12px] font-bold text-white bg-slate-600
+          <span className="opacity-0 py-1 w-24 rounded text-[12px] font-bold text-white bg-slate-600
           group-hover:opacity-100 absolute top-11 -left-6">{DisplayTypeMessage(props.displayIsList)}</span>
         </button>
         <button className=" p-3  group hover:bg-slate-200 rounded-full relative">
