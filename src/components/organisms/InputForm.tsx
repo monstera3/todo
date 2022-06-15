@@ -16,6 +16,11 @@ export const InputForm = (props:InputFormType) => {
   const onClickForm = () => {
     setInputFormType(!inputFormType)
   }
+
+  const FormType = (isForm:boolean) => {
+    return( isForm ? "a":"b");
+  }
+
   return(
     <div
       className="flex w-1/2 justify-between px-5 rounded-md
@@ -24,6 +29,7 @@ export const InputForm = (props:InputFormType) => {
         <input type="text" value={inputTitle} onChange={onChangeInputTitle}  placeholder="タイトル"/>
         <input type="text" value={inputText} onChange={onChangeInputText} placeholder="メモを入力" />
         <button onClick={onClickForm}>切り替え</button>
+        <p>{FormType(inputFormType)}</p>
       </div>
       <button onClick={onClick} className=" py-2 px-4 rounded hover:bg-gray-300">作成</button>
     </div>
