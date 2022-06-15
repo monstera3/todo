@@ -18,8 +18,23 @@ export const InputForm = (props:InputFormType) => {
   }
 
   const FormType = (isForm:boolean) => {
-    return( isForm ? "a":"b");
+    return( isForm ? <FormTypeBefore/>:<FormTypeAfter/>);
   }
+  const FormTypeBefore = () => {
+    return(
+      <div>
+        FormTypeBefore
+      </div>
+    );
+  }
+  const FormTypeAfter = () => {
+    return(
+      <div>
+        FormTypeAfter
+      </div>
+    );
+  }
+
 
   return(
     <div
@@ -35,3 +50,5 @@ export const InputForm = (props:InputFormType) => {
     </div>
   );
 }
+
+
