@@ -31,7 +31,7 @@ export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void 
                     </button>
                   </nav>
                   <div>{memo?.body}</div>
-                  <button type="button" onClick={closeModal}>close</button>
+                  <button type="button" onClick={closeModal}>閉じる</button>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
