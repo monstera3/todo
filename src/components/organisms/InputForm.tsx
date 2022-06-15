@@ -35,7 +35,7 @@ export const InputForm = (props:InputFormType) => {
      return(
       <div>
         <div className="flex ">
-          //TODO タイトルの文字を連続で入力したい
+          {/*//TODO タイトルの文字を連続で入力したい*/}
           <input type="text" value={inputTitle} onChange={onChangeInputTitle}  placeholder="タイトル"/>
           <button className=" p-2 group hover:bg-slate-200 rounded-full relative">
             <BsPin size='1.2rem'/>
