@@ -43,6 +43,12 @@ export const InputForm = (props:InputFormType) => {
           {/*//TODO タイトルの文字を連続で入力したい*/}
           <input className="placeholder:text-slate-800 text-base "
             type="text" value={inputTitle} onChange={onChangeInputTitle}  placeholder="タイトル"/>
+          <input className="placeholder:text-slate-800 text-base "
+                 onClick={onClickForm}
+                 type="text"
+                 value={inputText}
+                 onChange={onChangeInputText}
+                 placeholder="メモを入力..." />
           <button className=" p-2 group hover:bg-slate-200 rounded-full relative">
             <BsPin size='1.2rem'/>
             <span className="opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
