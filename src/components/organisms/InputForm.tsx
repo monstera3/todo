@@ -26,7 +26,12 @@ export const InputForm = (props:InputFormType) => {
   const FormTypeClose = () => {
     return(
       <>
-
+        <input className="placeholder:text-slate-800 text-base "
+               onClick={onClickForm}
+               type="text"
+               value={inputText}
+               onChange={onChangeInputText}
+               placeholder="メモを入力..." />
       </>
     );
   }
@@ -63,8 +68,6 @@ export const InputForm = (props:InputFormType) => {
         className="flex w-1/2 justify-between px-5 py-2 rounded-md
       mx-auto	border-2 border-gray-300 m-8 shadow-lg shadow-gray-300 ">
         <div className="flex flex-col">
-          <input className="placeholder:text-slate-800 text-base "
-            onClick={onClickForm} type="text" value={inputText} onChange={onChangeInputText} placeholder="メモを入力..." />
           {FormType(inputFormType)}
         </div>
       </div>
