@@ -26,12 +26,7 @@ export const InputForm = (props:InputFormType) => {
   const FormTypeClose = () => {
     return(
       <>
-        <input className="placeholder:text-slate-800 text-base "
-               onClick={onClickForm}
-               type="text"
-               value={inputText}
-               onChange={onChangeInputText}
-               placeholder="メモを入力..." />
+        <div className="placeholder:text-slate-800 text-base " onClick={onClickForm}>メモを入力...</div>
       </>
     );
   }
