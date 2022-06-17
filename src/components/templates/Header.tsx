@@ -33,9 +33,9 @@ export const Header = (props:HeaderProps) => {
           <span className="opacity-0 py-1 w-24 rounded text-[12px] font-bold text-white bg-slate-600
           group-hover:opacity-100 absolute top-11 -left-6">{DisplayTypeMessage(props.displayIsList)}</span>
         </button>
-        <button className=" p-3  group hover:bg-slate-200 rounded-full relative">
+        <button className=" p-3  group hover:bg-slate-200 rounded-full relative" aria-label="aa">
           <VscSettingsGear size='1.2rem'/>
-          <span className="opacity-0 px-2 rounded text-[12px] font-bold text-white p-1 bg-slate-600
+          <span className="opacity-1 px-2 rounded text-[12px] font-bold text-white p-1 bg-slate-600
           group-hover:opacity-100 absolute top-11 right-0.5">設定</span>
         </button>
         <button className="p-3 hover:bg-slate-200 rounded-full"> <VscAccount size='1.5rem'/></button>
