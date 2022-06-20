@@ -1,6 +1,6 @@
 import { Header } from './Header';
 import { Drawer } from './Drawer';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Memo } from '../../App';
 import { Home } from './Home';
 

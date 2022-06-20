@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BsPin } from 'react-icons/bs';
+import { BsPin, BsThreeDotsVertical } from 'react-icons/bs';
 import { RiInboxArchiveLine } from 'react-icons/ri';
 
 type InputFormType = {
@@ -55,6 +55,11 @@ export const InputForm = (props:InputFormType) => {
             <RiInboxArchiveLine size='1.1rem'/>
             <span className="opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
                       group-hover:opacity-100 absolute top-9 -right-4">アーカイブ</span>
+          </button>
+          <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
+            <BsThreeDotsVertical size='1.1rem'/>
+            <span className="opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
+                      group-hover:opacity-100 absolute top-9 -right-4">その他のアクション</span>
           </button>
           <button onClick={() => {onClickForm();onClick();}} className="px-4 hover:bg-gray-100">閉じる</button>
         </div>
