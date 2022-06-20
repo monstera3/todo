@@ -1,6 +1,6 @@
 import { Header } from './Header';
 import { Drawer } from './Drawer';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Memo } from '../../App';
 import { Home } from './Home';
 
@@ -18,6 +18,11 @@ import { Home } from './Home';
     const onChangeInputTitle = (e:React.ChangeEvent<HTMLInputElement>) => {
       setInputTitle(e.target.value)
     }
+
+    useEffect(() =>{
+      console.log("sa");
+    },[]);
+
     const onClickAdd = () => {
       if (inputText === '' && inputTitle === '') return;
       const newMemos = [...memoList, { title: inputTitle, body: inputText }];
