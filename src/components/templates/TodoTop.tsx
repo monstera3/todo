@@ -19,9 +19,7 @@ import { Home } from './Home';
       setInputTitle(e.target.value)
     }
 
-    useEffect(() =>{
-      console.log("sa");
-    },[]);
+
 
     const onClickAdd = () => {
       if (inputText === '' && inputTitle === '') return;
