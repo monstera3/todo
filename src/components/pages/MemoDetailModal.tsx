@@ -1,14 +1,19 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Memo } from '../../App';
-import { BsPin } from 'react-icons/bs';
+import { BsPin, BsThreeDotsVertical } from 'react-icons/bs';
+import { RiInboxArchiveLine } from 'react-icons/ri';
 
 
-export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void }) => {
+export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void ,}) => {
   const { memo, closeModal } = props;
+  const [inputFormType,setInputFormType] = useState<boolean>(true);
 
   const modalIsOpen = (): boolean => {
     return !!memo;
+  }
+  const onClickForm = () => {
+    setInputFormType(!inputFormType)
   }
 
   return(
@@ -31,6 +36,19 @@ export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void 
                     </button>
                   </nav>
                   <div>{memo?.body}</div>
+                  <div className="flex justify-between">
+                    <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
+                      <RiInboxArchiveLine size='1.1rem'/>
+                      <span className="opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
+                      group-hover:opacity-100 absolute top-9 -right-4">アーカイブ</span>
+                    </button>
+                    <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
+                      <BsThreeDotsVertical size='1.1rem'/>
+                      <span className="opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
+                      group-hover:opacity-100 absolute top-9 -right-4">その他のアクション</span>
+                    </button>
+                    <button onClick={() => {onClickForm();}} className="px-4 hover:bg-gray-100">閉じる</button>
+                  </div>
                   <button type="button" onClick={closeModal}>閉じる</button>
                 </div>
               </Dialog.Panel>
