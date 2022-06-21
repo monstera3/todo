@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { TodoTop } from './components/App/TodoTop';
 import { Routes,Route } from "react-router-dom"
-import { Reminders } from './components/templates/Reminders';
+import { Reminders } from './components/App/Reminders';
 import { Trash } from './components/templates/Trash';
 
 
