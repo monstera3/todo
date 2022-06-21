@@ -20,7 +20,7 @@ export const Header = (props:HeaderProps) => {
           <GiHamburgerMenu size='1.5rem'/>
         </button>
         <h1 className="text-3xl font-bold">
-          TODO
+          MEMO
         </h1>
         <SearchBar/>
         <button className=" p-3 group hover:bg-slate-200 rounded-full relative">
