@@ -23,10 +23,12 @@ export const Header = (props:HeaderProps) => {
           MEMO
         </h1></a>
         <SearchBar/>
-        <button className=" p-3 group hover:bg-slate-200 rounded-full relative">
+        <button className=" p-3 relative group hover:bg-slate-200 rounded-full ">
           <GrUpdate size='1.2rem'/>
-          <span className="opacity-0  w-[74px] rounded text-[12px] font-bold text-white py-1 bg-slate-600
-          group-hover:opacity-100 absolute top-11 -left-3">更新します</span>
+          <span className="opacity-0 w-[74px] invisible rounded text-[12px]
+          font-bold text-white py-1 bg-slate-600 top-11 -left-3
+           group-hover:visible opacity-100 absolute ">更新します
+          </span>
         </button>
         <button onClick={props.toggleDisplayIsList} className=" p-3 group hover:bg-slate-200 rounded-full relative">
           {DisplayTypeIcon(props.displayIsList)}
