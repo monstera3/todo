@@ -40,8 +40,8 @@ export const InputForm = (props:InputFormType) => {
             type="text" value={inputTitle} onChange={onChangeInputTitle}  placeholder="タイトル"/>
           <button className=" p-2 group hover:bg-slate-200 rounded-full relative">
             <BsPin size='1.2rem'/>
-            <span className="opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
-                      group-hover:opacity-100 absolute top-9 -right-4">メモを固定</span>
+            <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
+                      group-hover:visible opacity-100 absolute top-9 -right-4">メモを固定</span>
           </button>
         </div>
         {/*//TODO メモを入力の文字を連続で入力したい*/}
@@ -53,13 +53,13 @@ export const InputForm = (props:InputFormType) => {
         <div className="flex justify-between">
           <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
             <RiInboxArchiveLine size='1.1rem'/>
-            <span className="opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
-                      group-hover:opacity-100 absolute top-9 -right-4">アーカイブ</span>
+            <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
+                      group-hover:visible opacity-100 absolute top-9 -right-4">アーカイブ</span>
           </button>
           <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
             <BsThreeDotsVertical size='1.1rem'/>
-            <span className="opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
-                      group-hover:opacity-100 absolute top-9 -right-4">その他のアクション</span>
+            <span className="invisible opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
+                      group-hover:visible opacity-100 absolute top-9 -right-4">その他のアクション</span>
           </button>
           <button onClick={() => {onClickForm();onClick();}} className="px-4 hover:bg-gray-100">閉じる</button>
         </div>
