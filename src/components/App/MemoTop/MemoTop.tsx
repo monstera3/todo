@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Memo } from '../App';
 import { Home } from './Home/Home';
 
-  export const TodoTop = (props:{ memoList: Memo[], setMemoList:any, }) => {
+  export const MemoTop = (props:{ memoList: Memo[], setMemoList:any, }) => {
     const { memoList, setMemoList } = props;
     const [inputText,setInputText] = useState('');
     const [inputTitle,setInputTitle] = useState('');
