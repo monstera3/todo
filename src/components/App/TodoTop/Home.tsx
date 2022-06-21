@@ -1,4 +1,4 @@
-import { FixedMemoList } from '../../templates/FixedMemoList';
+import { FixedMemoList } from './Home/FixedMemoList';
 import React from 'react';
 import { InputForm } from './Home/InputForm';
 import { MemoList } from '../../templates/MemoList';
