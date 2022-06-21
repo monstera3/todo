@@ -2,7 +2,7 @@ import { FixedMemoList } from '../../templates/FixedMemoList';
 import React from 'react';
 import { InputForm } from '../../organisms/InputForm';
 import { MemoList } from '../../templates/MemoList';
-import { Memo } from '../../../App';
+import { Memo } from '../App';
 
 export type HomeType = {
   inputText:string,

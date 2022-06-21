@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './App.css';
-import { TodoTop } from './components/App/TodoTop';
+import '../../App.css';
+import { TodoTop } from './TodoTop';
 import { Routes,Route } from "react-router-dom"
-import { Reminders } from './components/App/Reminders';
-import { Trash } from './components/App/Trash';
+import { Reminders } from './Reminders';
+import { Trash } from './Trash';
 
 
 

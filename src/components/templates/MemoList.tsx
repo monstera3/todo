@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Memo } from '../../App';
+import { Memo } from '../App/App';
 import { MemoDetailModal } from '../pages/MemoDetailModal';
 import { BsPin } from 'react-icons/bs';
 
