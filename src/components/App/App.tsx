@@ -3,7 +3,7 @@ import './App.css';
 import { TodoTop } from './TodoTop/TodoTop';
 import { Routes,Route } from "react-router-dom"
 import { Reminders } from './Reminders/Reminders';
-import { Trash } from './Trash';
+import { Trash } from './Trash/Trash';
 
 
 
