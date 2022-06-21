@@ -1,6 +1,6 @@
 import { FixedMemoList } from '../../templates/FixedMemoList';
 import React from 'react';
-import { InputForm } from '../../organisms/InputForm';
+import { InputForm } from './Home/InputForm';
 import { MemoList } from '../../templates/MemoList';
 import { Memo } from '../App';
 
