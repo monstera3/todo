@@ -1,4 +1,4 @@
-import { Header } from './Header';
+import { Header } from './Header/Header';
 import { Drawer } from './Drawer/Drawer';
 import React, { useState } from 'react';
 import { Memo } from '../App';
