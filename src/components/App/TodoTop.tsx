@@ -2,7 +2,7 @@ import { Header } from './TodoTop/Header';
 import { Drawer } from '../templates/Drawer';
 import React, { useState } from 'react';
 import { Memo } from '../../App';
-import { Home } from '../templates/Home';
+import { Home } from './TodoTop/Home';
 
   export const TodoTop = (props:{ memoList: Memo[], setMemoList:any, }) => {
     const { memoList, setMemoList } = props;
