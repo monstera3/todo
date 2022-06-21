@@ -1,5 +1,5 @@
 import { Header } from './Header';
-import { Drawer } from './Drawer';
+import { Drawer } from './Drawer/Drawer';
 import React, { useState } from 'react';
 import { Memo } from '../App';
 import { Home } from './Home/Home';
