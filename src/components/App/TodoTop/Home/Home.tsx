@@ -1,8 +1,8 @@
-import { FixedMemoList } from './Home/FixedMemoList';
+import { FixedMemoList } from './FixedMemoList';
 import React from 'react';
-import { InputForm } from './Home/InputForm';
-import { MemoList } from './Home/MemoList';
-import { Memo } from '../App';
+import { InputForm } from './InputForm';
+import { MemoList } from './MemoList';
+import { Memo } from '../../App';
 
 export type HomeType = {
   inputText:string,
