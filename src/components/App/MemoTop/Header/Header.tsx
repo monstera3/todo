@@ -24,7 +24,7 @@ export const Header = (props:HeaderProps) => {
         </h1></a>
         <SearchBar/>
         <button className=" p-3 relative group hover:bg-slate-200 rounded-full "
-        onClick={() => window.location.reload()}>
+        onClick={reloadButton}>
           <GrUpdate size='1.2rem'/>
           <span className="opacity-0 w-[74px] invisible rounded text-[12px]
           font-bold text-white py-1 bg-slate-600 top-11 -left-3
@@ -65,4 +65,10 @@ const SearchBar = () => {
     </div>
   );
 
+}
+
+const reloadButton = () => {
+  return(
+    window.location.reload()
+  );
 }
