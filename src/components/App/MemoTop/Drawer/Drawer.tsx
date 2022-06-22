@@ -61,11 +61,12 @@ export const Drawer = (props:{menuIsOpen:boolean}) => {
         menuList.map((menu:Menu)=>{
           if(props.menuIsOpen){
             return(
-              <div key={menu.key} role='button' className='flex  px-4 py-2 hover:bg-slate-200 rounded-r-full'>
+              <Link to={menu.path} key={menu.key}>
+                <div  role='button' className='flex  px-6 py-2 hover:bg-slate-200 rounded-r-full w-60 '>
                 {menu.icon}
-                <Link to={menu.path}><p className="w-40">{menu.label}</p></Link>
-
-              </div>
+                  <p className="pl-4">{menu.label}</p>
+                </div>
+              </Link>
             )
           }else {
             return(
