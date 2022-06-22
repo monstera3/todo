@@ -22,24 +22,23 @@ export const MemoList = (props: MemoListProps) => {
   }
 
   const gridCols = () => {
-    return props.displayIsList ? 'grid-cols-1' : 'sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6';
+    return props.displayIsList ? 'grid-cols-1' : 'sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5';
   }
 
   const listWidth = () => {
-    return props.displayIsList ? 'w-2/3 ' : 'w-11/12 ';
-
+    return props.displayIsList ? 'w-2/5 mx-auto' : 'w-11/12 m-auto';
   }
 
 
   return(
     <div>
       <p>その他</p>
-      <div className={ listWidth() +' grid gap-4 ' + gridCols()} >
+      <div className={listWidth()+' grid gap-3 ' + gridCols()}>
         {props.memoList.map((memo: Memo,index:number) => {
           return(
             <div key={index} >
               <div
-                   className="flex flex-col p-2 rounded-md mx-auto my-8 border border-gray-40
+                   className="flex flex-col p-2 rounded-md mx-auto border border-gray-40
                    hover:shadow-md
                    hover:shadow-gray-300 ">
                 <div onClick={() => openModal(memo)}>
