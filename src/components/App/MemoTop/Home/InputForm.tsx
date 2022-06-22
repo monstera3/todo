@@ -9,16 +9,16 @@ type InputFormType = {
 export const InputForm = (props:InputFormType) => {
   const {onClick} = props;
 
-  const [inputFormType,setInputFormType] = useState<boolean>(true);
+  const [isLargeForm,setIsLargeForm] = useState<boolean>(true);
   const bodyRef = useRef<HTMLInputElement>(null);
   const titleRef = useRef<HTMLInputElement>(null);
 
   const toggleIsLargeForm = () => {
-    setInputFormType(!inputFormType)
+    setIsLargeForm(!isLargeForm)
   }
 
   const FormType = () => {
-    return( inputFormType ? <FormTypeClose/>:<FormTypeOpen/>);
+    return( isLargeForm ? <FormTypeClose/>:<FormTypeOpen/>);
   }
   const close = () => {
     const title = titleRef.current ? titleRef.current.value : '';
@@ -46,7 +46,6 @@ export const InputForm = (props:InputFormType) => {
                       group-hover:visible opacity-100 absolute top-9 -right-4">メモを固定</span>
           </button>
         </div>
-        {/*//TODO メモを入力の文字を連続で入力したい*/}
         <input className="placeholder:text-slate-800 text-base "
                type="text"
                ref={bodyRef}
