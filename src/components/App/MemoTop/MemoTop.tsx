@@ -2,7 +2,9 @@ import { Header } from './Header/Header';
 import { Drawer } from './Drawer/Drawer';
 import React, { useState } from 'react';
 import { Memo } from '../App';
-import { Home } from './Home/Home';
+import { InputForm } from './Home/InputForm';
+import { FixedMemoList } from './Home/FixedMemoList';
+import { MemoList } from './Home/MemoList/MemoList';
 
   export const MemoTop = (props:{ memoList: Memo[], setMemoList:any, }) => {
     const { memoList, setMemoList } = props;
@@ -58,11 +60,17 @@ import { Home } from './Home/Home';
         <div className="flex flex-row w-screen">
           <Drawer menuIsOpen={menuIsOpen}/>
           <div className="flex flex-col w-full justify-items-center">
-            <Home inputText={inputText} onChangeInputText={onChangeInputText} onClickAdd={onClickAdd}
-                  inputTitle={inputTitle} onChangeInputTitle={onChangeInputTitle}
-                  memoList={memoList}
-                  displayIsList={displayIsList}
-                  onClickDelete={onClickDelete}/>
+            Home
+            <InputForm
+              inputText={inputText} onChangeInputText={onChangeInputText} onClick={onClickAdd}
+              inputTitle={inputTitle} onChangeInputTitle={onChangeInputTitle}
+            />
+            <FixedMemoList />
+            <MemoList
+              memoList={memoList}
+              displayIsList={displayIsList}
+              onClickDelete={onClickDelete}
+            />
           </div>
         </div>
       </>
