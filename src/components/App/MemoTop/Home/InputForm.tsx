@@ -37,7 +37,7 @@ export const InputForm = (props:InputFormType) => {
     const FormTypeOpen = () => {
      return(
       <div>
-        <div className="flex ">
+        <div className="flex justify-between">
           <input className="placeholder:text-slate-800 text-base "
             type="text" ref={titleRef} placeholder="タイトル"/>
           <button className=" p-2 group hover:bg-slate-200 rounded-full relative">
@@ -70,7 +70,7 @@ export const InputForm = (props:InputFormType) => {
   return(
     <>
       <div
-        className="flex w-80 justify-between px-5 py-2 rounded-md
+        className=" w-3/5  px-5 py-2 rounded-md
       mx-auto	border-2 border-gray-300 m-8 shadow-lg shadow-gray-300 ">
         <div className="flex flex-col">
           {FormType()}

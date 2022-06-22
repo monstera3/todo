@@ -5,7 +5,7 @@ import { BsPin, BsThreeDotsVertical } from 'react-icons/bs';
 import { RiInboxArchiveLine } from 'react-icons/ri';
 
 
-export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void ,}) => {
+export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void}) => {
   const { memo, closeModal } = props;
 
   const modalIsOpen = (): boolean => {
@@ -31,7 +31,8 @@ export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void 
                       group-hover:visible opacity-100 absolute top-9 -right-4">メモを固定</span>
                     </button>
                   </nav>
-                  <div>{memo?.body}</div>
+                  <div>
+                    {memo?.body}</div>
                   <div className="flex justify-between">
                     <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
                       <RiInboxArchiveLine size='1.1rem'/>
