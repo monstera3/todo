@@ -8,28 +8,14 @@ import { MemoList } from './Home/MemoList/MemoList';
 
   export const MemoTop = (props:{ memoList: Memo[], setMemoList:any, }) => {
     const { memoList, setMemoList } = props;
-    const [inputText,setInputText] = useState('');
-    const [inputTitle,setInputTitle] = useState('');
     const [menuIsOpen, setMenuIsOpen] = useState(true);
     const [displayIsList, setDisplayIsList] = useState<boolean>(false);
 
-    const onChangeInputText = (e:React.ChangeEvent<HTMLInputElement>) =>{
-      setInputText(e.target.value)
-    }
-
-    const onChangeInputTitle = (e:React.ChangeEvent<HTMLInputElement>) => {
-      setInputTitle(e.target.value)
-    }
-
-
-
-    const onClickAdd = () => {
+    const onClickAdd = (inputTitle: string, inputText: string) => {
       if (inputText === '' && inputTitle === '') return;
       const newMemos = [...memoList, { title: inputTitle, body: inputText }];
       setMemoList(newMemos);
       updateStoredMemos(newMemos);
-      setInputText('');
-      setInputTitle('');
     };
 
     const onClickDelete = (index:number) => {
@@ -61,10 +47,7 @@ import { MemoList } from './Home/MemoList/MemoList';
           <Drawer menuIsOpen={menuIsOpen}/>
           <div className="flex flex-col w-full justify-items-center">
             Home
-            <InputForm
-              inputText={inputText} onChangeInputText={onChangeInputText} onClick={onClickAdd}
-              inputTitle={inputTitle} onChangeInputTitle={onChangeInputTitle}
-            />
+            <InputForm onClick={onClickAdd}/>
             <FixedMemoList />
             <MemoList
               memoList={memoList}

@@ -3,17 +3,23 @@ import { BsPin, BsThreeDotsVertical } from 'react-icons/bs';
 import { RiInboxArchiveLine } from 'react-icons/ri';
 
 type InputFormType = {
-  inputText: string,
-  onChangeInputText: (e: React.ChangeEvent<HTMLInputElement>) => void,
-  onClick: () => void,
-  inputTitle: string,
-  onChangeInputTitle: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  onClick: (title: string, body: string) => void,
 }
 
 export const InputForm = (props:InputFormType) => {
-  const {inputText,onChangeInputText,onClick,inputTitle,onChangeInputTitle} = props;
+  const {onClick} = props;
 
   const [inputFormType,setInputFormType] = useState<boolean>(true);
+  const [inputText,setInputText] = useState('');
+  const [inputTitle,setInputTitle] = useState('');
+
+  const onChangeInputText = (e:React.ChangeEvent<HTMLInputElement>) =>{
+    setInputText(e.target.value)
+  }
+
+  const onChangeInputTitle = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setInputTitle(e.target.value)
+  }
 
   const onClickForm = () => {
     setInputFormType(!inputFormType)
@@ -21,6 +27,11 @@ export const InputForm = (props:InputFormType) => {
 
   const FormType = (isForm:boolean) => {
     return( isForm ? <FormTypeClose/>:<FormTypeOpen/>);
+  }
+  const close = () => {
+    onClick(inputTitle, inputText);
+    setInputText('');
+    setInputTitle('');
   }
 
   const FormTypeClose = () => {
@@ -61,7 +72,7 @@ export const InputForm = (props:InputFormType) => {
             <span className="invisible opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
                       group-hover:visible opacity-100 absolute top-9 -right-4">その他のアクション</span>
           </button>
-          <button onClick={() => {onClickForm();onClick();}} className="px-4 hover:bg-gray-100">閉じる</button>
+          <button onClick={() => {onClickForm();close();}} className="px-4 hover:bg-gray-100">閉じる</button>
         </div>
       </div>
     );
