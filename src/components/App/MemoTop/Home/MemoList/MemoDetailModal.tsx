@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Memo } from '../../../App';
 import { BsPin, BsThreeDotsVertical } from 'react-icons/bs';
@@ -7,13 +7,9 @@ import { RiInboxArchiveLine } from 'react-icons/ri';
 
 export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void ,}) => {
   const { memo, closeModal } = props;
-  const [inputFormType,setInputFormType] = useState<boolean>(true);
 
   const modalIsOpen = (): boolean => {
     return !!memo;
-  }
-  const onClickForm = () => {
-    setInputFormType(!inputFormType)
   }
 
   return(
@@ -47,9 +43,8 @@ export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void 
                       <span className="invisible opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
                       group-hover:visible opacity-100 absolute top-9 -right-10">その他のアクション</span>
                     </button>
-                    <button onClick={() => {onClickForm();}} className="px-4 hover:bg-gray-100">閉じる</button>
+                    <button onClick={() => {closeModal();}} type="button" className="px-4 hover:bg-gray-100">閉じる</button>
                   </div>
-                  <button type="button" onClick={closeModal}>閉じる</button>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
