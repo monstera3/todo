@@ -13,7 +13,7 @@ export const InputForm = (props:InputFormType) => {
   const bodyRef = useRef<HTMLInputElement>(null);
   const titleRef = useRef<HTMLInputElement>(null);
 
-  const onClickForm = () => {
+  const toggleIsLargeForm = () => {
     setInputFormType(!inputFormType)
   }
 
@@ -29,7 +29,7 @@ export const InputForm = (props:InputFormType) => {
   const FormTypeClose = () => {
     return(
       <>
-        <div className="placeholder:text-slate-800 text-base " onClick={onClickForm}>メモを入力...</div>
+        <div className="placeholder:text-slate-800 text-base " onClick={toggleIsLargeForm}>メモを入力...</div>
       </>
     );
   }
@@ -62,7 +62,7 @@ export const InputForm = (props:InputFormType) => {
             <span className="invisible opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
                       group-hover:visible opacity-100 absolute top-9 -right-4">その他のアクション</span>
           </button>
-          <button onClick={() => {onClickForm();close();}} className="px-4 hover:bg-gray-100">閉じる</button>
+          <button onClick={() => {toggleIsLargeForm();close();}} className="px-4 hover:bg-gray-100">閉じる</button>
         </div>
       </div>
     );
