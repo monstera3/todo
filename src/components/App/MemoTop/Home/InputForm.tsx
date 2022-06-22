@@ -25,8 +25,8 @@ export const InputForm = (props:InputFormType) => {
     setInputFormType(!inputFormType)
   }
 
-  const FormType = (isForm:boolean) => {
-    return( isForm ? <FormTypeClose/>:<FormTypeOpen/>);
+  const FormType = () => {
+    return( inputFormType ? <FormTypeClose/>:<FormTypeOpen/>);
   }
   const close = () => {
     onClick(inputTitle, inputText);
@@ -84,7 +84,7 @@ export const InputForm = (props:InputFormType) => {
         className="flex w-80 justify-between px-5 py-2 rounded-md
       mx-auto	border-2 border-gray-300 m-8 shadow-lg shadow-gray-300 ">
         <div className="flex flex-col">
-          {FormType(inputFormType)}
+          {FormType()}
         </div>
       </div>
     </>
