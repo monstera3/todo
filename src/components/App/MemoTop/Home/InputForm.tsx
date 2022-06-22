@@ -70,7 +70,7 @@ export const InputForm = (props:InputFormType) => {
   return(
     <>
       <div
-        className=" w-3/5  px-5 py-2 rounded-md
+        className=" w-3/5  px-5 py-2 rounded-md max-w-md
       mx-auto	border-2 border-gray-300 m-8 shadow-lg shadow-gray-300 ">
         <div className="flex flex-col">
           {FormType()}
