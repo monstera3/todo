@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { BsPin, BsThreeDotsVertical } from 'react-icons/bs';
 import { RiInboxArchiveLine } from 'react-icons/ri';
 
@@ -10,16 +10,8 @@ export const InputForm = (props:InputFormType) => {
   const {onClick} = props;
 
   const [inputFormType,setInputFormType] = useState<boolean>(true);
-  const [inputText,setInputText] = useState('');
-  const [inputTitle,setInputTitle] = useState('');
-
-  const onChangeInputText = (e:React.ChangeEvent<HTMLInputElement>) =>{
-    setInputText(e.target.value)
-  }
-
-  const onChangeInputTitle = (e:React.ChangeEvent<HTMLInputElement>) => {
-    setInputTitle(e.target.value)
-  }
+  const bodyRef = useRef<HTMLInputElement>(null);
+  const titleRef = useRef<HTMLInputElement>(null);
 
   const onClickForm = () => {
     setInputFormType(!inputFormType)
@@ -29,9 +21,9 @@ export const InputForm = (props:InputFormType) => {
     return( inputFormType ? <FormTypeClose/>:<FormTypeOpen/>);
   }
   const close = () => {
-    onClick(inputTitle, inputText);
-    setInputText('');
-    setInputTitle('');
+    const title = titleRef.current ? titleRef.current.value : '';
+    const body = bodyRef.current ? bodyRef.current.value : '';
+    onClick(title, body);
   }
 
   const FormTypeClose = () => {
@@ -46,9 +38,8 @@ export const InputForm = (props:InputFormType) => {
      return(
       <div>
         <div className="flex ">
-          {/*//TODO タイトルの文字を連続で入力したい*/}
           <input className="placeholder:text-slate-800 text-base "
-            type="text" value={inputTitle} onChange={onChangeInputTitle}  placeholder="タイトル"/>
+            type="text" ref={titleRef} placeholder="タイトル"/>
           <button className=" p-2 group hover:bg-slate-200 rounded-full relative">
             <BsPin size='1.2rem'/>
             <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
@@ -58,8 +49,7 @@ export const InputForm = (props:InputFormType) => {
         {/*//TODO メモを入力の文字を連続で入力したい*/}
         <input className="placeholder:text-slate-800 text-base "
                type="text"
-               value={inputText}
-               onChange={onChangeInputText}
+               ref={bodyRef}
                placeholder="メモを入力..." />
         <div className="flex justify-between">
           <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
