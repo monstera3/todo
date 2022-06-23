@@ -36,6 +36,7 @@ export const Header = (props:HeaderProps) => {
           <span className="opacity-0 invisible py-1 w-24 rounded text-[12px] font-bold text-white bg-slate-600
           group-hover:visible opacity-100 absolute top-11 -left-6">{DisplayTypeMessage(props.displayIsList)}</span>
         </button>
+        {/*TODO 設定に Menu (Dropdown)を追加*/}
         <button className=" p-3  group hover:bg-slate-200 rounded-full relative" aria-label="aa">
           <VscSettingsGear size='1.2rem'/>
           <span className="invisible opacity-0 px-2 rounded text-[12px] font-bold text-white p-1 bg-slate-600
