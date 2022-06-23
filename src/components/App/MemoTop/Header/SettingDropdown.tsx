@@ -5,16 +5,15 @@ import { VscSettingsGear } from 'react-icons/vsc';
 export default function SettingDropdown() {
   return (
     <div className=" text-right">
-      <Menu as="div" className="relative inline-block text-left">
+      <Menu as="div" className="relative inline-block ">
         <div>
-          <Menu.Button className="">
+          <Menu.Button >
             <button className=" p-3  group hover:bg-slate-200 rounded-full relative" aria-label="aa">
               <VscSettingsGear size='1.2rem'/>
               <span className="invisible opacity-0 px-2 rounded text-[12px] font-bold text-white p-1 bg-slate-600
           group-hover:visible opacity-100 absolute top-11 right-0.5">設定</span>
             </button>
           </Menu.Button>
-
         </div>
         <Transition
           as={Fragment}
@@ -25,7 +24,7 @@ export default function SettingDropdown() {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute right-0  w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="px-1 py-1 ">
               <Menu.Item>
                 {({ active }) => (
