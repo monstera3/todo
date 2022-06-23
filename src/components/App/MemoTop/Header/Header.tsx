@@ -4,6 +4,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { GrClose, GrUpdate } from 'react-icons/gr';
 import { VscAccount, VscSettingsGear } from 'react-icons/vsc';
 import { TbLayoutGrid, TbLayoutList } from 'react-icons/tb';
+import SettingDropdown from './SettingDropdown';
 
 
 type HeaderProps = {
@@ -37,6 +38,7 @@ export const Header = (props:HeaderProps) => {
           group-hover:visible opacity-100 absolute top-11 -left-6">{DisplayTypeMessage(props.displayIsList)}</span>
         </button>
         {/*TODO 設定に Menu (Dropdown)を追加*/}
+        <SettingDropdown/>
         <button className=" p-3  group hover:bg-slate-200 rounded-full relative" aria-label="aa">
           <VscSettingsGear size='1.2rem'/>
           <span className="invisible opacity-0 px-2 rounded text-[12px] font-bold text-white p-1 bg-slate-600
@@ -73,3 +75,4 @@ const reloadButton = () => {
     window.location.reload()
   );
 }
+
