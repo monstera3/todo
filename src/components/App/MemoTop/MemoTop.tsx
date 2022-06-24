@@ -3,7 +3,6 @@ import { Drawer } from './Drawer/Drawer';
 import React, { useState } from 'react';
 import { Memo } from '../App';
 import { InputForm } from './Home/InputForm';
-import { FixedMemoList } from './Home/FixedMemoList';
 import { MemoList } from './Home/MemoList/MemoList';
 
   export const MemoTop = (props:{ memoList: Memo[], setMemoList:any, }) => {
@@ -48,7 +47,6 @@ import { MemoList } from './Home/MemoList/MemoList';
           <div className="flex flex-col w-full justify-items-center">
             Home
             <InputForm onClick={onClickAdd}/>
-            <FixedMemoList />
             <MemoList
               title='固定済み'
               memoList={memoList}
