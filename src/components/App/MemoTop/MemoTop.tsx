@@ -50,6 +50,12 @@ import { MemoList } from './Home/MemoList/MemoList';
             <InputForm onClick={onClickAdd}/>
             <FixedMemoList />
             <MemoList
+              title='固定済み'
+              memoList={memoList}
+              displayIsList={displayIsList}
+              onClickDelete={onClickDelete}
+            />
+            <MemoList
               title='その他'
               memoList={memoList}
               displayIsList={displayIsList}
