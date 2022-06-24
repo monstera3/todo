@@ -8,11 +8,11 @@ export default function SettingDropdown() {
       <Menu as="div" className="relative inline-block ">
         <div>
           <Menu.Button >
-            <button className=" p-3  group hover:bg-slate-200 rounded-full relative" aria-label="aa">
+            <div className=" p-3  group hover:bg-slate-200 rounded-full relative" aria-label="aa">
               <VscSettingsGear size='1.2rem'/>
               <span className="invisible opacity-0 px-2 rounded text-[12px] font-bold text-white p-1 bg-slate-600
           group-hover:visible opacity-100 absolute top-11 right-0.5">設定</span>
-            </button>
+            </div>
           </Menu.Button>
         </div>
         <Transition
@@ -68,41 +68,8 @@ export default function SettingDropdown() {
   )
 }
 
-function EditInactiveIcon(props:any) {
-  return (
-    <svg
-      {...props}
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M4 13V16H7L16 7L13 4L4 13Z"
-        fill="#EDE9FE"
-        stroke="#A78BFA"
-        strokeWidth="2"
-      />
-    </svg>
-  )
-}
 
-function EditActiveIcon(props:any) {
-  return (
-    <svg
-      {...props}
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M4 13V16H7L16 7L13 4L4 13Z"
-        fill="#8B5CF6"
-        stroke="#C4B5FD"
-        strokeWidth="2"
-      />
-    </svg>
-  )
-}
+
 
 function DuplicateInactiveIcon(props:any) {
   return (
