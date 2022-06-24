@@ -10,6 +10,7 @@ import { Trash } from './Trash/Trash';
 export type Memo = {
   title: string
   body: string
+  isFixed: boolean
 }
 
 export const App = (props: {storedMemoList:Memo[]})=>{

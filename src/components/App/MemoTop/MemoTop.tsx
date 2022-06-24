@@ -12,7 +12,7 @@ import { MemoList } from './Home/MemoList/MemoList';
 
     const onClickAdd = (inputTitle: string, inputText: string) => {
       if (inputText === '' && inputTitle === '') return;
-      const newMemos = [...memoList, { title: inputTitle, body: inputText }];
+      const newMemos = [...memoList, { title: inputTitle, body: inputText ,isFixed:false}];
       setMemoList(newMemos);
       updateStoredMemos(newMemos);
     };
