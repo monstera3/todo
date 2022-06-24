@@ -5,6 +5,7 @@ import { BsPin } from 'react-icons/bs';
 
 
 type MemoListProps = {
+  title: '固定済み' | 'その他',
   memoList: Memo[],
   displayIsList: boolean,
   onClickDelete: (index: number) => void,
@@ -32,7 +33,7 @@ export const MemoList = (props: MemoListProps) => {
 
   return(
     <div>
-      <p>その他</p>
+      <p>{props.title}</p>
       <div className={listWidth()+' grid gap-3 ' + gridCols()}>
         {props.memoList.map((memo: Memo,index:number) => {
           return(
