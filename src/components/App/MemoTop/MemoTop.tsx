@@ -17,6 +17,13 @@ import { MemoList } from './Home/MemoList/MemoList';
       updateStoredMemos(newMemos);
     };
 
+    const toggleMemoIsFixed = (index:number) => {
+      const newMemos = [...memoList];
+      newMemos[index].isFixed = !newMemos[index].isFixed
+      setMemoList(newMemos);
+      updateStoredMemos(newMemos);
+    }
+
     const onClickDelete = (index:number) => {
       const newMemos = [...memoList];
       newMemos.splice(index,1);
@@ -52,12 +59,14 @@ import { MemoList } from './Home/MemoList/MemoList';
               memoList={memoList}
               displayIsList={displayIsList}
               onClickDelete={onClickDelete}
+              toggleMemoIsFixed={toggleMemoIsFixed}
             />
             <MemoList
               title='その他'
               memoList={memoList}
               displayIsList={displayIsList}
               onClickDelete={onClickDelete}
+              toggleMemoIsFixed={toggleMemoIsFixed}
             />
           </div>
         </div>
