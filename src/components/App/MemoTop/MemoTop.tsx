@@ -25,8 +25,9 @@ import { MemoList } from './Home/MemoList/MemoList';
       updateStoredMemos(newMemos);
     }
 
-    const onClickDelete = (index:number) => {
+    const onClickDelete = (id:number) => {
       const newMemos = [...memoList];
+      const index = newMemos.findIndex((memo) => memo.id === id);
       newMemos.splice(index,1);
       setMemoList(newMemos);
       updateStoredMemos(newMemos);

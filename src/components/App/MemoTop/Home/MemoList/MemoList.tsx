@@ -57,7 +57,7 @@ export const MemoList = (props: MemoListProps) => {
                 </div>
                 <button
                   className="hover:bg-gray-300"
-                  onClick={() => props.onClickDelete(index)} >削除</button>
+                  onClick={() => props.onClickDelete(memo.id)} >削除</button>
               </div>
             </div>
           );
