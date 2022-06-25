@@ -46,7 +46,7 @@ export const MemoList = (props: MemoListProps) => {
                 <div onClick={() => openModal(memo)}>
                   <nav className="flex justify-between">
                     <div>{memo.title}</div>
-                    <button onClick={()=> props.toggleMemoIsFixed(index)}
+                    <button onClick={()=> props.toggleMemoIsFixed(memo.id)}
                       className=" p-2 group hover:bg-slate-200 rounded-full relative">
                       <BsPin size='1.2rem'/>
                       <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600

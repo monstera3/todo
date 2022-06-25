@@ -17,8 +17,9 @@ import { MemoList } from './Home/MemoList/MemoList';
       updateStoredMemos(newMemos);
     };
 
-    const toggleMemoIsFixed = (index:number) => {
+    const toggleMemoIsFixed = (id:number) => {
       const newMemos = [...memoList];
+      const index = newMemos.findIndex((memo) => memo.id === id);
       newMemos[index].isFixed = !newMemos[index].isFixed
       setMemoList(newMemos);
       updateStoredMemos(newMemos);
