@@ -8,6 +8,7 @@ import { Trash } from './Trash/Trash';
 
 
 export type Memo = {
+  id: number
   title: string
   body: string
   isFixed: boolean
