@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Memo } from '../../../App';
 import { MemoDetailModal } from './MemoDetailModal';
 import { BsPin } from 'react-icons/bs';
+import { BsPinFill } from 'react-icons/bs';
 
 
 type MemoListProps = {
@@ -32,6 +33,17 @@ export const MemoList = (props: MemoListProps) => {
   }
 
 
+  const toggleFixedPin = (isFixed: boolean) => {
+    return(
+      <div>
+        {isFixed ? <BsPinFill size='1.2rem'/> : <BsPin size='1.2rem'/>}
+        <span className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-slate-600
+                      group-hover:visible opacity-100 absolute top-[100%] -translate-x-1/2 ">{isFixed ? 'メモの固定を解除' : 'メモを固定'}</span>
+      </div>
+    );
+  }
+
+
   return(
     <div>
       <p>{props.title}</p>
@@ -48,9 +60,7 @@ export const MemoList = (props: MemoListProps) => {
                     <div>{memo.title}</div>
                     <button onClick={()=> props.toggleMemoIsFixed(memo.id)}
                       className=" p-2 group hover:bg-slate-200 rounded-full relative">
-                      <BsPin size='1.2rem'/>
-                      <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
-                      group-hover:visible opacity-100 absolute top-9 -right-4">メモを固定</span>
+                      {toggleFixedPin(memo.isFixed)}
                     </button>
                   </nav>
                   <div>{memo.body}</div>
