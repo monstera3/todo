@@ -2,9 +2,9 @@ import React from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { GrClose, GrUpdate } from 'react-icons/gr';
-import { VscAccount, VscSettingsGear } from 'react-icons/vsc';
+import { VscAccount } from 'react-icons/vsc';
 import { TbLayoutGrid, TbLayoutList } from 'react-icons/tb';
-import SettingDropdown from './SettingDropdown';
+import { SettingDropdown } from './SettingDropdown';
 
 
 type HeaderProps = {
@@ -37,15 +37,8 @@ export const Header = (props:HeaderProps) => {
           <span className="opacity-0 invisible py-1 w-24 rounded text-[12px] font-bold text-white bg-slate-600
           group-hover:visible opacity-100 absolute top-11 -left-6">{DisplayTypeMessage(props.displayIsList)}</span>
         </button>
-        {/*TODO 設定に Menu (Dropdown)を追加*/}
         <SettingDropdown/>
-        <button className=" p-3  group hover:bg-slate-200 rounded-full relative" aria-label="aa">
-          <VscSettingsGear size='1.2rem'/>
-          <span className="invisible opacity-0 px-2 rounded text-[12px] font-bold text-white p-1 bg-slate-600
-          group-hover:visible opacity-100 absolute top-11 right-0.5">設定</span>
-        </button>
         <button className="p-3 hover:bg-slate-200 rounded-full"> <VscAccount size='1.5rem'/></button>
-
       </header>
     </div>
   );
