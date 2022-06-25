@@ -45,6 +45,12 @@ import { MemoList } from './Home/MemoList/MemoList';
       localStorage.setItem('storedMemos', JSON.stringify(updatedMemos));
     }
 
+    const fixedMemoList = (memoList:Memo[])=>{
+      return memoList.filter((memo) => memo.isFixed);
+    }
+    const unFixedMemoList = (memoList:Memo[])=>{
+      return memoList.filter((memo) => !memo.isFixed);
+    }
 
     return(
       <>
@@ -56,14 +62,14 @@ import { MemoList } from './Home/MemoList/MemoList';
             <InputForm onClick={onClickAdd}/>
             <MemoList
               title='固定済み'
-              memoList={memoList}
+              memoList={fixedMemoList(memoList)}
               displayIsList={displayIsList}
               onClickDelete={onClickDelete}
               toggleMemoIsFixed={toggleMemoIsFixed}
             />
             <MemoList
               title='その他'
-              memoList={memoList}
+              memoList={unFixedMemoList(memoList)}
               displayIsList={displayIsList}
               onClickDelete={onClickDelete}
               toggleMemoIsFixed={toggleMemoIsFixed}
