@@ -56,7 +56,10 @@ import { MemoList } from './Home/MemoList/MemoList';
         });
     }
     const unFixedMemoList = (memoList:Memo[])=>{
-      return memoList.filter((memo) => !memo.isFixed);
+      return memoList.filter((memo) => !memo.isFixed)
+        .sort((a,b)=>{
+          return b.pinnedAt - a.pinnedAt;
+        });
     }
 
     return(
