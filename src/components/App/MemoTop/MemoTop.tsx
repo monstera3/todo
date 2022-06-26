@@ -5,7 +5,7 @@ import { Memo } from '../App';
 import { InputForm } from './Home/InputForm';
 import { MemoList } from './Home/MemoList/MemoList';
 
-  export const MemoTop = (props:{ memoList: Memo[], setMemoList:any, }) => {
+  export const MemoTop = (props:{ memoList: Memo[], setMemoList: (newMemos: Memo[])=> void, }) => {
     const { memoList, setMemoList } = props;
     const [menuIsOpen, setMenuIsOpen] = useState(true);
     const [displayIsList, setDisplayIsList] = useState<boolean>(false);
