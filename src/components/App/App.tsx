@@ -12,6 +12,7 @@ export type Memo = {
   title: string
   body: string
   isFixed: boolean
+  pinnedAt: number | null
 }
 
 export const App = (props: {storedMemoList:Memo[]})=>{
