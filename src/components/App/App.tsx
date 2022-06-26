@@ -12,7 +12,7 @@ export type Memo = {
   title: string
   body: string
   isFixed: boolean
-  pinnedAt: number | null
+  pinnedAt: number | 0
 }
 
 export const App = (props: {storedMemoList:Memo[]})=>{
