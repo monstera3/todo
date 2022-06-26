@@ -51,15 +51,11 @@ import { MemoList } from './Home/MemoList/MemoList';
 
     const fixedMemoList = (memoList:Memo[])=>{
       return memoList.filter((memo) => memo.isFixed)
-        .sort((a,b)=>{
-          return b.pinnedAt - a.pinnedAt; // NOTE: 新しい順に並べる
-        });
+        .sort((a,b)=> b.pinnedAt - a.pinnedAt); // NOTE: 新しい順に並べる
     }
     const unFixedMemoList = (memoList:Memo[])=>{
       return memoList.filter((memo) => !memo.isFixed)
-        .sort((a,b)=>{
-          return b.pinnedAt - a.pinnedAt;
-        });
+        .sort((a,b)=> b.pinnedAt - a.pinnedAt);
     }
 
     return(
