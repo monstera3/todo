@@ -55,6 +55,7 @@ export const MemoList = (props: MemoListProps) => {
                    className="flex flex-col p-2 rounded-md mx-auto border border-gray-40
                    hover:shadow-md
                    hover:shadow-gray-300 ">
+                {/*TODO 固定ピンをクリックした時にモーダルしないようにする*/}
                 <div onClick={() => openModal(memo)}>
                   <nav className="flex justify-between">
                     <div>{memo.title}</div>
