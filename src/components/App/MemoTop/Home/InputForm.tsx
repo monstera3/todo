@@ -48,6 +48,7 @@ export const InputForm = (props:InputFormType) => {
         </div>
         <input className="placeholder:text-slate-800 text-base "
                type="text"
+               autoFocus={true}
                ref={bodyRef}
                placeholder="メモを入力..." />
         <div className="flex justify-between">
