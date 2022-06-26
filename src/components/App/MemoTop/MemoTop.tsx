@@ -17,9 +17,10 @@ import { MemoList } from './Home/MemoList/MemoList';
       updateStoredMemos(newMemos);
     };
 
-    const toggleMemoIsFixed = (id:number) => {
+    const toggleMemoIsFixed = (id:number, event: React.MouseEvent<HTMLButtonElement>) => {
       const newMemos = [...memoList];
       const index = newMemos.findIndex((memo) => memo.id === id);
+      event.stopPropagation(); // NOTE: onClickイベントを親要素に伝播させないため(モーダルを反応させない)
       newMemos[index].isFixed = !newMemos[index].isFixed
       setMemoList(newMemos);
       updateStoredMemos(newMemos);

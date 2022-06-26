@@ -10,7 +10,7 @@ type MemoListProps = {
   memoList: Memo[],
   displayIsList: boolean,
   onClickDelete: (index: number) => void,
-  toggleMemoIsFixed:(index:number) => void,
+  toggleMemoIsFixed:(index:number, event: React.MouseEvent<HTMLButtonElement>) => void,
 }
 
 export const MemoList = (props: MemoListProps) => {
@@ -59,7 +59,7 @@ export const MemoList = (props: MemoListProps) => {
                 <div onClick={() => openModal(memo)}>
                   <nav className="flex justify-between">
                     <div>{memo.title}</div>
-                    <button onClick={()=> props.toggleMemoIsFixed(memo.id)}
+                    <button onClick={(event: React.MouseEvent<HTMLButtonElement>)=> props.toggleMemoIsFixed(memo.id, event)}
                       className=" p-2 group hover:bg-slate-200 rounded-full relative">
                       {toggleFixedPin(memo.isFixed)}
                     </button>
