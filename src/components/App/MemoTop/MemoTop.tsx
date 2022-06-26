@@ -22,6 +22,7 @@ import { MemoList } from './Home/MemoList/MemoList';
       const index = newMemos.findIndex((memo) => memo.id === id);
       event.stopPropagation(); // NOTE: onClickイベントを親要素に伝播させないため(モーダルを反応させない)
       newMemos[index].isFixed = !newMemos[index].isFixed
+      newMemos[index].pinnedAt = new Date().getTime();
       setMemoList(newMemos);
       updateStoredMemos(newMemos);
     }
