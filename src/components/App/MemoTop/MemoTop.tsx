@@ -66,6 +66,9 @@ import { MemoList } from './Home/MemoList/MemoList';
       return memoList.filter((memo) => !memo.isFixed)
         .sort((a,b)=> b.pinnedAt - a.pinnedAt);
     }
+    const archivedMemoList = (memoList:Memo[]) => {
+      return memoList.filter((memo)=> memo.isArchived)
+    }
 
     return(
       <>
@@ -93,7 +96,7 @@ import { MemoList } from './Home/MemoList/MemoList';
             />
             <MemoList
               title='アーカイブ'
-              memoList={fixedMemoList(memoList)}
+              memoList={archivedMemoList(memoList)}
               displayIsList={displayIsList}
               onClickDelete={onClickDelete}
               toggleMemoIsFixed={toggleMemoIsFixed}
