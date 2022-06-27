@@ -28,6 +28,14 @@ import { MemoList } from './Home/MemoList/MemoList';
       updateStoredMemos(newMemos);
     }
 
+    const toggleMemoIsArchived = (id:number, event: React.MouseEvent<HTMLButtonElement>) => {
+      const newMemos = [...memoList];
+      const index = newMemos.findIndex((memo) => memo.id === id);
+      newMemos[index].isArchived = !newMemos[index].isArchived
+      setMemoList(newMemos);
+      updateStoredMemos(newMemos);
+    }
+
     const onClickDelete = (id:number) => {
       const newMemos = [...memoList];
       const index = newMemos.findIndex((memo) => memo.id === id);
@@ -73,6 +81,7 @@ import { MemoList } from './Home/MemoList/MemoList';
               displayIsList={displayIsList}
               onClickDelete={onClickDelete}
               toggleMemoIsFixed={toggleMemoIsFixed}
+              toggleMemoIsArchived={toggleMemoIsArchived}
             />
             <MemoList
               title='その他'
@@ -80,6 +89,7 @@ import { MemoList } from './Home/MemoList/MemoList';
               displayIsList={displayIsList}
               onClickDelete={onClickDelete}
               toggleMemoIsFixed={toggleMemoIsFixed}
+              toggleMemoIsArchived={toggleMemoIsArchived}
             />
           </div>
         </div>

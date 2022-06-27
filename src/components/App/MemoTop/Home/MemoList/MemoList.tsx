@@ -12,6 +12,7 @@ type MemoListProps = {
   displayIsList: boolean,
   onClickDelete: (index: number) => void,
   toggleMemoIsFixed:(index:number, event: React.MouseEvent<HTMLButtonElement>) => void,
+  toggleMemoIsArchived:(index:number, event: React.MouseEvent<HTMLButtonElement>) => void,
 }
 
 export const MemoList = (props: MemoListProps) => {
@@ -67,7 +68,8 @@ export const MemoList = (props: MemoListProps) => {
                   <div>{memo.body}</div>
                 </div>
                 <div className="flex justify-between">
-                  <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
+                  <button onClick={(event: React.MouseEvent<HTMLButtonElement>)=> props.toggleMemoIsArchived(memo.id, event)}
+                    className=" p-2 group hover:bg-gray-200 rounded-full relative">
                     <RiInboxArchiveLine size='1.1rem'/>
                     <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
                       group-hover:visible opacity-100 absolute top-9 -right-4">アーカイブ</span>
