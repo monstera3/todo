@@ -59,11 +59,11 @@ import { MemoList } from './Home/MemoList/MemoList';
     }
 
     const fixedMemoList = (memoList:Memo[])=>{
-      return memoList.filter((memo) => memo.isFixed)
+      return memoList.filter((memo) => memo.isFixed && !memo.isArchived)
         .sort((a,b)=> b.pinnedAt - a.pinnedAt); // NOTE: 新しい順に並べる
     }
     const unFixedMemoList = (memoList:Memo[])=>{
-      return memoList.filter((memo) => !memo.isFixed)
+      return memoList.filter((memo) => !memo.isFixed && !memo.isArchived)
         .sort((a,b)=> b.pinnedAt - a.pinnedAt);
     }
     const archivedMemoList = (memoList:Memo[]) => {
