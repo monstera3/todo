@@ -7,12 +7,12 @@ import { RiInboxArchiveLine } from 'react-icons/ri';
 
 
 type MemoListProps = {
-  title: '固定済み' | 'その他',
+  title: '固定済み' | 'その他' | 'アーカイブ',
   memoList: Memo[],
   displayIsList: boolean,
   onClickDelete: (index: number) => void,
   toggleMemoIsFixed:(index:number, event: React.MouseEvent<HTMLButtonElement>) => void,
-  toggleMemoIsArchived:(index:number, event: React.MouseEvent<HTMLButtonElement>) => void,
+  toggleMemoIsArchived:(index:number) => void,
 }
 
 export const MemoList = (props: MemoListProps) => {
@@ -68,7 +68,7 @@ export const MemoList = (props: MemoListProps) => {
                   <div>{memo.body}</div>
                 </div>
                 <div className="flex justify-between">
-                  <button onClick={(event: React.MouseEvent<HTMLButtonElement>)=> props.toggleMemoIsArchived(memo.id, event)}
+                  <button onClick={()=> props.toggleMemoIsArchived(memo.id)}
                     className=" p-2 group hover:bg-gray-200 rounded-full relative">
                     <RiInboxArchiveLine size='1.1rem'/>
                     <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
