@@ -41,7 +41,7 @@ const menuList: Menu[] = [
     key: 'archive',
     label: 'アーカイブ',
     icon: (<RiInboxArchiveLine className='mr-4' size='1.5rem'/>),
-    path: ''
+    path: '/archive'
   },
   {
     key: 'trashBox',
