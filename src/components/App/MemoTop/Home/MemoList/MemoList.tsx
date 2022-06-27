@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Memo } from '../../../App';
 import { MemoDetailModal } from './MemoDetailModal';
-import { BsPin } from 'react-icons/bs';
+import { BsPin, BsThreeDotsVertical } from 'react-icons/bs';
 import { BsPinFill } from 'react-icons/bs';
+import { RiInboxArchiveLine } from 'react-icons/ri';
 
 
 type MemoListProps = {
@@ -65,9 +66,21 @@ export const MemoList = (props: MemoListProps) => {
                   </nav>
                   <div>{memo.body}</div>
                 </div>
-                <button
-                  className="bg-white w-20 hover:bg-gray-300"
-                  onClick={() => props.onClickDelete(memo.id)} >削除</button>
+                <div className="flex justify-between">
+                  <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
+                    <RiInboxArchiveLine size='1.1rem'/>
+                    <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
+                      group-hover:visible opacity-100 absolute top-9 -right-4">アーカイブ</span>
+                  </button>
+                  <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
+                    <BsThreeDotsVertical size='1.1rem'/>
+                    <span className="invisible opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
+                      group-hover:visible opacity-100 absolute top-9 -right-10">その他のアクション</span>
+                  </button>
+                  <button
+                    className="bg-white w-20 hover:bg-gray-300"
+                    onClick={() => props.onClickDelete(memo.id)} >削除</button>
+                </div>
               </div>
             </div>
           );
