@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Memo } from '../../../App';
-import { BsPin, BsThreeDotsVertical } from 'react-icons/bs';
+import { BsThreeDotsVertical } from 'react-icons/bs';
 import { RiInboxArchiveLine } from 'react-icons/ri';
+import { Pin } from './Pin';
 
 
 export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void}) => {
@@ -26,9 +27,7 @@ export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void}
                   <nav className="flex justify-between">
                     <div>{memo?.title}</div>
                     <button className=" p-2 group hover:bg-slate-200 rounded-full relative">
-                      <BsPin size='1.2rem'/>
-                      <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
-                      group-hover:visible opacity-100 absolute top-9 -right-4">メモを固定</span>
+                      { !!memo ? <Pin isFixed={memo.isFixed} /> : <></> }
                     </button>
                   </nav>
                   <div>
