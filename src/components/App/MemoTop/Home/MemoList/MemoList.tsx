@@ -35,7 +35,7 @@ export const MemoList = (props: MemoListProps) => {
   }
 
 
-  const toggleFixedPin = (isFixed: boolean) => {
+  const Pin = (isFixed: boolean) => {
     return(
       <div>
         {isFixed ? <BsPinFill size='1.2rem'/> : <BsPin size='1.2rem'/>}
@@ -62,7 +62,7 @@ export const MemoList = (props: MemoListProps) => {
                     <div>{memo.title}</div>
                     <button onClick={(event: React.MouseEvent<HTMLButtonElement>)=> props.toggleMemoIsFixed(memo.id, event)}
                       className=" p-2 group hover:bg-slate-200 rounded-full relative">
-                      {toggleFixedPin(memo.isFixed)}
+                      {Pin(memo.isFixed)}
                     </button>
                   </nav>
                   <div>{memo.body}</div>
