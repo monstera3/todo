@@ -50,7 +50,7 @@ export const MemoList = (props: MemoListProps) => {
                     <div>{memo.title}</div>
                     <button onClick={(event: React.MouseEvent<HTMLButtonElement>)=> props.toggleMemoIsFixed(memo.id, event)}
                       className=" p-2 group hover:bg-slate-200 rounded-full relative">
-                      {Pin(memo.isFixed)}
+                       <Pin isFixed={memo.isFixed}/>
                     </button>
                   </nav>
                   <div>{memo.body}</div>
