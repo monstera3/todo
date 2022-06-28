@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Memo } from '../../../App';
 import { MemoDetailModal } from './MemoDetailModal';
-import { BsPin, BsThreeDotsVertical } from 'react-icons/bs';
-import { BsPinFill } from 'react-icons/bs';
+import { BsThreeDotsVertical } from 'react-icons/bs';
 import { RiInboxArchiveLine } from 'react-icons/ri';
+import { Pin } from './Pin';
 
 
 type MemoListProps = {
@@ -33,18 +33,6 @@ export const MemoList = (props: MemoListProps) => {
   const listWidth = () => {
     return props.displayIsList ? 'w-2/5 mx-auto' : 'w-11/12 m-auto';
   }
-
-
-  const Pin = (isFixed: boolean) => {
-    return(
-      <div>
-        {isFixed ? <BsPinFill size='1.2rem'/> : <BsPin size='1.2rem'/>}
-        <span className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-slate-600
-                      group-hover:visible opacity-100 absolute top-[100%] -translate-x-1/2 ">{isFixed ? 'メモの固定を解除' : 'メモを固定'}</span>
-      </div>
-    );
-  }
-
 
   return(
     <div>
