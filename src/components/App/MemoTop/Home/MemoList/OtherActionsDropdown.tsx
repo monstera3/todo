@@ -11,8 +11,8 @@ export const OtherActionsDropdown = (props:{toggleMemoIsTrash:any, memo:Memo}) =
           <Menu.Button >
             <div className=" p-2 group hover:bg-gray-200 rounded-full relative">
               <BsThreeDotsVertical size='1.1rem'/>
-              <span className="invisible opacity-0 p-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
-                      group-hover:visible opacity-100 absolute top-9 -right-10">その他のアクション</span>
+              <span className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-slate-600
+                      group-hover:visible opacity-100 absolute top-[100%] -translate-x-1/2 z-20 ">その他のアクション</span>
             </div>
           </Menu.Button>
         </div>

@@ -35,11 +35,6 @@ export const MemoDetailModal = (props:{memo: Memo|null, closeModal: () => void, 
                     {memo?.body}</div>
                   <div className="flex justify-between">
                     { !!memo ? <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/> : <></> }
-                    <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
-                      <BsThreeDotsVertical size='1.1rem'/>
-                      <span className="invisible opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
-                      group-hover:visible opacity-100 absolute top-9 -right-10">その他のアクション</span>
-                    </button>
                     { !!memo ? <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} /> : <></> }
                     <button onClick={() => {closeModal();}} type="button" className="px-4 hover:bg-gray-100">閉じる</button>
                   </div>

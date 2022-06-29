@@ -4,6 +4,7 @@ import { MemoDetailModal } from './MemoDetailModal';
 import { Pin } from './Pin';
 import { OtherActionsDropdown } from './OtherActionsDropdown';
 import { ArchiveButton } from './ArchiveButton';
+import { FaTrash, FaTrashRestore } from 'react-icons/fa';
 
 
 type MemoListProps = {

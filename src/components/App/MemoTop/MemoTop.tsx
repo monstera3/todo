@@ -1,9 +1,10 @@
 import { Header } from './Header/Header';
 import { Drawer } from './Drawer/Drawer';
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import { Memo } from '../App';
 import { InputForm } from './Home/InputForm';
 import { MemoList } from './Home/MemoList/MemoList';
+import { FaTrash, FaTrashRestore } from 'react-icons/fa';
 
   export const MemoTop = (props:{ memoList: Memo[], setMemoList: (newMemos: Memo[])=> void, }) => {
     const { memoList, setMemoList } = props;
@@ -126,6 +127,8 @@ import { MemoList } from './Home/MemoList/MemoList';
               toggleMemoIsArchived={toggleMemoIsArchived}
               toggleMemoIsTrash={toggleMemoIsTrash}
             />
+            <FaTrashRestore size='1.1rem'/>
+            <FaTrash size='1.1rem'/>
           </div>
         </div>
       </>
