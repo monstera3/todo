@@ -4,7 +4,6 @@ import { MemoDetailModal } from './MemoDetailModal';
 import { Pin } from './Pin';
 import { OtherActionsDropdown } from './OtherActionsDropdown';
 import { ArchiveButton } from './ArchiveButton';
-import { FaTrash, FaTrashRestore } from 'react-icons/fa';
 import { TrashIcons } from './TrashIcons';
 
 
@@ -57,8 +56,9 @@ export const MemoList = (props: MemoListProps) => {
                   <div>{memo.body}</div>
                 </div>
                 <div className="flex justify-between">
-                  <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
                   <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
+                  {memo.trash ?
+                    "" : <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>}
                   {memo.trash ? <TrashIcons onClickDelete={props.onClickDelete}
                                             toggleMemoIsTrash={props.toggleMemoIsTrash}
                                             memo={memo}/> : " "}
