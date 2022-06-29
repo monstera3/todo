@@ -127,8 +127,6 @@ import { FaTrash, FaTrashRestore } from 'react-icons/fa';
               toggleMemoIsArchived={toggleMemoIsArchived}
               toggleMemoIsTrash={toggleMemoIsTrash}
             />
-            <FaTrashRestore size='1.1rem'/>
-            <FaTrash size='1.1rem'/>
           </div>
         </div>
       </>

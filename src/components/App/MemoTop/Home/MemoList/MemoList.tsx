@@ -4,7 +4,7 @@ import { MemoDetailModal } from './MemoDetailModal';
 import { Pin } from './Pin';
 import { OtherActionsDropdown } from './OtherActionsDropdown';
 import { ArchiveButton } from './ArchiveButton';
-import { FaTrashRestore } from 'react-icons/fa';
+import { FaTrash, FaTrashRestore } from 'react-icons/fa';
 
 
 type MemoListProps = {
@@ -57,13 +57,16 @@ export const MemoList = (props: MemoListProps) => {
                 </div>
                 <div className="flex justify-between">
                   <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
-                  <button
-                    className="bg-white w-20 hover:bg-gray-300"
-                    onClick={() => props.onClickDelete(memo.id)} >削除</button>
                   <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
+                  <button onClick={()=> props.onClickDelete(memo.id)}
+                          className="p-2 group hover:bg-gray-200 rounded-full relative">
+                    <FaTrash size='1rem'/>
+                    <span className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-slate-600
+                      group-hover:visible opacity-100 absolute top-[100%] -translate-x-1/2 z-20 ">完全に削除</span>
+                  </button>
                   <button onClick={()=> props.toggleMemoIsTrash(memo.id)}
                     className="p-2 group hover:bg-gray-200 rounded-full relative">
-                    <FaTrashRestore size='1.1rem'/>
+                    <FaTrashRestore size='1rem'/>
                     <span className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-slate-600
                       group-hover:visible opacity-100 absolute top-[100%] -translate-x-1/2 z-20 ">復元</span>
                   </button>
