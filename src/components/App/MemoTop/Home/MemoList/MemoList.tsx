@@ -38,7 +38,7 @@ export const MemoList = (props: MemoListProps) => {
   return(
     <div>
       <p>{props.title}</p>
-      <RiInboxUnarchiveLine />
+
       <div className={listWidth()+' grid gap-3 ' + gridCols()}>
         {props.memoList.map((memo: Memo,index:number) => {
           return(
@@ -57,9 +57,11 @@ export const MemoList = (props: MemoListProps) => {
                 <div className="flex justify-between">
                   <button onClick={()=> props.toggleMemoIsArchived(memo.id)}
                     className=" p-2 group hover:bg-gray-200 rounded-full relative">
-                    <RiInboxArchiveLine size='1.1rem'/>
+                    {memo.isArchived ? <RiInboxUnarchiveLine size='1.1rem'/> : <RiInboxArchiveLine size='1.1rem'/>}
                     <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
-                      group-hover:visible opacity-100 absolute top-9 -right-4">アーカイブ</span>
+                      group-hover:visible opacity-100 absolute top-9 -right-4">
+                      {memo.isArchived ? 'アーカイブを解除します' : 'アーカイブ'}
+                      </span>
                   </button>
                   <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
                     <BsThreeDotsVertical size='1.1rem'/>
