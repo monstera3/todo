@@ -102,6 +102,14 @@ import { MemoList } from './Home/MemoList/MemoList';
               toggleMemoIsFixed={toggleMemoIsFixed}
               toggleMemoIsArchived={toggleMemoIsArchived}
             />
+            <MemoList
+              title='ゴミ箱'
+              memoList={archivedMemoList(memoList)}
+              displayIsList={displayIsList}
+              onClickDelete={onClickDelete}
+              toggleMemoIsFixed={toggleMemoIsFixed}
+              toggleMemoIsArchived={toggleMemoIsArchived}
+            />
           </div>
         </div>
       </>

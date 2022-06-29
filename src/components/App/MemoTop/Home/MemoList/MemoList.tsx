@@ -7,7 +7,7 @@ import { Pin } from './Pin';
 
 
 type MemoListProps = {
-  title: '固定済み' | 'その他' | 'アーカイブ',
+  title: '固定済み' | 'その他' | 'アーカイブ' | 'ゴミ箱',
   memoList: Memo[],
   displayIsList: boolean,
   onClickDelete: (index: number) => void,
