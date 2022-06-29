@@ -68,7 +68,8 @@ export const MemoList = (props: MemoListProps) => {
         <MemoDetailModal
           memo={modalMemo} closeModal={closeModal}
           toggleMemoIsFixed={props.toggleMemoIsFixed}
-          toggleMemoIsArchived={props.toggleMemoIsArchived}/>
+          toggleMemoIsArchived={props.toggleMemoIsArchived}
+          toggleMemoIsTrash={props.toggleMemoIsTrash}/>
       </div>
     </div>
   );

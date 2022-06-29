@@ -4,9 +4,10 @@ import { Memo } from '../../../App';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { Pin } from './Pin';
 import { ArchiveButton } from './ArchiveButton';
+import { OtherActionsDropdown } from './OtherActionsDropdown';
 
 export const MemoDetailModal = (props:{memo: Memo|null, closeModal: () => void, toggleMemoIsFixed: any,
-  toggleMemoIsArchived:any, }) => {
+  toggleMemoIsArchived:any, toggleMemoIsTrash:any,}) => {
   const { memo, closeModal } = props;
 
   const modalIsOpen = (): boolean => {
@@ -39,6 +40,7 @@ export const MemoDetailModal = (props:{memo: Memo|null, closeModal: () => void, 
                       <span className="invisible opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
                       group-hover:visible opacity-100 absolute top-9 -right-10">その他のアクション</span>
                     </button>
+                    { !!memo ? <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} /> : <></> }
                     <button onClick={() => {closeModal();}} type="button" className="px-4 hover:bg-gray-100">閉じる</button>
                   </div>
                 </div>
