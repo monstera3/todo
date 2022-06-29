@@ -61,7 +61,8 @@ export const MemoList = (props: MemoListProps) => {
                     className="bg-white w-20 hover:bg-gray-300"
                     onClick={() => props.onClickDelete(memo.id)} >削除</button>
                   <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
-                  <button className="p-2 group hover:bg-gray-200 rounded-full relative">
+                  <button onClick={()=> props.toggleMemoIsTrash(memo.id)}
+                    className="p-2 group hover:bg-gray-200 rounded-full relative">
                     <FaTrashRestore size='1.1rem'/>
                     <span className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-slate-600
                       group-hover:visible opacity-100 absolute top-[100%] -translate-x-1/2 z-20 ">復元</span>

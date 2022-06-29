@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Memo } from '../../../App';
-import { BsThreeDotsVertical } from 'react-icons/bs';
 import { Pin } from './Pin';
 import { ArchiveButton } from './ArchiveButton';
 import { OtherActionsDropdown } from './OtherActionsDropdown';
