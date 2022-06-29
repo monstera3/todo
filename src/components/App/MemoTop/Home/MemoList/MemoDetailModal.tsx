@@ -17,16 +17,15 @@ export const MemoDetailModal = (props:{memo: Memo|null, closeModal: () => void, 
     return(
       <div>
         <nav className="flex justify-between">
-          <div>{memo?.title}</div>
+          <div>{memo.title}</div>
           <button className=" p-2 group hover:bg-slate-200 rounded-full relative">
-            { !!memo ? <Pin toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} /> : <></> }
+            <Pin toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
           </button>
         </nav>
-        <div>
-          {memo?.body}</div>
+        <div>{memo.body}</div>
         <div className="flex justify-between">
-          { !!memo ? <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/> : <></> }
-          { !!memo ? <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} /> : <></> }
+          <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
+          <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
           <button onClick={() => {closeModal();}} type="button" className="px-4 hover:bg-gray-100">閉じる</button>
         </div>
       </div>
