@@ -1,8 +1,9 @@
 import { Menu, Transition } from '@headlessui/react'
 import React, { Fragment } from 'react'
 import { BsThreeDotsVertical } from 'react-icons/bs';
+import { Memo } from '../../App';
 
-export const OtherActionsDropdown = () => {
+export const OtherActionsDropdown = (props:{toggleMemoIsTrash:any, memo:Memo}) => {
   return (
     <div className=" text-right">
       <Menu as="div" className="relative inline-block ">
@@ -30,6 +31,7 @@ export const OtherActionsDropdown = () => {
               <Menu.Item>
                 {({ active }) => (
                   <button
+                    onClick={() => props.toggleMemoIsTrash(props.memo.id)}
                     className={`${
                       active ? 'bg-slate-200 ' : 'text-gray-900'
                     } group flex w-full items-center  px-2 py-2 text-sm`}

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Memo } from '../../../App';
 import { MemoDetailModal } from './MemoDetailModal';
-import { BsThreeDotsVertical } from 'react-icons/bs';
 import { RiInboxArchiveLine, RiInboxUnarchiveLine } from 'react-icons/ri';
 import { Pin } from './Pin';
 import { OtherActionsDropdown } from '../../Header/OtherActionsDropdown';
@@ -70,7 +69,7 @@ export const MemoList = (props: MemoListProps) => {
                   <button
                     className="bg-white w-20 hover:bg-gray-300"
                     onClick={() => props.onClickDelete(memo.id)} >削除</button>
-                  <OtherActionsDropdown />
+                  <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
                 </div>
               </div>
             </div>
