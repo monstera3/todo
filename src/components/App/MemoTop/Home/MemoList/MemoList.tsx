@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Memo } from '../../../App';
 import { MemoDetailModal } from './MemoDetailModal';
 import { BsThreeDotsVertical } from 'react-icons/bs';
-import { RiInboxArchiveLine } from 'react-icons/ri';
+import { RiInboxArchiveLine, RiInboxUnarchiveLine } from 'react-icons/ri';
 import { Pin } from './Pin';
 
 
@@ -37,6 +37,7 @@ export const MemoList = (props: MemoListProps) => {
   return(
     <div>
       <p>{props.title}</p>
+      <RiInboxUnarchiveLine />
       <div className={listWidth()+' grid gap-3 ' + gridCols()}>
         {props.memoList.map((memo: Memo,index:number) => {
           return(
