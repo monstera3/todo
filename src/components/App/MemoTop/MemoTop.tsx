@@ -18,6 +18,16 @@ import { MemoList } from './Home/MemoList/MemoList';
       updateStoredMemos(newMemos);
     };
 
+    const updateMemo = (id: number, title: string, body: string) => {
+      if (title === '' && body === '') return;
+      const newMemos = [...memoList];
+      const index = newMemos.findIndex((memo: Memo) => memo.id === id);
+      newMemos[index].title = title;
+      newMemos[index].body = body;
+      setMemoList(newMemos);
+      updateStoredMemos(newMemos);
+    }
+
     const toggleMemoIsFixed = (id:number, event: React.MouseEvent<HTMLButtonElement>) => {
       const newMemos = [...memoList];
       const index = newMemos.findIndex((memo) => memo.id === id);
