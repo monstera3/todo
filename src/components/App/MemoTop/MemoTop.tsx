@@ -67,16 +67,20 @@ import { MemoList } from './Home/MemoList/MemoList';
     }
 
     const fixedMemoList = (memoList:Memo[])=>{
-      return memoList.filter((memo) => memo.isFixed && !memo.isArchived)
+      return memoList.filter((memo) => memo.isFixed && !memo.isArchived && !memo.trash)
         .sort((a,b)=> b.pinnedAt - a.pinnedAt); // NOTE: 新しい順に並べる
     }
     const unFixedMemoList = (memoList:Memo[])=>{
-      return memoList.filter((memo) => !memo.isFixed && !memo.isArchived)
+      return memoList.filter((memo) => !memo.isFixed && !memo.isArchived && !memo.trash)
         .sort((a,b)=> b.pinnedAt - a.pinnedAt);
     }
     const archivedMemoList = (memoList:Memo[]) => {
-      return memoList.filter((memo)=> memo.isArchived)
+      return memoList.filter((memo)=> memo.isArchived && !memo.trash)
     }
+    const trashMemoList = (memoList:Memo[]) => {
+      return memoList.filter((memo)=> memo.trash)
+    }
+
 
     return(
       <>
@@ -115,7 +119,7 @@ import { MemoList } from './Home/MemoList/MemoList';
             />
             <MemoList
               title='ゴミ箱'
-              memoList={archivedMemoList(memoList)}
+              memoList={trashMemoList(memoList)}
               displayIsList={displayIsList}
               onClickDelete={onClickDelete}
               toggleMemoIsFixed={toggleMemoIsFixed}
