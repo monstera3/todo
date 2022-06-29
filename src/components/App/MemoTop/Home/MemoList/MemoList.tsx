@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Memo } from '../../../App';
 import { MemoDetailModal } from './MemoDetailModal';
-import { RiInboxArchiveLine, RiInboxUnarchiveLine } from 'react-icons/ri';
 import { Pin } from './Pin';
 import { OtherActionsDropdown } from './OtherActionsDropdown';
+import { ArchiveButton } from './ArchiveButton';
 
 
 type MemoListProps = {
@@ -55,14 +55,7 @@ export const MemoList = (props: MemoListProps) => {
                   <div>{memo.body}</div>
                 </div>
                 <div className="flex justify-between">
-                  <button onClick={()=> props.toggleMemoIsArchived(memo.id)}
-                    className=" p-2 group hover:bg-gray-200 rounded-full relative">
-                    {memo.isArchived ? <RiInboxUnarchiveLine size='1.1rem'/> : <RiInboxArchiveLine size='1.1rem'/>}
-                    <span className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-slate-600
-                      group-hover:visible opacity-100 absolute top-[100%] -translate-x-1/2">
-                      {memo.isArchived ? 'アーカイブを解除します' : 'アーカイブ'}
-                      </span>
-                  </button>
+                  <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
                   <button
                     className="bg-white w-20 hover:bg-gray-300"
                     onClick={() => props.onClickDelete(memo.id)} >削除</button>
@@ -72,7 +65,10 @@ export const MemoList = (props: MemoListProps) => {
             </div>
           );
         })}
-        <MemoDetailModal memo={modalMemo} closeModal={closeModal} toggleMemoIsFixed={props.toggleMemoIsFixed} />
+        <MemoDetailModal
+          memo={modalMemo} closeModal={closeModal}
+          toggleMemoIsFixed={props.toggleMemoIsFixed}
+          toggleMemoIsArchived={props.toggleMemoIsArchived}/>
       </div>
     </div>
   );

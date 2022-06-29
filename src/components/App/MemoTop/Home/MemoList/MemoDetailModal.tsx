@@ -2,10 +2,11 @@ import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Memo } from '../../../App';
 import { BsThreeDotsVertical } from 'react-icons/bs';
-import { RiInboxArchiveLine } from 'react-icons/ri';
 import { Pin } from './Pin';
+import { ArchiveButton } from './ArchiveButton';
 
-export const MemoDetailModal = (props:{memo: Memo|null, closeModal: () => void, toggleMemoIsFixed: any}) => {
+export const MemoDetailModal = (props:{memo: Memo|null, closeModal: () => void, toggleMemoIsFixed: any,
+  toggleMemoIsArchived:any, }) => {
   const { memo, closeModal } = props;
 
   const modalIsOpen = (): boolean => {
@@ -32,11 +33,7 @@ export const MemoDetailModal = (props:{memo: Memo|null, closeModal: () => void, 
                   <div>
                     {memo?.body}</div>
                   <div className="flex justify-between">
-                    <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
-                      <RiInboxArchiveLine size='1.1rem'/>
-                      <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600
-                      group-hover:visible opacity-100 absolute top-9 -right-4">アーカイブ</span>
-                    </button>
+                    { !!memo ? <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/> : <></> }
                     <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
                       <BsThreeDotsVertical size='1.1rem'/>
                       <span className="invisible opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
