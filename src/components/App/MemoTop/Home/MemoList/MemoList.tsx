@@ -4,6 +4,7 @@ import { MemoDetailModal } from './MemoDetailModal';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { RiInboxArchiveLine, RiInboxUnarchiveLine } from 'react-icons/ri';
 import { Pin } from './Pin';
+import { OtherActionsDropdown } from '../../Header/OtherActionsDropdown';
 
 
 type MemoListProps = {
@@ -63,17 +64,13 @@ export const MemoList = (props: MemoListProps) => {
                       {memo.isArchived ? 'アーカイブを解除します' : 'アーカイブ'}
                       </span>
                   </button>
-                  <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
-                    <BsThreeDotsVertical size='1.1rem'/>
-                    <span className="invisible opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
-                      group-hover:visible opacity-100 absolute top-9 -right-10">その他のアクション</span>
-                  </button>
                   <button
                     className="bg-white w-20 hover:bg-gray-300"
                     onClick={() => props.toggleMemoIsTrash(memo.id)} >ゴミ箱</button>
                   <button
                     className="bg-white w-20 hover:bg-gray-300"
                     onClick={() => props.onClickDelete(memo.id)} >削除</button>
+                  <OtherActionsDropdown />
                 </div>
               </div>
             </div>
