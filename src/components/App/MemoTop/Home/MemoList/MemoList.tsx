@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Memo } from '../../../App';
 import { MemoDetailModal } from './MemoDetailModal';
-import { Pin } from './Pin';
+import { PinButton } from './PinButton';
 import { OtherActionsDropdown } from './OtherActionsDropdown';
 import { ArchiveButton } from './ArchiveButton';
 import { TrashIcons } from './TrashIcons';
@@ -51,7 +51,7 @@ export const MemoList = (props: MemoListProps) => {
                 <div onClick={() => openModal(memo)}>
                   <nav className="flex justify-between">
                     <div>{memo.title}</div>
-                    <Pin toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
+                    <PinButton toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
                   </nav>
                   <div>{memo.body}</div>
                 </div>

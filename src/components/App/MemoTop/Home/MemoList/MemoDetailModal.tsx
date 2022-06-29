@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Memo } from '../../../App';
-import { Pin } from './Pin';
+import { PinButton } from './PinButton';
 import { ArchiveButton } from './ArchiveButton';
 import { OtherActionsDropdown } from './OtherActionsDropdown';
 
@@ -19,7 +19,7 @@ export const MemoDetailModal = (props:{memo: Memo|null, closeModal: () => void, 
         <nav className="flex justify-between">
           <div>{memo.title}</div>
           <button className=" p-2 group hover:bg-slate-200 rounded-full relative">
-            <Pin toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
+            <PinButton toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
           </button>
         </nav>
         <div>{memo.body}</div>
