@@ -48,7 +48,7 @@ export const MemoList = (props: MemoListProps) => {
                 <div onClick={() => openModal(memo)}>
                   <nav className="flex justify-between">
                     <div>{memo.title}</div>
-                    <Pin isFixed={memo.isFixed} toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
+                    <Pin toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
                   </nav>
                   <div>{memo.body}</div>
                 </div>
