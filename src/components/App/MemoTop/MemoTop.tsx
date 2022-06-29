@@ -4,14 +4,13 @@ import React, {  useState } from 'react';
 import { Memo } from '../App';
 import { InputForm } from './Home/InputForm';
 import { MemoList } from './Home/MemoList/MemoList';
-import { FaTrash, FaTrashRestore } from 'react-icons/fa';
 
   export const MemoTop = (props:{ memoList: Memo[], setMemoList: (newMemos: Memo[])=> void, }) => {
     const { memoList, setMemoList } = props;
     const [menuIsOpen, setMenuIsOpen] = useState(true);
     const [displayIsList, setDisplayIsList] = useState<boolean>(false);
 
-    const onClickAdd = (inputTitle: string, inputText: string) => {
+    const addNewMemo = (inputTitle: string, inputText: string) => {
       if (inputText === '' && inputTitle === '') return;
       const newMemos = [...memoList,
         { id:new Date().getTime(),title: inputTitle, body: inputText ,isFixed:false, pinnedAt: 0, isArchived:false, trash: false}];
@@ -90,7 +89,7 @@ import { FaTrash, FaTrashRestore } from 'react-icons/fa';
           <Drawer menuIsOpen={menuIsOpen}/>
           <div className="flex flex-col w-full justify-items-center">
             Home
-            <InputForm onClick={onClickAdd}/>
+            <InputForm onClick={addNewMemo}/>
             <MemoList
               title='固定済み'
               memoList={fixedMemoList(memoList)}
