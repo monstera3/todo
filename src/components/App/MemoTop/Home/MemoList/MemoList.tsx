@@ -48,10 +48,7 @@ export const MemoList = (props: MemoListProps) => {
                 <div onClick={() => openModal(memo)}>
                   <nav className="flex justify-between">
                     <div>{memo.title}</div>
-                    <button onClick={(event: React.MouseEvent<HTMLButtonElement>)=> props.toggleMemoIsFixed(memo.id, event)}
-                      className=" p-2 group hover:bg-slate-200 rounded-full relative">
-                       <Pin isFixed={memo.isFixed}/>
-                    </button>
+                    <Pin isFixed={memo.isFixed} toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
                   </nav>
                   <div>{memo.body}</div>
                 </div>
@@ -75,7 +72,7 @@ export const MemoList = (props: MemoListProps) => {
             </div>
           );
         })}
-        <MemoDetailModal memo={modalMemo} closeModal={closeModal} />
+        <MemoDetailModal memo={modalMemo} closeModal={closeModal} toggleMemoIsFixed={props.toggleMemoIsFixed} />
       </div>
     </div>
   );

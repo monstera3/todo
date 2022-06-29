@@ -6,7 +6,7 @@ import { RiInboxArchiveLine } from 'react-icons/ri';
 import { Pin } from './Pin';
 
 
-export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void}) => {
+export const MemoDetailModal = (props:{memo: Memo|null, closeModal: () => void, toggleMemoIsFixed: any}) => {
   const { memo, closeModal } = props;
 
   const modalIsOpen = (): boolean => {
@@ -27,7 +27,7 @@ export const MemoDetailModal = (props:{ memo: Memo|null, closeModal: () => void}
                   <nav className="flex justify-between">
                     <div>{memo?.title}</div>
                     <button className=" p-2 group hover:bg-slate-200 rounded-full relative">
-                      { !!memo ? <Pin isFixed={memo.isFixed} /> : <></> }
+                      { !!memo ? <Pin isFixed={memo.isFixed} toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} /> : <></> }
                     </button>
                   </nav>
                   <div>
