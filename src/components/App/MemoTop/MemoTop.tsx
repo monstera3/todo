@@ -36,6 +36,14 @@ import { MemoList } from './Home/MemoList/MemoList';
       updateStoredMemos(newMemos);
     }
 
+    const toggleMemoIsTrash = (id:number) => {
+      const newMemos = [...memoList];
+      const index = newMemos.findIndex((memo) => memo.id === id);
+      newMemos[index].trash = !newMemos[index].trash
+      setMemoList(newMemos);
+      updateStoredMemos(newMemos);
+    }
+
     const onClickDelete = (id:number) => {
       const newMemos = [...memoList];
       const index = newMemos.findIndex((memo) => memo.id === id);
@@ -85,6 +93,7 @@ import { MemoList } from './Home/MemoList/MemoList';
               onClickDelete={onClickDelete}
               toggleMemoIsFixed={toggleMemoIsFixed}
               toggleMemoIsArchived={toggleMemoIsArchived}
+              toggleMemoIsTrash={toggleMemoIsTrash}
             />
             <MemoList
               title='その他'
@@ -93,6 +102,7 @@ import { MemoList } from './Home/MemoList/MemoList';
               onClickDelete={onClickDelete}
               toggleMemoIsFixed={toggleMemoIsFixed}
               toggleMemoIsArchived={toggleMemoIsArchived}
+              toggleMemoIsTrash={toggleMemoIsTrash}
             />
             <MemoList
               title='アーカイブ'
@@ -101,6 +111,7 @@ import { MemoList } from './Home/MemoList/MemoList';
               onClickDelete={onClickDelete}
               toggleMemoIsFixed={toggleMemoIsFixed}
               toggleMemoIsArchived={toggleMemoIsArchived}
+              toggleMemoIsTrash={toggleMemoIsTrash}
             />
             <MemoList
               title='ゴミ箱'
@@ -109,6 +120,7 @@ import { MemoList } from './Home/MemoList/MemoList';
               onClickDelete={onClickDelete}
               toggleMemoIsFixed={toggleMemoIsFixed}
               toggleMemoIsArchived={toggleMemoIsArchived}
+              toggleMemoIsTrash={toggleMemoIsTrash}
             />
           </div>
         </div>

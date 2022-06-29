@@ -13,6 +13,7 @@ type MemoListProps = {
   onClickDelete: (index: number) => void,
   toggleMemoIsFixed:(index:number, event: React.MouseEvent<HTMLButtonElement>) => void,
   toggleMemoIsArchived:(index:number) => void,
+  toggleMemoIsTrash:(index:number) => void,
 }
 
 export const MemoList = (props: MemoListProps) => {
@@ -65,6 +66,9 @@ export const MemoList = (props: MemoListProps) => {
                     <span className="invisible opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600
                       group-hover:visible opacity-100 absolute top-9 -right-10">その他のアクション</span>
                   </button>
+                  <button
+                    className="bg-white w-20 hover:bg-gray-300"
+                    onClick={() => props.toggleMemoIsTrash(memo.id)} >ゴミ箱</button>
                   <button
                     className="bg-white w-20 hover:bg-gray-300"
                     onClick={() => props.onClickDelete(memo.id)} >削除</button>
