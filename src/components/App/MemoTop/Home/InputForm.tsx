@@ -18,7 +18,7 @@ export const InputForm = (props:InputFormType) => {
   }
 
   const Form = () => {
-    return( isLargeForm ? <FormTypeClose/>:<FormTypeOpen/>);
+    return( isLargeForm ? <ClosedForm/>:<OpenedForm/>);
   }
   const close = () => {
     const title = titleRef.current ? titleRef.current.value : '';
@@ -26,7 +26,7 @@ export const InputForm = (props:InputFormType) => {
     onClick(title, body);
   }
 
-  const FormTypeClose = () => {
+  const ClosedForm = () => {
     return(
       <>
         <div className="placeholder:text-slate-800 text-base " onClick={toggleIsLargeForm}>メモを入力...</div>
@@ -34,7 +34,7 @@ export const InputForm = (props:InputFormType) => {
     );
   }
 
-    const FormTypeOpen = () => {
+    const OpenedForm = () => {
      return(
       <div>
         <div className="flex justify-between">
