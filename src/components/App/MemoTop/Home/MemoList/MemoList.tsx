@@ -57,6 +57,7 @@ export const MemoList = (props: MemoListProps) => {
                 </div>
                 <div className="flex justify-between">
                   <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
+                  // TODO OtherActionsDropdownを三項演算子に入れたい
                   {memo.trash ?
                     "" : <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>}
                   {memo.trash ? <TrashIcons onClickDelete={props.onClickDelete}
