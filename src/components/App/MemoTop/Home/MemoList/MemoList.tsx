@@ -65,9 +65,6 @@ export const MemoList = (props: MemoListProps) => {
                   </button>
                   <button
                     className="bg-white w-20 hover:bg-gray-300"
-                    onClick={() => props.toggleMemoIsTrash(memo.id)} >ゴミ箱</button>
-                  <button
-                    className="bg-white w-20 hover:bg-gray-300"
                     onClick={() => props.onClickDelete(memo.id)} >削除</button>
                   <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
                 </div>
