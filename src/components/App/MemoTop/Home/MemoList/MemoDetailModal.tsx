@@ -5,7 +5,6 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 import { RiInboxArchiveLine } from 'react-icons/ri';
 import { Pin } from './Pin';
 
-
 export const MemoDetailModal = (props:{memo: Memo|null, closeModal: () => void, toggleMemoIsFixed: any}) => {
   const { memo, closeModal } = props;
 

@@ -3,7 +3,7 @@ import { Memo } from '../../../App';
 import { MemoDetailModal } from './MemoDetailModal';
 import { RiInboxArchiveLine, RiInboxUnarchiveLine } from 'react-icons/ri';
 import { Pin } from './Pin';
-import { OtherActionsDropdown } from '../../Header/OtherActionsDropdown';
+import { OtherActionsDropdown } from './OtherActionsDropdown';
 
 
 type MemoListProps = {
