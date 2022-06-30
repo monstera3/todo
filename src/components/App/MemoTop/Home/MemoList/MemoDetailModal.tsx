@@ -5,8 +5,15 @@ import { PinButton } from './PinButton';
 import { ArchiveButton } from './ArchiveButton';
 import { OtherActionsDropdown } from './OtherActionsDropdown';
 
-export const MemoDetailModal = (props:{memo: Memo|null, closeModal: () => void, toggleMemoIsFixed: any,
-  toggleMemoIsArchived:any, toggleMemoIsTrash:any,}) => {
+type MemoDetailModalType = {
+  memo: Memo|null,
+  closeModal: () => void,
+  toggleMemoIsFixed: any,
+  toggleMemoIsArchived:any,
+  toggleMemoIsTrash:any,
+}
+
+export const MemoDetailModal = (props:MemoDetailModalType) => {
   const { memo, closeModal } = props;
 
   const modalIsOpen = (): boolean => {
