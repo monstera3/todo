@@ -36,6 +36,8 @@ export const MemoList = (props: MemoListProps) => {
     return props.displayIsList ? 'w-2/5 mx-auto' : 'w-11/12 m-auto';
   }
 
+
+
   return(
     <div>
       <p>{props.title}</p>
@@ -56,10 +58,12 @@ export const MemoList = (props: MemoListProps) => {
                   <div>{memo.body}</div>
                 </div>
                 <div className="flex justify-between">
-                  <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
-                   {/*TODO OtherActionsDropdownを三項演算子に入れたい*/}
                   {memo.trash ?
-                    "" : <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>}
+                    "" :
+                    <>
+                      <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
+                      <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
+                    </>}
                   {memo.trash ? <TrashIcons onClickDelete={props.onClickDelete}
                                             toggleMemoIsTrash={props.toggleMemoIsTrash}
                                             memo={memo}/> : " "}
@@ -77,3 +81,4 @@ export const MemoList = (props: MemoListProps) => {
     </div>
   );
 }
+
