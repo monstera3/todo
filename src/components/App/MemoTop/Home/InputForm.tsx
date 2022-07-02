@@ -34,6 +34,7 @@ export const InputForm = (props:InputFormType) => {
     );
   }
 
+  //TODO OpenedFormの外側をクリックしたら閉じたい
   const OpenedForm = () => {
     return(
       <div>
