@@ -7,7 +7,7 @@ type InputFormType = {
 }
 
 export const InputForm = (props:InputFormType) => {
-  const {onClick} = props;
+  const {onClick,} = props;
 
   const [isLargeForm,setIsLargeForm] = useState<boolean>(true);
   const bodyRef = useRef<HTMLInputElement>(null);
