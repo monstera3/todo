@@ -3,7 +3,7 @@ import { Drawer } from './Drawer/Drawer';
 import React, {  useState } from 'react';
 import { Memo } from '../App';
 import { InputForm } from './Content/InputForm';
-import { MemoList } from './Content/MemoList/MemoList';
+import { Content } from './Content/Content';
 
   export const MemoTop = (props:{ memoList: Memo[], setMemoList: (newMemos: Memo[])=> void, }) => {
     const { memoList, setMemoList } = props;
@@ -76,21 +76,6 @@ import { MemoList } from './Content/MemoList/MemoList';
       localStorage.setItem('storedMemos', JSON.stringify(updatedMemos));
     }
 
-    const fixedMemoList = (memoList:Memo[])=>{
-      return memoList.filter((memo) => memo.isFixed && !memo.isArchived && !memo.trash)
-        .sort((a,b)=> b.pinnedAt - a.pinnedAt); // NOTE: 新しい順に並べる
-    }
-    const unFixedMemoList = (memoList:Memo[])=>{
-      return memoList.filter((memo) => !memo.isFixed && !memo.isArchived && !memo.trash)
-        .sort((a,b)=> b.pinnedAt - a.pinnedAt);
-    }
-    const archivedMemoList = (memoList:Memo[]) => {
-      return memoList.filter((memo)=> memo.isArchived && !memo.trash)
-    }
-    const trashMemoList = (memoList:Memo[]) => {
-      return memoList.filter((memo)=> memo.trash)
-    }
-
 
     return(
       <>
@@ -100,41 +85,13 @@ import { MemoList } from './Content/MemoList/MemoList';
           <div className="flex flex-col w-full justify-items-center">
             Home
             <InputForm onClick={addNewMemo}/>
-            <MemoList
-              title='固定済み'
-              memoList={fixedMemoList(memoList)}
+            <Content
               displayIsList={displayIsList}
               onClickDelete={onClickDelete}
               toggleMemoIsFixed={toggleMemoIsFixed}
               toggleMemoIsArchived={toggleMemoIsArchived}
               toggleMemoIsTrash={toggleMemoIsTrash}
-            />
-            <MemoList
-              title='その他'
-              memoList={unFixedMemoList(memoList)}
-              displayIsList={displayIsList}
-              onClickDelete={onClickDelete}
-              toggleMemoIsFixed={toggleMemoIsFixed}
-              toggleMemoIsArchived={toggleMemoIsArchived}
-              toggleMemoIsTrash={toggleMemoIsTrash}
-            />
-            <MemoList
-              title='アーカイブ'
-              memoList={archivedMemoList(memoList)}
-              displayIsList={displayIsList}
-              onClickDelete={onClickDelete}
-              toggleMemoIsFixed={toggleMemoIsFixed}
-              toggleMemoIsArchived={toggleMemoIsArchived}
-              toggleMemoIsTrash={toggleMemoIsTrash}
-            />
-            <MemoList
-              title='ゴミ箱'
-              memoList={trashMemoList(memoList)}
-              displayIsList={displayIsList}
-              onClickDelete={onClickDelete}
-              toggleMemoIsFixed={toggleMemoIsFixed}
-              toggleMemoIsArchived={toggleMemoIsArchived}
-              toggleMemoIsTrash={toggleMemoIsTrash}
+              memoList={memoList}
             />
           </div>
         </div>
