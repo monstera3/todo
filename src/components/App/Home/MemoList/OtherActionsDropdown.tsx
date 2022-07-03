@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { Memo } from '../../App';
 
-export const OtherActionsDropdown = (props:{toggleMemoIsTrash:any, memo:Memo}) => {
+export const OtherActionsDropdown = (props:{toggleMemoIsTrash:(index:number) => void, memo:Memo}) => {
   return (
     <div className=" text-right">
       <Menu as="div" className="relative inline-block ">

@@ -1,6 +1,6 @@
 import { Header } from './Header/Header';
 import { Drawer } from './Drawer/Drawer';
-import React, { ContextType, useState } from 'react';
+import React, { useState } from 'react';
 import { Memo } from '../App';
 import { InputForm } from '../Home/InputForm';
 import { Outlet, useOutletContext } from 'react-router-dom';
@@ -8,10 +8,10 @@ import { Outlet, useOutletContext } from 'react-router-dom';
 type MemoListContextType = {
   memoList: Memo[],
   displayIsList: boolean,
-  onClickDelete: any,
-  toggleMemoIsFixed: any,
-  toggleMemoIsArchived: any,
-  toggleMemoIsTrash: any,
+  onClickDelete: (index: number) => void,
+  toggleMemoIsFixed: (index:number, event: React.MouseEvent<HTMLButtonElement>) => void,
+  toggleMemoIsArchived: (index:number) => void,
+  toggleMemoIsTrash: (index:number) => void,
 };
 
   export const MemoTop = (props:{ memoList: Memo[], setMemoList: (newMemos: Memo[])=> void, }) => {

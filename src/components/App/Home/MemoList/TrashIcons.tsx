@@ -2,7 +2,7 @@ import React from 'react';
 import { Memo } from '../../App';
 import { FaTrash, FaTrashRestore } from 'react-icons/fa';
 
-export const TrashIcons = (props:{  onClickDelete: any,toggleMemoIsTrash:any, memo: Memo }) => {
+export const TrashIcons = (props:{  onClickDelete: (index: number) => void,toggleMemoIsTrash:(index:number) => void, memo: Memo }) => {
   return(
     <>
       <button onClick={()=> props.onClickDelete(props.memo.id)}
