@@ -58,15 +58,15 @@ export const MemoList = (props: MemoListProps) => {
                   <div>{memo.body}</div>
                 </div>
                 <div className="flex justify-between">
-                  {memo.trash ?
+                  {memo.isTrashed ?
                     "" :
                     <>
                       <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
                       <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
                     </>}
-                  {memo.trash ? <TrashIcons onClickDelete={props.onClickDelete}
-                                            toggleMemoIsTrash={props.toggleMemoIsTrash}
-                                            memo={memo}/> : " "}
+                  {memo.isTrashed ? <TrashIcons onClickDelete={props.onClickDelete}
+                                                toggleMemoIsTrash={props.toggleMemoIsTrash}
+                                                memo={memo}/> : " "}
                 </div>
               </div>
             </div>

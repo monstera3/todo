@@ -15,18 +15,18 @@ export const Content = (props: ContentProps) => {
   const { displayIsList, onClickDelete, toggleMemoIsFixed, toggleMemoIsArchived, toggleMemoIsTrash, memoList } = props;
 
   const fixedMemoList = (memoList:Memo[])=>{
-    return memoList.filter((memo) => memo.isFixed && !memo.isArchived && !memo.trash)
+    return memoList.filter((memo) => memo.isFixed && !memo.isArchived && !memo.isTrashed)
       .sort((a,b)=> b.pinnedAt - a.pinnedAt); // NOTE: 新しい順に並べる
   }
   const unFixedMemoList = (memoList:Memo[])=>{
-    return memoList.filter((memo) => !memo.isFixed && !memo.isArchived && !memo.trash)
+    return memoList.filter((memo) => !memo.isFixed && !memo.isArchived && !memo.isTrashed)
       .sort((a,b)=> b.pinnedAt - a.pinnedAt);
   }
   const archivedMemoList = (memoList:Memo[]) => {
-    return memoList.filter((memo)=> memo.isArchived && !memo.trash)
+    return memoList.filter((memo)=> memo.isArchived && !memo.isTrashed)
   }
   const trashMemoList = (memoList:Memo[]) => {
-    return memoList.filter((memo)=> memo.trash)
+    return memoList.filter((memo)=> memo.isTrashed)
   }
 
   return (

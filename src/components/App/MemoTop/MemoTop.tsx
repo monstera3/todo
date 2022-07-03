@@ -49,7 +49,7 @@ import { Content } from './Content/Content';
     const toggleMemoIsTrash = (id:number) => {
       const newMemos = [...memoList];
       const index = newMemos.findIndex((memo) => memo.id === id);
-      newMemos[index].trash = !newMemos[index].trash
+      newMemos[index].isTrashed = !newMemos[index].isTrashed
       setMemoList(newMemos);
       updateStoredMemos(newMemos);
     }
