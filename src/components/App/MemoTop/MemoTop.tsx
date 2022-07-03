@@ -83,7 +83,6 @@ import { Content } from './Content/Content';
         <div className="flex flex-row w-screen">
           <Drawer menuIsOpen={menuIsOpen}/>
           <div className="flex flex-col w-full justify-items-center">
-            Home
             <InputForm onClick={addNewMemo}/>
             <Content
               displayIsList={displayIsList}
