@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Memo } from '../../../App';
+import { Memo } from '../../App';
 import { MemoDetailModal } from './MemoDetailModal';
 import { PinButton } from './PinButton';
 import { OtherActionsDropdown } from './OtherActionsDropdown';

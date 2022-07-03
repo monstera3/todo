@@ -1,6 +1,6 @@
 import React from 'react';
-import { Memo } from '../../../App';
-import { ArchiveIcon } from '../../../../shared/atoms/ArchiveIcon';
+import { Memo } from '../../App';
+import { ArchiveIcon } from '../../../shared/atoms/ArchiveIcon';
 
 export const ArchiveButton = (props:{  toggleMemoIsArchived: any, memo: Memo }) => {
   return(

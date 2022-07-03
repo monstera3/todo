@@ -1,5 +1,5 @@
 import React from 'react';
-import { Memo } from '../../../App';
+import { Memo } from '../../App';
 import { FaTrash, FaTrashRestore } from 'react-icons/fa';
 
 export const TrashIcons = (props:{  onClickDelete: any,toggleMemoIsTrash:any, memo: Memo }) => {

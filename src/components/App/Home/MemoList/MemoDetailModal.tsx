@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { Memo } from '../../../App';
+import { Memo } from '../../App';
 import { PinButton } from './PinButton';
 import { ArchiveButton } from './ArchiveButton';
 import { OtherActionsDropdown } from './OtherActionsDropdown';

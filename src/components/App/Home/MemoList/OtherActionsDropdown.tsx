@@ -1,7 +1,7 @@
 import { Menu, Transition } from '@headlessui/react'
 import React, { Fragment } from 'react'
 import { BsThreeDotsVertical } from 'react-icons/bs';
-import { Memo } from '../../../App';
+import { Memo } from '../../App';
 
 export const OtherActionsDropdown = (props:{toggleMemoIsTrash:any, memo:Memo}) => {
   return (

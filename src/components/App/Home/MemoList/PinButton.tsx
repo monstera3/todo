@@ -1,6 +1,6 @@
 import { BsPin, BsPinFill } from 'react-icons/bs';
 import React from 'react';
-import { Memo } from '../../../App';
+import { Memo } from '../../App';
 
 export const PinButton = (props:{  toggleMemoIsFixed: any, memo: Memo }) => {
   return(

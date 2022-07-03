@@ -17,7 +17,7 @@ const menuList: Menu[] = [
     key: 'memo',
     label: 'メモ',
     icon: (<MdOutlineLightbulb className='mr-4' size='1.5rem'/>),
-    path: '/'
+    path: '/home'
   },
   {
     key: 'reminder',

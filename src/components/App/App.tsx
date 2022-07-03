@@ -5,6 +5,7 @@ import { Routes,Route } from "react-router-dom"
 import { Reminders } from './Reminders/Reminders';
 import { Trash } from './Trash/Trash';
 import { Archive } from './Archive/Archive';
+import { Home } from './Home/Home';
 
 
 
@@ -24,11 +25,12 @@ export const App = (props: {storedMemoList:Memo[]})=>{
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<MemoTop memoList={memoList} setMemoList={setMemoList} />}/>
-        <Route path="/reminders" element={<Reminders />} />
-        <Route path="/trash" element={<Trash />} />
-        <Route path="/archive" element={<Archive />} />
-
+        <Route path="/" element={<MemoTop memoList={memoList} setMemoList={setMemoList} />}>
+          <Route path="/home" element={<Home />} />
+          <Route path="/reminders" element={<Reminders />} />
+          <Route path="/trash" element={<Trash />} />
+          <Route path="/archive" element={<Archive />} />
+        </Route>
       </Routes>
     </div>
   );

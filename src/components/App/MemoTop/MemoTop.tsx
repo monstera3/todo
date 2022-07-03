@@ -2,8 +2,17 @@ import { Header } from './Header/Header';
 import { Drawer } from './Drawer/Drawer';
 import React, {  useState } from 'react';
 import { Memo } from '../App';
-import { InputForm } from './Content/InputForm';
-import { Content } from './Content/Content';
+import { InputForm } from '../Home/InputForm';
+import { Outlet, useOutletContext } from 'react-router-dom';
+
+type ContextType = {
+  memoList: Memo[],
+  displayIsList: boolean,
+  onClickDelete: any,
+  toggleMemoIsFixed: any,
+  toggleMemoIsArchived: any,
+  toggleMemoIsTrash: any,
+};
 
   export const MemoTop = (props:{ memoList: Memo[], setMemoList: (newMemos: Memo[])=> void, }) => {
     const { memoList, setMemoList } = props;
@@ -13,7 +22,7 @@ import { Content } from './Content/Content';
     const addNewMemo = (inputTitle: string, inputText: string) => {
       if (inputText === '' && inputTitle === '') return;
       const newMemos = [...memoList,
-        { id:new Date().getTime(),title: inputTitle, body: inputText ,isFixed:false, pinnedAt: 0, isArchived:false, trash: false}];
+        { id:new Date().getTime(),title: inputTitle, body: inputText ,isFixed:false, pinnedAt: 0, isArchived:false, isTrashed: false}];
       setMemoList(newMemos);
       updateStoredMemos(newMemos);
     };
@@ -84,16 +93,20 @@ import { Content } from './Content/Content';
           <Drawer menuIsOpen={menuIsOpen}/>
           <div className="flex flex-col w-full justify-items-center">
             <InputForm onClick={addNewMemo}/>
-            <Content
-              displayIsList={displayIsList}
-              onClickDelete={onClickDelete}
-              toggleMemoIsFixed={toggleMemoIsFixed}
-              toggleMemoIsArchived={toggleMemoIsArchived}
-              toggleMemoIsTrash={toggleMemoIsTrash}
-              memoList={memoList}
-            />
+            <Outlet context={{
+              memoList: memoList,
+              displayIsList: displayIsList,
+              onClickDelete: onClickDelete,
+              toggleMemoIsFixed: toggleMemoIsFixed,
+              toggleMemoIsArchived: toggleMemoIsArchived,
+              toggleMemoIsTrash: toggleMemoIsTrash
+            }}/>
           </div>
         </div>
       </>
   );
+}
+export function useContent() {
+  // NOTE: https://reactrouter.com/docs/en/v6/hooks/use-outlet-context
+  return useOutletContext<ContextType>();
 }
