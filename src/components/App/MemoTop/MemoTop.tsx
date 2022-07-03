@@ -1,11 +1,11 @@
 import { Header } from './Header/Header';
 import { Drawer } from './Drawer/Drawer';
-import React, {  useState } from 'react';
+import React, { ContextType, useState } from 'react';
 import { Memo } from '../App';
 import { InputForm } from '../Home/InputForm';
 import { Outlet, useOutletContext } from 'react-router-dom';
 
-type ContextType = {
+type MemoListContextType = {
   memoList: Memo[],
   displayIsList: boolean,
   onClickDelete: any,
@@ -106,7 +106,6 @@ type ContextType = {
       </>
   );
 }
-export function useContent() {
-  // NOTE: https://reactrouter.com/docs/en/v6/hooks/use-outlet-context
-  return useOutletContext<ContextType>();
-}
+export function useMemoListContent() {
+  return useOutletContext<MemoListContextType>();
+  }

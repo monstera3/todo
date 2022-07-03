@@ -1,11 +1,11 @@
 import React from 'react';
-import { useContent } from '../MemoTop/MemoTop';
+import { useMemoListContent } from '../MemoTop/MemoTop';
 import { Memo } from '../App';
 import { MemoList } from './MemoList/MemoList';
 
 
 export const Home = () => {
-  const { memoList, displayIsList, onClickDelete, toggleMemoIsFixed, toggleMemoIsArchived, toggleMemoIsTrash } = useContent();
+  const { memoList, displayIsList, onClickDelete, toggleMemoIsFixed, toggleMemoIsArchived, toggleMemoIsTrash } = useMemoListContent();
 
   const fixedMemoList = (memoList:Memo[])=>{
     return memoList.filter((memo) => memo.isFixed && !memo.isArchived && !memo.isTrashed)
