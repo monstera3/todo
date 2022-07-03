@@ -2,8 +2,8 @@ import { Header } from './Header/Header';
 import { Drawer } from './Drawer/Drawer';
 import React, {  useState } from 'react';
 import { Memo } from '../App';
-import { InputForm } from './Home/InputForm';
-import { MemoList } from './Home/MemoList/MemoList';
+import { InputForm } from './Content/InputForm';
+import { MemoList } from './Content/MemoList/MemoList';
 
   export const MemoTop = (props:{ memoList: Memo[], setMemoList: (newMemos: Memo[])=> void, }) => {
     const { memoList, setMemoList } = props;
