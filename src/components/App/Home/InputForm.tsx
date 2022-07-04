@@ -18,7 +18,7 @@ export const InputForm = (props:InputFormType) => {
   }
 
   const Form = () => {
-    return( isLargeForm ? <ClosedForm/>:<OpenedForm/>);
+    return( isLargeForm ? <ClosedForm/>:<OpenedForm />);
   }
   const close = () => {
     const title = titleRef.current ? titleRef.current.value : '';

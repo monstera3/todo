@@ -2,7 +2,7 @@ import { BsPin, BsPinFill } from 'react-icons/bs';
 import React from 'react';
 import { Memo } from '../../App';
 
-export const PinButton = (props:{  toggleMemoIsFixed: any, memo: Memo }) => {
+export const PinButton = (props:{  toggleMemoIsFixed:(index:number, event: React.MouseEvent<HTMLButtonElement>) => void, memo: Memo }) => {
   return(
     <button onClick={(event: React.MouseEvent<HTMLButtonElement>)=> props.toggleMemoIsFixed(props.memo.id, event)}
             className=" p-2 group hover:bg-slate-200 rounded-full relative">
