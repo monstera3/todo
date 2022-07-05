@@ -39,10 +39,9 @@ export const MemoList = (props: MemoListProps) => {
 
 
   return(
-    <div>
+    <div className={listWidth()}>
       <p>{props.title}</p>
-
-      <div className={listWidth()+' grid gap-3 ' + gridCols()}>
+      <div className={' grid gap-3 ' + gridCols()}>
         {props.memoList.map((memo: Memo,index:number) => {
           return(
             <div key={index} >
