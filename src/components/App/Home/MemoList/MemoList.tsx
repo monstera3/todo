@@ -40,7 +40,7 @@ export const MemoList = (props: MemoListProps) => {
 
   return(
     <div className={listWidth()}>
-      <p>{props.title}</p>
+      <p className='p-3 text-xs'>{props.title}</p>
       <div className={' grid gap-3 ' + gridCols()}>
         {props.memoList.map((memo: Memo,index:number) => {
           return(
