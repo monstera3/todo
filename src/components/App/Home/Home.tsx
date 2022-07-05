@@ -27,15 +27,18 @@ export const Home = () => {
         toggleMemoIsArchived={toggleMemoIsArchived}
         toggleMemoIsTrash={toggleMemoIsTrash}
       />
-      <MemoList
-        title='その他'
-        memoList={unFixedMemoList(memoList)}
-        displayIsList={displayIsList}
-        onClickDelete={onClickDelete}
-        toggleMemoIsFixed={toggleMemoIsFixed}
-        toggleMemoIsArchived={toggleMemoIsArchived}
-        toggleMemoIsTrash={toggleMemoIsTrash}
-      />
+      <div className='mt-10'>
+        <MemoList
+          title='その他'
+          memoList={unFixedMemoList(memoList)}
+          displayIsList={displayIsList}
+          onClickDelete={onClickDelete}
+          toggleMemoIsFixed={toggleMemoIsFixed}
+          toggleMemoIsArchived={toggleMemoIsArchived}
+          toggleMemoIsTrash={toggleMemoIsTrash}
+        />
+      </div>
+
     </>
   );
 }
