@@ -45,6 +45,7 @@ export const InputForm = (props:InputFormType) => {
             <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600 group-hover:visible opacity-100 absolute top-9 -right-4">メモを固定</span>
           </button>
         </div>
+        {/*TODO 複数行入力できるようにしたい*/}
         <input className="placeholder:text-slate-800 text-base "
                type="text"
                autoFocus={true}

@@ -38,7 +38,10 @@ export const Header = (props:HeaderProps) => {
           group-hover:visible opacity-100 absolute top-11 -left-6">{DisplayTypeMessage(props.displayIsList)}</span>
         </button>
         <SettingDropdown/>
-        <button className="p-3 hover:bg-slate-200 rounded-full"> <VscAccount size='1.5rem'/></button>
+        <button className="p-3 relative group  hover:bg-slate-200 rounded-full">
+          <VscAccount size='1.5rem'/>
+          <span className="invisible opacity-0 px-2 w-max rounded text-[12px] font-bold text-white p-1 bg-slate-600
+          group-hover:visible opacity-100 absolute top-[100%] -translate-x-3/4">Googleアカウント</span></button>
       </header>
     </div>
   );
