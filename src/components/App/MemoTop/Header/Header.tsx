@@ -60,7 +60,11 @@ const SearchBar = () => {
     <form className="flex box px-2 w-1/2 rounded-md mx-auto bg-slate-100 focus-within:bg-white focus-within:shadow-sm focus-within:shadow-gray-400">
       <button className="m-1 p-2 hover:bg-slate-200 rounded-full" ><AiOutlineSearch  size='1.3rem'/></button>
       <input type="text" placeholder="検索" className=" w-full mx-1 "/>
-      <button className="m-1 px-2 hover:bg-slate-200 rounded-full "><GrClose size='1rem'/></button>
+      <button className="m-1 group relative px-2 hover:bg-slate-200 rounded-full ">
+        <GrClose size='1rem'/>
+        <span className="invisible opacity-0 px-2 w-max rounded text-[12px] font-bold text-white p-1 bg-slate-600
+          group-hover:visible opacity-100 absolute top-[100%] -translate-x-1/2">検索をクリア</span>
+      </button>
     </form>
   );
 
