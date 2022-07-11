@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { BsPin, BsThreeDotsVertical } from 'react-icons/bs';
+import { BsThreeDotsVertical } from 'react-icons/bs';
 import { RiInboxArchiveLine } from 'react-icons/ri';
+import { PinIcon } from '../../shared/atoms/PinIcon';
 
 type InputFormType = {
   onClick: (title: string, body: string) => void,
@@ -41,8 +42,7 @@ export const InputForm = (props:InputFormType) => {
         <div className="flex justify-between">
           <input className="placeholder:text-slate-800 text-base " type="text" ref={titleRef} placeholder="タイトル"/>
           <button className=" p-2 group hover:bg-slate-200 rounded-full relative">
-            <BsPin size='1.2rem'/>
-            <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600 group-hover:visible opacity-100 absolute top-9 -right-4">メモを固定</span>
+            <PinIcon isFixed={false}/>
           </button>
         </div>
         {/*TODO 複数行入力できるようにしたい*/}
