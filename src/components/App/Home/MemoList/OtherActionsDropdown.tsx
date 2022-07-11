@@ -1,7 +1,7 @@
 import { Menu, Transition } from '@headlessui/react'
 import React, { Fragment } from 'react'
-import { BsThreeDotsVertical } from 'react-icons/bs';
 import { Memo } from '../../App';
+import { ThreeDotsVerticalIcon } from '../../../shared/atoms/ThreeDotsVerticalIcon';
 
 export const OtherActionsDropdown = (props:{toggleMemoIsTrash:(index:number) => void, memo:Memo}) => {
   return (
@@ -10,9 +10,7 @@ export const OtherActionsDropdown = (props:{toggleMemoIsTrash:(index:number) => 
         <div>
           <Menu.Button >
             <div className=" p-2 group hover:bg-gray-200 rounded-full relative">
-              <BsThreeDotsVertical size='1.1rem'/>
-              <span className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-slate-600
-                      group-hover:visible opacity-100 absolute top-[100%] -translate-x-1/2 z-20 ">その他のアクション</span>
+              <ThreeDotsVerticalIcon />
             </div>
           </Menu.Button>
         </div>

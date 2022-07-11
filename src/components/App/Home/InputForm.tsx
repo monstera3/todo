@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { BsThreeDotsVertical } from 'react-icons/bs';
 import { RiInboxArchiveLine } from 'react-icons/ri';
 import { PinIcon } from '../../shared/atoms/PinIcon';
+import { ThreeDotsVerticalIcon } from '../../shared/atoms/ThreeDotsVerticalIcon';
 
 type InputFormType = {
   onClick: (title: string, body: string) => void,
@@ -57,8 +57,7 @@ export const InputForm = (props:InputFormType) => {
             <span className="invisible opacity-0 py-1 w-[70px] rounded text-[12px] font-bold text-white  bg-slate-600 group-hover:visible opacity-100 absolute top-9 -right-4">アーカイブ</span>
           </button>
           <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
-            <BsThreeDotsVertical size='1.1rem'/>
-            <span className="invisible opacity-0 py-1 w-[120px] rounded text-[12px] font-bold text-white  bg-slate-600 group-hover:visible opacity-100 absolute top-9 -right-4">その他のアクション</span>
+            <ThreeDotsVerticalIcon />
           </button>
           <button onClick={() => {toggleIsLargeForm();close();}} className="px-4 hover:bg-gray-100">閉じる</button>
         </div>
