@@ -25,9 +25,7 @@ export const MemoDetailModal = (props:MemoDetailModalType) => {
       <div>
         <nav className="flex justify-between">
           <div>{memo.title}</div>
-          <button className=" p-2 group hover:bg-slate-200 rounded-full relative">
             <PinButton toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
-          </button>
         </nav>
         <div>{memo.body}</div>
         <div className="flex justify-between">
