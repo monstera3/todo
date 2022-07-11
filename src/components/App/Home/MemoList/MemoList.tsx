@@ -36,6 +36,33 @@ export const MemoList = (props: MemoListProps) => {
     return props.displayIsList ? 'w-2/5 mx-auto' : 'w-11/12 m-auto';
   }
 
+  const memoDetail = (memo:Memo) => {
+    return(
+      <div
+        className="flex flex-col p-4 rounded-md mx-auto border border-gray-40
+                   hover:shadow-md
+                   hover:shadow-gray-300 ">
+        <div>
+          <nav className="flex justify-between">
+            <div>{memo.title}</div>
+            <PinButton toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
+          </nav>
+          <div className='py-4'>{memo.body}</div>
+        </div>
+        <div className="flex justify-between">
+          {memo.isTrashed ?
+            "" :
+            <>
+              <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
+              <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
+            </>}
+          {memo.isTrashed ? <TrashIcons onClickDelete={props.onClickDelete}
+                                        toggleMemoIsTrash={props.toggleMemoIsTrash}
+                                        memo={memo}/> : " "}
+        </div>
+      </div>
+    );
+  }
 
 
   return(
@@ -44,30 +71,8 @@ export const MemoList = (props: MemoListProps) => {
       <div className={' grid gap-4 ' + gridCols()}>
         {props.memoList.map((memo: Memo,index:number) => {
           return(
-            <div key={index} >
-              <div
-                   className="flex flex-col p-4 rounded-md mx-auto border border-gray-40
-                   hover:shadow-md
-                   hover:shadow-gray-300 ">
-                <div onClick={() => openModal(memo)}>
-                  <nav className="flex justify-between">
-                    <div>{memo.title}</div>
-                    <PinButton toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
-                  </nav>
-                  <div className='py-4'>{memo.body}</div>
-                </div>
-                <div className="flex justify-between">
-                  {memo.isTrashed ?
-                    "" :
-                    <>
-                      <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
-                      <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
-                    </>}
-                  {memo.isTrashed ? <TrashIcons onClickDelete={props.onClickDelete}
-                                                toggleMemoIsTrash={props.toggleMemoIsTrash}
-                                                memo={memo}/> : " "}
-                </div>
-              </div>
+            <div key={index} onClick={() => openModal(memo)}>
+              {memoDetail(memo)}
             </div>
           );
         })}
