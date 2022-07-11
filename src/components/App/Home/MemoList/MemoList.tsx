@@ -38,10 +38,7 @@ export const MemoList = (props: MemoListProps) => {
 
   const memoDetail = (memo:Memo) => {
     return(
-      <div
-        className="flex flex-col p-4 rounded-md mx-auto border border-gray-40
-                   hover:shadow-md
-                   hover:shadow-gray-300 ">
+      <div className="flex flex-col p-4 rounded-md mx-auto border border-gray-40 hover:shadow-md hover:shadow-gray-300 ">
         <div>
           <nav className="flex justify-between">
             <div>{memo.title}</div>
