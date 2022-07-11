@@ -4,6 +4,7 @@ import { Memo } from '../../App';
 import { PinButton } from './PinButton';
 import { ArchiveButton } from './ArchiveButton';
 import { OtherActionsDropdown } from './OtherActionsDropdown';
+import { TrashIcons } from './TrashIcons';
 
 type MemoDetailModalType = {
   memo: Memo|null,
@@ -30,8 +31,14 @@ export const MemoDetailModal = (props:MemoDetailModalType) => {
         </nav>
         <div>{memo.body}</div>
         <div className="flex justify-between">
-          <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
-          <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
+          {
+            memo.isTrashed ?
+            <TrashIcons deleteCompletely={props.deleteCompletely} toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo}/> :
+            <>
+              <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
+              <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
+            </>
+          }
           <button onClick={() => {closeModal();}} type="button" className="px-4 hover:bg-gray-100">閉じる</button>
         </div>
       </div>
