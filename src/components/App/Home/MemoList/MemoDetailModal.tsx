@@ -11,6 +11,7 @@ type MemoDetailModalType = {
   toggleMemoIsFixed:(index:number, event: React.MouseEvent<HTMLButtonElement>) => void,
   toggleMemoIsArchived:(index:number) => void,
   toggleMemoIsTrash:(index:number) => void,
+  deleteCompletely: (index: number) => void,
 }
 
 export const MemoDetailModal = (props:MemoDetailModalType) => {
