@@ -22,6 +22,7 @@ export const Header = (props:HeaderProps) => {
         </button>
         <a href="/"><h1 className="text-3xl font-bold">
           MEMO
+          {/*TODO drawerのlabelを表示させたい*/}
         </h1></a>
         <SearchBar/>
         <button className=" p-3 relative group hover:bg-slate-200 rounded-full "
