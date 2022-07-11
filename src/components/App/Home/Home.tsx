@@ -5,7 +5,7 @@ import { MemoList } from './MemoList/MemoList';
 
 
 export const Home = () => {
-  const { memoList, displayIsList, onClickDelete, toggleMemoIsFixed, toggleMemoIsArchived, toggleMemoIsTrash } = useMemoListContent();
+  const { memoList, displayIsList, deleteCompletely, toggleMemoIsFixed, toggleMemoIsArchived, toggleMemoIsTrash } = useMemoListContent();
 
   const fixedMemoList = (memoList:Memo[])=>{
     return memoList.filter((memo) => memo.isFixed && !memo.isArchived && !memo.isTrashed)
@@ -22,7 +22,7 @@ export const Home = () => {
         title='固定済み'
         memoList={fixedMemoList(memoList)}
         displayIsList={displayIsList}
-        onClickDelete={onClickDelete}
+        deleteCompletely={deleteCompletely}
         toggleMemoIsFixed={toggleMemoIsFixed}
         toggleMemoIsArchived={toggleMemoIsArchived}
         toggleMemoIsTrash={toggleMemoIsTrash}
@@ -32,7 +32,7 @@ export const Home = () => {
           title='その他'
           memoList={unFixedMemoList(memoList)}
           displayIsList={displayIsList}
-          onClickDelete={onClickDelete}
+          deleteCompletely={deleteCompletely}
           toggleMemoIsFixed={toggleMemoIsFixed}
           toggleMemoIsArchived={toggleMemoIsArchived}
           toggleMemoIsTrash={toggleMemoIsTrash}

@@ -11,7 +11,7 @@ type MemoListProps = {
   title: '固定済み' | 'その他' | 'アーカイブ' | 'ゴミ箱',
   memoList: Memo[],
   displayIsList: boolean,
-  onClickDelete: (index: number) => void,
+  deleteCompletely: (index: number) => void,
   toggleMemoIsFixed:(index:number, event: React.MouseEvent<HTMLButtonElement>) => void,
   toggleMemoIsArchived:(index:number) => void,
   toggleMemoIsTrash:(index:number) => void,
@@ -52,7 +52,7 @@ export const MemoList = (props: MemoListProps) => {
         <div className="flex justify-between">
           {
             memo.isTrashed ?
-            <TrashIcons onClickDelete={props.onClickDelete} toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo}/> :
+            <TrashIcons deleteCompletely={props.deleteCompletely} toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo}/> :
             <>
               <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
               <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>

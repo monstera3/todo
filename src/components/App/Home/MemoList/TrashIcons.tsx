@@ -2,10 +2,10 @@ import React from 'react';
 import { Memo } from '../../App';
 import { FaTrash, FaTrashRestore } from 'react-icons/fa';
 
-export const TrashIcons = (props:{  onClickDelete: (index: number) => void,toggleMemoIsTrash:(index:number) => void, memo: Memo }) => {
+export const TrashIcons = (props:{  deleteCompletely: (index: number) => void,toggleMemoIsTrash:(index:number) => void, memo: Memo }) => {
   return(
     <>
-      <button onClick={()=> props.onClickDelete(props.memo.id)}
+      <button onClick={()=> props.deleteCompletely(props.memo.id)}
               className="p-2 group hover:bg-gray-200 rounded-full relative">
         <FaTrash size='1rem'/>
         <span className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-slate-600

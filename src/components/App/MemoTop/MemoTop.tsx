@@ -8,7 +8,7 @@ import { Outlet, useOutletContext } from 'react-router-dom';
 type MemoListContextType = {
   memoList: Memo[],
   displayIsList: boolean,
-  onClickDelete: (index: number) => void,
+  deleteCompletely: (index: number) => void,
   toggleMemoIsFixed: (index:number, event: React.MouseEvent<HTMLButtonElement>) => void,
   toggleMemoIsArchived: (index:number) => void,
   toggleMemoIsTrash: (index:number) => void,
