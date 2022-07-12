@@ -19,8 +19,12 @@ export const Header = (props:HeaderProps) => {
   const location = useLocation();
 
   const title = () => {
-    const menu = menuList.find((menu)=> location.pathname === menu.path);
+    const menu = currentMenu();
     return !!menu ? menu.label : "";
+  }
+
+  const currentMenu = () => {
+    return menuList.find((menu) => location.pathname === menu.path);
   }
 
   return(
