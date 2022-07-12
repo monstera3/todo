@@ -12,7 +12,7 @@ type Menu = {
   path: string,
 }
 
-const menuList: Menu[] = [
+export const menuList: Menu[] = [
   {
     key: 'memo',
     label: 'メモ',

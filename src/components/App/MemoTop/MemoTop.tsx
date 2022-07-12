@@ -97,7 +97,7 @@ export const MemoTop = (props: { memoList: Memo[], setMemoList: (newMemos: Memo[
   return (
     <>
       <Header toggleMenuIsOpen={toggleMenuIsOpen} toggleDisplayIsList={toggleDisplayIsList}
-              displayIsList={displayIsList}/>
+              displayIsList={displayIsList} />
       <div className="flex flex-row w-screen">
         <Drawer menuIsOpen={menuIsOpen}/>
         <div className="flex flex-col w-full justify-items-center">

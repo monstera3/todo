@@ -5,6 +5,8 @@ import { GrClose, GrUpdate } from 'react-icons/gr';
 import { VscAccount } from 'react-icons/vsc';
 import { TbLayoutGrid, TbLayoutList } from 'react-icons/tb';
 import { SettingDropdown } from './SettingDropdown';
+import { useLocation } from 'react-router-dom';
+import { menuList } from '../Drawer/Drawer';
 
 
 type HeaderProps = {
@@ -14,15 +16,21 @@ type HeaderProps = {
 }
 
 export const Header = (props:HeaderProps) => {
+  const location = useLocation();
+
+  const title = () => {
+    const menu = menuList.find((menu)=> location.pathname === menu.path);
+    return !!menu ? menu.label : "";
+  }
+
   return(
     <div>
       <header className="flex border-b border-gray-300 p-2 items-center	">
         <button onClick={props.toggleMenuIsOpen} className="p-3 hover:bg-slate-200 rounded-full">
           <GiHamburgerMenu size='1.5rem'/>
         </button>
-        <a href="/"><h1 className="text-3xl font-bold">
-          MEMO
-          {/*TODO drawerのlabelを表示させたい*/}
+        <a href="/"><h1 className="text-xl font-bold">
+          {title()}
         </h1></a>
         <SearchBar/>
         <button className=" p-3 relative group hover:bg-slate-200 rounded-full "
