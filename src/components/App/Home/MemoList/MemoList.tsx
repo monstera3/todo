@@ -47,6 +47,7 @@ export const MemoList = (props: MemoListProps) => {
           <div className='py-4'>{memo.body}</div>
         </div>
         <div className="flex justify-between">
+          {/* TODO: 以下をクリック時にモーダルが開かないようにする */}
           {
             memo.isTrashed ?
             <TrashIcons deleteCompletely={props.deleteCompletely} toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo}/> :
