@@ -5,7 +5,7 @@ import { GrClose, GrUpdate } from 'react-icons/gr';
 import { VscAccount } from 'react-icons/vsc';
 import { TbLayoutGrid, TbLayoutList } from 'react-icons/tb';
 import { SettingDropdown } from './SettingDropdown';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { menuList } from '../Drawer/Drawer';
 
 
@@ -29,9 +29,9 @@ export const Header = (props:HeaderProps) => {
         <button onClick={props.toggleMenuIsOpen} className="p-3 hover:bg-slate-200 rounded-full">
           <GiHamburgerMenu size='1.5rem'/>
         </button>
-        <a href="/"><h1 className="text-xl font-bold">
+        <Link to="/home" className="text-lg mx-2">
           {title()}
-        </h1></a>
+        </Link>
         <SearchBar/>
         <button className=" p-3 relative group hover:bg-slate-200 rounded-full "
         onClick={reloadButton}>
