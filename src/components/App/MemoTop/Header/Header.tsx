@@ -23,9 +23,16 @@ export const Header = (props:HeaderProps) => {
     return !!menu ? menu.label : "";
   }
 
+  const path = () => {
+    const menu = currentMenu();
+    return !!menu ? menu.path : "";
+  }
+
   const currentMenu = () => {
     return menuList.find((menu) => location.pathname === menu.path);
   }
+
+
 
   return(
     <div>
@@ -33,7 +40,7 @@ export const Header = (props:HeaderProps) => {
         <button onClick={props.toggleMenuIsOpen} className="p-3 hover:bg-slate-200 rounded-full">
           <GiHamburgerMenu size='1.5rem'/>
         </button>
-        <Link to="/home" className="text-lg mx-2">
+        <Link to={path()} className="text-lg mx-2">
           {title()}
         </Link>
         <SearchBar/>

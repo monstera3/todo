@@ -46,9 +46,15 @@ export const InputForm = (props:InputFormType) => {
           </button>
         </div>
         {/*TODO 複数行入力できるようにしたい*/}
+        <textarea
+          name="text"
+          id="a"
+          placeholder="メモを入力..."
+          autoFocus
+          className="resize-none"></textarea>
         <input className="placeholder:text-slate-800 text-base "
                type="text"
-               autoFocus={true}
+               // autoFocus={true}
                ref={bodyRef}
                placeholder="メモを入力..." />
         <div className="flex justify-between">
