@@ -14,7 +14,7 @@ type MemoListProps = {
   deleteCompletely: (index: number) => void,
   toggleMemoIsFixed:(index:number, event: React.MouseEvent<HTMLButtonElement>) => void,
   toggleMemoIsArchived:(index:number) => void,
-  toggleMemoIsTrash:(index:number) => void,
+  toggleMemoIsTrash:(index:number,event: React.MouseEvent<HTMLButtonElement>) => void,
 }
 
 export const MemoList = (props: MemoListProps) => {

@@ -11,7 +11,7 @@ type MemoListContextType = {
   deleteCompletely: (index: number) => void,
   toggleMemoIsFixed: (index: number, event: React.MouseEvent<HTMLButtonElement>) => void,
   toggleMemoIsArchived: (index: number) => void,
-  toggleMemoIsTrash: (index: number) => void,
+  toggleMemoIsTrash: (index: number,event: React.MouseEvent<HTMLButtonElement>) => void,
 };
 
 export const MemoTop = (props: { memoList: Memo[], setMemoList: (newMemos: Memo[]) => void, }) => {
@@ -63,9 +63,10 @@ export const MemoTop = (props: { memoList: Memo[], setMemoList: (newMemos: Memo[
     updateStoredMemos(newMemos);
   }
 
-  const toggleMemoIsTrash = (id: number) => {
+  const toggleMemoIsTrash = (id: number,event: React.MouseEvent<HTMLButtonElement>) => {
     const newMemos = [...memoList];
     const index = newMemos.findIndex((memo) => memo.id === id);
+    event.stopPropagation();
     newMemos[index].isTrashed = !newMemos[index].isTrashed
     setMemoList(newMemos);
     updateStoredMemos(newMemos);

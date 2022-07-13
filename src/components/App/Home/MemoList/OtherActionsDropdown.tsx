@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import { Memo } from '../../App';
 import { ThreeDotsVerticalIcon } from '../../../shared/atoms/ThreeDotsVerticalIcon';
 
-export const OtherActionsDropdown = (props:{toggleMemoIsTrash:(index:number) => void, memo:Memo}) => {
+export const OtherActionsDropdown = (props:{toggleMemoIsTrash:(index:number,event: React.MouseEvent<HTMLButtonElement>) => void, memo:Memo}) => {
   return (
     <div className=" text-right">
       <Menu as="div" className="relative inline-block ">
@@ -29,7 +29,7 @@ export const OtherActionsDropdown = (props:{toggleMemoIsTrash:(index:number) => 
               <Menu.Item>
                 {({ active }) => (
                   <button
-                    onClick={() => props.toggleMemoIsTrash(props.memo.id)}
+                    onClick={(event: React.MouseEvent<HTMLButtonElement>) => props.toggleMemoIsTrash(props.memo.id,event)}
                     className={`${
                       active ? 'bg-slate-200 ' : 'text-gray-900'
                     } group flex w-full items-center  px-2 py-2 text-sm`}
