@@ -45,18 +45,18 @@ export const InputForm = (props:InputFormType) => {
             <PinIcon isFixed={false}/>
           </button>
         </div>
-        {/*TODO 複数行入力できるようにしたい*/}
+        {/*TODO textareaにbodyRefを渡す方法*/}
         <textarea
           name="text"
           id="a"
           placeholder="メモを入力..."
           autoFocus
-          className="resize-none"></textarea>
-        <input className="placeholder:text-slate-800 text-base "
-               type="text"
-               // autoFocus={true}
-               ref={bodyRef}
-               placeholder="メモを入力..." />
+          className=" resize-none placeholder:text-slate-800 text-base"></textarea>
+        {/*<input className="placeholder:text-slate-800 text-base "*/}
+        {/*       type="text"*/}
+        {/*       autoFocus={true}*/}
+        {/*       ref={bodyRef}*/}
+        {/*       placeholder="メモを入力..." />*/}
         <div className="flex justify-between">
           <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
             <RiInboxArchiveLine size='1.1rem'/>
