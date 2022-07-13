@@ -37,6 +37,11 @@ export const MemoList = (props: MemoListProps) => {
   }
 
   const memoDetail = (memo:Memo) => {
+
+    const modalStop = (event: React.MouseEvent<HTMLDivElement>) => {
+      event.stopPropagation(); // NOTE: onClickイベントを親要素に伝播させないため(モーダルを反応させない)
+    }
+
     return(
       <div className="flex flex-col p-4 rounded-md mx-auto border border-gray-40 hover:shadow-md hover:shadow-gray-300 ">
         <div>
@@ -46,8 +51,7 @@ export const MemoList = (props: MemoListProps) => {
           </nav>
           <div className='py-4'>{memo.body}</div>
         </div>
-        <div className="flex justify-between">
-          {/* TODO: 以下をクリック時にモーダルが開かないようにする */}
+        <div className="flex justify-between" onClick={modalStop}>
           {
             memo.isTrashed ?
             <TrashIcons deleteCompletely={props.deleteCompletely} toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo}/> :
