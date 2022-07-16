@@ -11,7 +11,7 @@ export const InputForm = (props:InputFormType) => {
   const {onClick,} = props;
 
   const [isLargeForm,setIsLargeForm] = useState<boolean>(true);
-  const bodyRef = useRef<HTMLInputElement>(null);
+  const bodyRef = useRef<HTMLTextAreaElement>(null);
   const titleRef = useRef<HTMLInputElement>(null);
 
   const toggleIsLargeForm = () => {
@@ -45,18 +45,13 @@ export const InputForm = (props:InputFormType) => {
             <PinIcon isFixed={false}/>
           </button>
         </div>
-        {/*TODO textareaにbodyRefを渡す方法*/}
         <textarea
           name="text"
+          ref={bodyRef}
           id="a"
           placeholder="メモを入力..."
           autoFocus
-          className=" resize-none placeholder:text-slate-800 text-base"></textarea>
-        {/*<input className="placeholder:text-slate-800 text-base "*/}
-        {/*       type="text"*/}
-        {/*       autoFocus={true}*/}
-        {/*       ref={bodyRef}*/}
-        {/*       placeholder="メモを入力..." />*/}
+          className=" resize-none placeholder:text-slate-800 text-base" />
         <div className="flex justify-between">
           <button className=" p-2 group hover:bg-gray-200 rounded-full relative">
             <RiInboxArchiveLine size='1.1rem'/>
