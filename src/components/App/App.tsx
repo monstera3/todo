@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import { MemoTop } from './MemoTop/MemoTop';
 import { Routes, Route } from 'react-router-dom'
@@ -19,12 +19,11 @@ export type Memo = {
 }
 
 export const App = (props: { storedMemoList: Memo[] }) => {
-  const [memoList, setMemoList] = useState<Memo[]>(props.storedMemoList);
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<MemoTop memoList={memoList} setMemoList={setMemoList}/>}>
+        <Route path="/" element={<MemoTop storedMemoList={props.storedMemoList}/>}>
           <Route path="/home" element={<Home/>}/>
           <Route path="/reminders" element={<Reminders/>}/>
           <Route path="/trash" element={<Trash/>}/>

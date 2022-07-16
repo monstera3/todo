@@ -14,8 +14,8 @@ type MemoListContextType = {
   toggleMemoIsTrash: (index: number,event: React.MouseEvent<HTMLButtonElement>) => void,
 };
 
-export const MemoTop = (props: { memoList: Memo[], setMemoList: (newMemos: Memo[]) => void, }) => {
-  const { memoList, setMemoList } = props;
+export const MemoTop = (props: { storedMemoList:Memo[] }) => {
+  const [memoList, setMemoList] = useState<Memo[]>(props.storedMemoList);
   const [menuIsOpen, setMenuIsOpen] = useState(true);
   const [displayIsList, setDisplayIsList] = useState<boolean>(false);
 
