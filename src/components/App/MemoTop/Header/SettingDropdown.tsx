@@ -8,9 +8,9 @@ export const SettingDropdown = () => {
       <Menu as="div" className="relative inline-block ">
         <div>
           <Menu.Button >
-            <div className=" p-3  group hover:bg-slate-200 rounded-full relative" aria-label="aa">
+            <div className=" p-3 mt-1 group hover:bg-slate-200 rounded-full relative" aria-label="aa">
               <VscSettingsGear size='1.2rem'/>
-              <span className="invisible opacity-0 px-2 rounded text-[12px] font-bold text-white p-1 bg-slate-600
+              <span className="invisible opacity-0 px-2  rounded text-[12px] font-bold text-white p-1 bg-slate-600
           group-hover:visible opacity-100 absolute top-11 right-0.5">設定</span>
             </div>
           </Menu.Button>
