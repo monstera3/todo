@@ -37,8 +37,10 @@ export const Header = (props:HeaderProps) => {
   return(
     <div>
       <header className="flex border-b border-gray-300 p-2 items-center	">
-        <button onClick={props.toggleMenuIsOpen} className="p-3 hover:bg-slate-200 rounded-full">
+        <button onClick={props.toggleMenuIsOpen} className="p-3 relative group  hover:bg-slate-200 rounded-full">
           <GiHamburgerMenu size='1.5rem'/>
+          <span className="invisible opacity-0 px-2 w-max rounded text-[12px] font-bold text-white p-1 bg-slate-600
+          group-hover:visible opacity-100 absolute top-[100%] -translate-x-1/4">メインメニュー</span>
         </button>
         <Link to={path()} className="text-lg mx-2">
           {title()}
