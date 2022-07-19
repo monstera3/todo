@@ -6,6 +6,7 @@ import { Reminders } from './Reminders/Reminders';
 import { Trash } from './Trash/Trash';
 import { Archive } from './Archive/Archive';
 import { Home } from './Home/Home';
+import { EditLabelModal } from '../shared/atoms/EditLabelModal';
 
 
 export type Memo = {
@@ -28,6 +29,7 @@ export const App = (props: { storedMemoList: Memo[] }) => {
           <Route path="/reminders" element={<Reminders/>}/>
           <Route path="/trash" element={<Trash/>}/>
           <Route path="/archive" element={<Archive/>}/>
+          <Route path="/editLabel" element={<EditLabelModal/>}/>
         </Route>
       </Routes>
     </div>

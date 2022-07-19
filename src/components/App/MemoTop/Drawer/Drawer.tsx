@@ -35,7 +35,7 @@ export const menuList: Menu[] = [
     key: 'editLabel',
     label: 'ラベルの編集',
     icon: (<BsPencil className='mr-4' size='1.5rem'/>),
-    path: ''
+    path: '/editLabel'
   },
   {
     key: 'archive',
