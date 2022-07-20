@@ -2,7 +2,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 
 export  const EditLabelModal = () => {
-  let [isOpen, setIsOpen] = useState(true)
+  let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
     setIsOpen(false)
