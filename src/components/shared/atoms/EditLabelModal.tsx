@@ -14,7 +14,7 @@ export  const EditLabelModal = () => {
 
   return (
     <>
-      <div className="fixed inset-0 flex items-center justify-center">
+      <div className="-z-10 fixed inset-0 flex items-center justify-center">
         <button
           type="button"
           onClick={openModal}
