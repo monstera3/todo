@@ -29,13 +29,13 @@ export const menuList: Menu[] = [
     key: 'cooking',
     label: '料理',
     icon: (<BiTag className='mr-4' size='1.5rem'/>),
-    path: ''
+    path: '',
   },
   {
     key: 'editLabel',
     label: 'ラベルの編集',
     icon: (<BsPencil className='mr-4' size='1.5rem'/>),
-    path: '/editLabel'
+    path: '',
   },
   {
     key: 'archive',
