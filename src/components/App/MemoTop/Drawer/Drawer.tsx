@@ -52,7 +52,7 @@ export const menuList: Menu[] = [
 ];
 
 
-export const Drawer = (props:{menuIsOpen:boolean}) => {
+export const Drawer = (props:{menuIsOpen:boolean,}) => {
 
   return(
 
@@ -78,7 +78,7 @@ export const Drawer = (props:{menuIsOpen:boolean}) => {
 
         })
       }
-      <button>ラベルの編集</button>
+      <button >ラベルの編集</button>
     </div>
   );
 }

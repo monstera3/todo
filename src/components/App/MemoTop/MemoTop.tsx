@@ -100,7 +100,7 @@ export const MemoTop = (props: { storedMemoList:Memo[] }) => {
       <Header toggleMenuIsOpen={toggleMenuIsOpen} toggleDisplayIsList={toggleDisplayIsList}
               displayIsList={displayIsList} />
       <div className="flex flex-row w-screen">
-        <Drawer menuIsOpen={menuIsOpen}/>
+        <Drawer menuIsOpen={menuIsOpen} />
         <div className="flex flex-col w-full justify-items-center">
           <InputForm onClick={addNewMemo}/>
           <Outlet context={{
