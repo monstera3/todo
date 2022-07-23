@@ -49,7 +49,7 @@ export const MemoList = (props: MemoListProps) => {
             <div>{memo.title}</div>
             <PinButton toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
           </nav>
-          <div className='py-4'>{memo.body}</div>
+          <div className='py-4 whitespace-pre-wrap'>{memo.body}</div>
         </div>
         <div className="flex justify-between" onClick={modalStop}>
           {
