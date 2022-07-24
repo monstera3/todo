@@ -5,6 +5,7 @@ import { PinButton } from './PinButton';
 import { ArchiveButton } from './ArchiveButton';
 import { OtherActionsDropdown } from './OtherActionsDropdown';
 import { TrashIcons } from './TrashIcons';
+import { PaletteButton } from './PaletteButton';
 
 type MemoDetailModalType = {
   memo: Memo|null,
@@ -36,6 +37,7 @@ export const MemoDetailModal = (props:MemoDetailModalType) => {
             memo.isTrashed ?
             <TrashIcons deleteCompletely={props.deleteCompletely} toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo}/> :
             <>
+              <PaletteButton/>
               <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
               <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
             </>
