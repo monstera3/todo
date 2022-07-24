@@ -30,7 +30,7 @@ export const MemoDetailModal = (props:MemoDetailModalType) => {
             {/*TODO 枠外のツールチップが表示されない*/}
             <PinButton toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
         </nav>
-        <div>{memo.body}</div>
+        <div className=" whitespace-pre-wrap">{memo.body}</div>
         <div className="flex justify-between">
           {
             memo.isTrashed ?
