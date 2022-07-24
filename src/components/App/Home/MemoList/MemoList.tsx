@@ -5,6 +5,7 @@ import { PinButton } from './PinButton';
 import { OtherActionsDropdown } from './OtherActionsDropdown';
 import { ArchiveButton } from './ArchiveButton';
 import { TrashIcons } from './TrashIcons';
+import { MdOutlineColorLens } from 'react-icons/md';
 
 
 type MemoListProps = {
@@ -56,6 +57,7 @@ export const MemoList = (props: MemoListProps) => {
             memo.isTrashed ?
             <TrashIcons deleteCompletely={props.deleteCompletely} toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo}/> :
             <>
+              <MdOutlineColorLens size='1.2rem'/>
               <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
               <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
             </>
