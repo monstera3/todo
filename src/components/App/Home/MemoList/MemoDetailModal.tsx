@@ -36,8 +36,8 @@ export const MemoDetailModal = (props:MemoDetailModalType) => {
             memo.isTrashed ?
             <TrashIcons deleteCompletely={props.deleteCompletely} toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo}/> :
             <>
-              <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
               <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
+              <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
             </>
           }
           <button onClick={() => {closeModal();}} type="button" className="px-4 hover:bg-gray-100">閉じる</button>
