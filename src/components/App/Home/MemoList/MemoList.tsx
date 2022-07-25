@@ -6,6 +6,7 @@ import { OtherActionsDropdown } from './OtherActionsDropdown';
 import { ArchiveButton } from './ArchiveButton';
 import { TrashIcons } from './TrashIcons';
 import { PaletteButton } from './PaletteButton';
+import { ColorOptionDropdown } from './ColorOptionDropdown';
 
 
 type MemoListProps = {
@@ -58,6 +59,7 @@ export const MemoList = (props: MemoListProps) => {
             <TrashIcons deleteCompletely={props.deleteCompletely} toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo}/> :
             <>
               <PaletteButton />
+              <ColorOptionDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo}/>
               <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
               <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
             </>
