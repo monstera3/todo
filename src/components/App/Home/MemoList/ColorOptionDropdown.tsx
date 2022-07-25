@@ -1,9 +1,8 @@
 import { Menu, Transition } from '@headlessui/react'
 import React, { Fragment } from 'react'
-import { Memo } from '../../App';
 import { PaletteIcons } from '../../../shared/atoms/PaletteIcons';
 
-export const ColorOptionDropdown = (props:{toggleMemoIsTrash:(index:number,event: React.MouseEvent<HTMLButtonElement>) => void, memo:Memo}) => {
+export const ColorOptionDropdown = () => {
   return (
     <div className=" text-right">
       <Menu as="div" className="relative inline-block ">
@@ -29,12 +28,11 @@ export const ColorOptionDropdown = (props:{toggleMemoIsTrash:(index:number,event
               <Menu.Item>
                 {({ active }) => (
                   <button
-                    onClick={(event: React.MouseEvent<HTMLButtonElement>) => props.toggleMemoIsTrash(props.memo.id,event)}
                     className={`${
                       active ? 'bg-slate-200 ' : 'text-gray-900'
                     } group flex w-full items-center  px-2 py-2 text-sm`}
                   >
-                    メモを削除
+                    赤オレンジ黄色
                   </button>
                 )}
               </Menu.Item>
@@ -45,7 +43,7 @@ export const ColorOptionDropdown = (props:{toggleMemoIsTrash:(index:number,event
                       active ? 'bg-slate-200' : 'text-gray-900'
                     } group flex w-full items-center px-2 py-2 text-sm`}
                   >
-                    ラベルを追加
+                    柄
                   </button>
                 )}
               </Menu.Item>
