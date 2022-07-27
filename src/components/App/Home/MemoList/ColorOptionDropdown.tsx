@@ -36,24 +36,24 @@ export const ColorOptionDropdown = () => {
                       柄
                     </button>
                     <div className="flex">
-                      <button>
-                        <svg width="50" height="50">
-                          <circle cx="25" cy="25" r="10" stroke="gray" strokeWidth="4" fill="#fff" />
+                      <button className=" hover:stroke-2 stroke-blue-300" data-tooltip-text="赤">
+                        <svg width="50" height="50" >
+                          <circle cx="25" cy="25" r="15" stroke="#e0e0e0" strokeWidth="2" fill="#fff" className=" hover:stroke-gray-600"/>
                         </svg>
                       </button>
                       <button>
                         <svg width="50" height="50">
-                          <circle cx="25" cy="25" r="10" stroke="#f28b82" strokeWidth="4" fill="#f28b82" />
+                          <circle cx="25" cy="25" r="15" stroke="#f28b82" strokeWidth="2" fill="#f28b82" className=" hover:stroke-gray-600"/>
                         </svg>
                       </button>
                       <button>
                         <svg width="50" height="50">
-                          <circle cx="25" cy="25" r="10" stroke="#fbbc04" strokeWidth="4" fill="#fbbc04" />
+                          <circle cx="25" cy="25" r="15" stroke="#fbbc04" strokeWidth="2" fill="#fbbc04" className=" hover:stroke-gray-600"/>
                         </svg>
                       </button>
                       <button>
                         <svg width="50" height="50">
-                          <circle cx="25" cy="25" r="10" stroke="#fff475" strokeWidth="4" fill="#fff475" />
+                          <circle cx="25" cy="25" r="15" stroke="#fff475" strokeWidth="2" fill="#fff475" className=" hover:stroke-gray-600"/>
                         </svg>
                       </button>
                     </div>
