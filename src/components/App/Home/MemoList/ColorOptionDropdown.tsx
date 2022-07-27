@@ -27,13 +27,38 @@ export const ColorOptionDropdown = () => {
             <div className="py-2 ">
               <Menu.Item>
                 {({ active }) => (
-                  <button
-                    className={`${
-                      active ? 'bg-slate-200 ' : 'text-gray-900'
-                    } group flex w-full items-center  px-2 py-2 text-sm`}
-                  >
-                    赤オレンジ黄色
-                  </button>
+                  <>
+                    <button
+                      className={`${
+                        active ? 'bg-slate-200' : 'text-gray-900'
+                      } group flex w-full items-center px-2 py-2 text-sm`}
+                    >
+                      柄
+                    </button>
+                    <div className="flex">
+                      <button>
+                        <svg width="50" height="50">
+                          <circle cx="25" cy="25" r="10" stroke="gray" strokeWidth="4" fill="#fff" />
+                        </svg>
+                      </button>
+                      <button>
+                        <svg width="50" height="50">
+                          <circle cx="25" cy="25" r="10" stroke="#f28b82" strokeWidth="4" fill="#f28b82" />
+                        </svg>
+                      </button>
+                      <button>
+                        <svg width="50" height="50">
+                          <circle cx="25" cy="25" r="10" stroke="#fbbc04" strokeWidth="4" fill="#fbbc04" />
+                        </svg>
+                      </button>
+                      <button>
+                        <svg width="50" height="50">
+                          <circle cx="25" cy="25" r="10" stroke="#fff475" strokeWidth="4" fill="#fff475" />
+                        </svg>
+                      </button>
+                    </div>
+
+                  </>
                 )}
               </Menu.Item>
               <Menu.Item>
