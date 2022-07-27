@@ -26,15 +26,6 @@ export const ColorOptionDropdown = () => {
           bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-2 ">
               <Menu.Item>
-                {({ active }) => (
-                  <>
-                    <button
-                      className={`${
-                        active ? 'bg-slate-200' : 'text-gray-900'
-                      } group flex w-full items-center px-2 py-2 text-sm`}
-                    >
-                      柄
-                    </button>
                     <div className="flex">
                       <button className=" hover:stroke-2 stroke-blue-300 group relative" data-tooltip-text="赤">
                         <svg width="50" height="50" >
@@ -60,8 +51,6 @@ export const ColorOptionDropdown = () => {
                       </button>
                     </div>
 
-                  </>
-                )}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
