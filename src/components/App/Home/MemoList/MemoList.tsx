@@ -73,7 +73,7 @@ export const MemoList = (props: MemoListProps) => {
         <div className="flex justify-between" onClick={modalStop}>
           {
             memo.isTrashed ?
-            <TrashIcons deleteCompletely={props.deleteCompletely} toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo}/> :
+            <TrashIcons deleteCompletely={props.deleteCompletely} toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} /> :
             <>
               <ColorOptionDropdown />
               <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>

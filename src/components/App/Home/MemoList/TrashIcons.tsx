@@ -2,7 +2,7 @@ import React from 'react';
 import { Memo } from '../../App';
 import { FaTrash, FaTrashRestore } from 'react-icons/fa';
 
-export const TrashIcons = (props:{  deleteCompletely: (index: number) => void,toggleMemoIsTrash:(index:number,event: React.MouseEvent<HTMLButtonElement>) => void, memo: Memo }) => {
+export const TrashIcons = (props:{  deleteCompletely: (index: number) => void,toggleMemoIsTrash:(index:number,event: React.MouseEvent<HTMLButtonElement>) => void, memo: Memo, }) => {
   return(
     <div className="flex ">
       <button onClick={()=> props.deleteCompletely(props.memo.id)}

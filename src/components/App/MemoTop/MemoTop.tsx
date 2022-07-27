@@ -73,7 +73,7 @@ export const MemoTop = (props: { storedMemoList:Memo[] }) => {
     updateStoredMemos(newMemos);
   }
 
-  const onClickDelete = (id: number) => {
+  const deleteCompletely = (id: number) => {
     const newMemos = [...memoList];
     const index = newMemos.findIndex((memo) => memo.id === id);
     newMemos.splice(index, 1);
@@ -107,10 +107,10 @@ export const MemoTop = (props: { storedMemoList:Memo[] }) => {
           <Outlet context={{
             memoList: memoList,
             displayIsList: displayIsList,
-            onClickDelete: onClickDelete,
+            deleteCompletely: deleteCompletely,
             toggleMemoIsFixed: toggleMemoIsFixed,
             toggleMemoIsArchived: toggleMemoIsArchived,
-            toggleMemoIsTrash: toggleMemoIsTrash
+            toggleMemoIsTrash: toggleMemoIsTrash,
           }}/>
         </div>
       </div>
