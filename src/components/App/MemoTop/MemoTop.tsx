@@ -61,6 +61,7 @@ export const MemoTop = (props: { storedMemoList:Memo[] }) => {
     const newMemos = [...memoList];
     const index = newMemos.findIndex((memo) => memo.id === id);
     event.stopPropagation(); // NOTE: onClickイベントを親要素に伝播させないため(モーダルを反応させない)
+    //TODO newMemosのcolorを変える方法
     newMemos[index].pinnedAt = new Date().getTime();
     setMemoList(newMemos);
     updateStoredMemos(newMemos);
