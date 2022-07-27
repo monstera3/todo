@@ -36,10 +36,12 @@ export const ColorOptionDropdown = () => {
                       柄
                     </button>
                     <div className="flex">
-                      <button className=" hover:stroke-2 stroke-blue-300" data-tooltip-text="赤">
+                      <button className=" hover:stroke-2 stroke-blue-300 group relative" data-tooltip-text="赤">
                         <svg width="50" height="50" >
                           <circle cx="25" cy="25" r="15" stroke="#e0e0e0" strokeWidth="2" fill="#fff" className=" hover:stroke-gray-600"/>
                         </svg>
+                        <span className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-gray-500 group-hover:visible opacity-100 absolute top-[85%] -translate-x-1/2 z-20 ">
+                          デフォルト</span>
                       </button>
                       <button>
                         <svg width="50" height="50">
