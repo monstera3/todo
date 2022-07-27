@@ -16,6 +16,7 @@ type MemoListProps = {
   toggleMemoIsFixed:(index:number, event: React.MouseEvent<HTMLButtonElement>) => void,
   toggleMemoIsArchived:(index:number) => void,
   toggleMemoIsTrash:(index:number,event: React.MouseEvent<HTMLButtonElement>) => void,
+  toggleMemoIsColor:(index:number,event: React.MouseEvent<HTMLButtonElement>) => void,
 }
 
 export const MemoList = (props: MemoListProps) => {
@@ -75,7 +76,7 @@ export const MemoList = (props: MemoListProps) => {
             memo.isTrashed ?
             <TrashIcons deleteCompletely={props.deleteCompletely} toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} /> :
             <>
-              <ColorOptionDropdown />
+              <ColorOptionDropdown toggleMemoIsColor={props.toggleMemoIsColor} memo={memo}/>
               <ArchiveButton toggleMemoIsArchived={props.toggleMemoIsArchived} memo={memo}/>
               <OtherActionsDropdown toggleMemoIsTrash={props.toggleMemoIsTrash} memo={memo} />
             </>
@@ -103,6 +104,7 @@ export const MemoList = (props: MemoListProps) => {
           toggleMemoIsArchived={props.toggleMemoIsArchived}
           toggleMemoIsTrash={props.toggleMemoIsTrash}
           deleteCompletely={props.deleteCompletely}
+          toggleMemoIsColor={props.toggleMemoIsColor}
         />
       </div>
     </div>

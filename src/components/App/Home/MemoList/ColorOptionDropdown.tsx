@@ -1,8 +1,9 @@
 import { Menu, Transition } from '@headlessui/react'
 import React, { Fragment } from 'react'
 import { PaletteIcons } from '../../../shared/atoms/PaletteIcons';
+import { Memo } from '../../App';
 
-export const ColorOptionDropdown = () => {
+export const ColorOptionDropdown = (props:{toggleMemoIsColor:(index:number,event: React.MouseEvent<HTMLButtonElement>)=>void,memo:Memo}) => {
   return (
     <div className=" text-right">
       <Menu as="div" className="relative inline-block ">
@@ -27,7 +28,9 @@ export const ColorOptionDropdown = () => {
             <div className="py-2 ">
               <Menu.Item>
                     <div className="flex">
-                      <button className=" hover:stroke-2 stroke-blue-300 group relative" data-tooltip-text="赤">
+                      <button
+                        onClick={(event: React.MouseEvent<HTMLButtonElement>)=> props.toggleMemoIsColor(props.memo.id,event)}
+                        className=" hover:stroke-2 stroke-blue-300 group relative" data-tooltip-text="赤">
                         <svg width="50" height="50" >
                           <circle cx="25" cy="25" r="15" stroke="#e0e0e0" strokeWidth="2" fill="#fff" className=" hover:stroke-gray-600"/>
                         </svg>

@@ -12,6 +12,7 @@ type MemoListContextType = {
   toggleMemoIsFixed: (index: number, event: React.MouseEvent<HTMLButtonElement>) => void,
   toggleMemoIsArchived: (index: number) => void,
   toggleMemoIsTrash: (index: number,event: React.MouseEvent<HTMLButtonElement>) => void,
+  toggleMemoIsColor: (index: number,event: React.MouseEvent<HTMLButtonElement>) => void,
 };
 
 export const MemoTop = (props: { storedMemoList:Memo[] }) => {
@@ -55,6 +56,15 @@ export const MemoTop = (props: { storedMemoList:Memo[] }) => {
     setMemoList(newMemos);
     updateStoredMemos(newMemos);
   }
+
+  const toggleMemoIsColor = (id: number, event: React.MouseEvent<HTMLButtonElement>) => {
+    const newMemos = [...memoList];
+    const index = newMemos.findIndex((memo) => memo.id === id);
+    event.stopPropagation(); // NOTE: onClickイベントを親要素に伝播させないため(モーダルを反応させない)
+    newMemos[index].pinnedAt = new Date().getTime();
+    setMemoList(newMemos);
+    updateStoredMemos(newMemos);
+}
 
   const toggleMemoIsArchived = (id: number) => {
     const newMemos = [...memoList];
@@ -111,6 +121,7 @@ export const MemoTop = (props: { storedMemoList:Memo[] }) => {
             toggleMemoIsFixed: toggleMemoIsFixed,
             toggleMemoIsArchived: toggleMemoIsArchived,
             toggleMemoIsTrash: toggleMemoIsTrash,
+            toggleMemoIsColor: toggleMemoIsColor,
           }}/>
         </div>
       </div>
