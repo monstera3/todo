@@ -29,7 +29,8 @@ export const MemoTop = (props: { storedMemoList:Memo[] }) => {
         isFixed: false,
         pinnedAt: 0,
         isArchived: false,
-        isTrashed: false
+        isTrashed: false,
+        color: 'white',
       }];
     setMemoList(newMemos);
     updateStoredMemos(newMemos);

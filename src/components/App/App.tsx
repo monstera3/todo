@@ -17,6 +17,7 @@ export type Memo = {
   pinnedAt: number | 0
   isArchived: boolean
   isTrashed: boolean
+  color: string
 }
 
 export const App = (props: { storedMemoList: Memo[] }) => {

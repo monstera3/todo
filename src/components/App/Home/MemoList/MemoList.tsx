@@ -37,6 +37,24 @@ export const MemoList = (props: MemoListProps) => {
     return props.displayIsList ? 'w-2/5 mx-auto' : 'w-11/12 m-auto';
   }
 
+  const colorList = () => {
+    return [
+      {
+        name: 'white',
+        tailName: 'bg-white-200'
+      },
+      {
+        name: 'red',
+        tailName: 'bg-red-200'
+      },
+    ]
+  }
+
+  const tailColor = (colorName: string) => {
+    const color = colorList().find((c) => c.name === colorName);
+    return color ? color.tailName : 'bg-white-200';
+  }
+
   const memoDetail = (memo:Memo) => {
 
     const modalStop = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -44,7 +62,7 @@ export const MemoList = (props: MemoListProps) => {
     }
 
     return(
-      <div className="flex flex-col p-4 rounded-md mx-auto border border-gray-40 hover:shadow-md hover:shadow-gray-300 ">
+      <div className={`${tailColor(memo.color)} flex flex-col p-4 rounded-md mx-auto border border-gray-40 hover:shadow-md hover:shadow-gray-300 `}>
         <div>
           <nav className="flex justify-between">
             <div>{memo.title}</div>
