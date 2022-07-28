@@ -5,7 +5,7 @@ import { PinButton } from './PinButton';
 import { OtherActionsDropdown } from './OtherActionsDropdown';
 import { ArchiveButton } from './ArchiveButton';
 import { TrashIcons } from './TrashIcons';
-import { ColorOptionDropdown } from './ColorOptionDropdown';
+import { colorList, ColorOptionDropdown } from './ColorOptionDropdown';
 
 
 type MemoListProps = {
@@ -38,21 +38,10 @@ export const MemoList = (props: MemoListProps) => {
     return props.displayIsList ? 'w-2/5 mx-auto' : 'w-11/12 m-auto';
   }
 
-  const colorList = () => {
-    return [
-      {
-        name: 'white',
-        tailName: 'bg-white-200'
-      },
-      {
-        name: 'red',
-        tailName: 'bg-red-200'
-      },
-    ]
-  }
+
 
   const tailColor = (colorName: string) => {
-    const color = colorList().find((c) => c.name === colorName);
+    const color = colorList.find((c) => c.name === colorName);
     return color ? color.tailName : 'bg-white-200';
   }
 

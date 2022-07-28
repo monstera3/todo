@@ -3,6 +3,25 @@ import React, { Fragment } from 'react'
 import { PaletteIcons } from '../../../shared/atoms/PaletteIcons';
 import { Memo } from '../../App';
 
+type Color = {
+  name: 'white' | 'red',
+  tailName: 'bg-white-200' | 'bg-red-200',
+}
+
+
+export const colorList:Color[] =[
+  {
+    name: 'white',
+    tailName: 'bg-white-200'
+  },
+  {
+    name: 'red',
+    tailName: 'bg-red-200'
+  }
+]
+
+
+
 export const ColorOptionDropdown = (props:{toggleMemoIsColor:(index:number,event: React.MouseEvent<HTMLButtonElement>)=>void,memo:Memo}) => {
   return (
     <div className=" text-right">
