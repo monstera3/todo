@@ -6,17 +6,23 @@ import { Memo } from '../../App';
 type Color = {
   name: 'white' | 'red',
   tailName: 'bg-white-200' | 'bg-red-200',
+  fill: '#fff' | '#f28b82',
+  stroke: '#e0e0e0' | '#f28b82',
 }
 
 
 export const colorList:Color[] =[
   {
     name: 'white',
-    tailName: 'bg-white-200'
+    tailName: 'bg-white-200',
+    fill: '#fff',
+    stroke: '#e0e0e0',
   },
   {
     name: 'red',
-    tailName: 'bg-red-200'
+    tailName: 'bg-red-200',
+    fill: '#f28b82',
+    stroke: '#f28b82',
   }
 ]
 
@@ -47,15 +53,22 @@ export const ColorOptionDropdown = (props:{toggleMemoIsColor:(index:number,color
             <div className="py-2 ">
               <Menu.Item>
                     <div className="flex">
-                      <button
-                        onClick={(event: React.MouseEvent<HTMLButtonElement>)=> props.toggleMemoIsColor(props.memo.id, 'white',event)}
-                        className=" hover:stroke-2 stroke-blue-300 group relative" data-tooltip-text="赤">
-                        <svg width="50" height="50" >
-                          <circle cx="25" cy="25" r="15" stroke="#e0e0e0" strokeWidth="2" fill="#fff" className=" hover:stroke-gray-600"/>
-                        </svg>
-                        <span className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-gray-500 group-hover:visible opacity-100 absolute top-[85%] -translate-x-1/2 z-20 ">
-                          デフォルト</span>
-                      </button>
+                      {
+                        colorList.map((color)=>{
+                          return(
+                            <button
+                              onClick={(event: React.MouseEvent<HTMLButtonElement>)=> props.toggleMemoIsColor(props.memo.id, color.name,event)}
+                              className=" hover:stroke-2 stroke-blue-300 group relative" data-tooltip-text="赤">
+                              <svg width="50" height="50" >
+                                <circle cx="25" cy="25" r="15" stroke={color.stroke} strokeWidth="2" fill={color.fill} className=" hover:stroke-gray-600"/>
+                              </svg>
+                              <span className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-gray-500 group-hover:visible opacity-100 absolute top-[85%] -translate-x-1/2 z-20 ">
+                          {color.name}</span>
+                            </button>
+                          )
+                        })
+                      }
+
                       <button>
                         <svg width="50" height="50">
                           <circle cx="25" cy="25" r="15" stroke="#f28b82" strokeWidth="2" fill="#f28b82" className=" hover:stroke-gray-600"/>
