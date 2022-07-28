@@ -16,7 +16,7 @@ type MemoListProps = {
   toggleMemoIsFixed:(index:number, event: React.MouseEvent<HTMLButtonElement>) => void,
   toggleMemoIsArchived:(index:number) => void,
   toggleMemoIsTrash:(index:number,event: React.MouseEvent<HTMLButtonElement>) => void,
-  toggleMemoIsColor:(index:number,event: React.MouseEvent<HTMLButtonElement>) => void,
+  toggleMemoIsColor:(index:number,color:string, event: React.MouseEvent<HTMLButtonElement>) => void,
 }
 
 export const MemoList = (props: MemoListProps) => {
