@@ -4,14 +4,14 @@ import { PaletteIcons } from '../../../shared/atoms/PaletteIcons';
 import { Memo } from '../../App';
 
 type Color = {
-  name: 'white' | 'red',
-  tailName: 'bg-white-200' | 'bg-red-200',
-  fill: '#fff' | '#f28b82',
-  stroke: '#e0e0e0' | '#f28b82',
+  name: 'white' | 'red' | 'orange' | 'yellow',
+  tailName: 'bg-white-200' | 'bg-red-200' | '',
+  fill: '#fff' | '#f28b82' | '#fbbc04' | '#fff475',
+  stroke: '#e0e0e0' | '#f28b82' | '#fbbc04' | '#fff475',
 }
 
 
-export const colorList:Color[] =[
+export const colorList: Color[] = [
   {
     name: 'white',
     tailName: 'bg-white-200',
@@ -23,19 +23,30 @@ export const colorList:Color[] =[
     tailName: 'bg-red-200',
     fill: '#f28b82',
     stroke: '#f28b82',
+  },
+  {
+    name: 'orange',
+    tailName: 'bg-red-200',
+    fill: '#fbbc04',
+    stroke: '#fbbc04',
+  },
+  {
+    name: 'yellow',
+    tailName: 'bg-red-200',
+    fill: '#fff475',
+    stroke: '#fff475',
   }
 ]
 
 
-
-export const ColorOptionDropdown = (props:{toggleMemoIsColor:(index:number,color:string, event: React.MouseEvent<HTMLButtonElement>)=>void,memo:Memo}) => {
+export const ColorOptionDropdown = (props: { toggleMemoIsColor: (index: number, color: string, event: React.MouseEvent<HTMLButtonElement>) => void, memo: Memo }) => {
   return (
     <div className=" text-right">
       <Menu as="div" className="relative inline-block ">
         <div>
-          <Menu.Button >
+          <Menu.Button>
             <div className=" p-2 group hover:bg-gray-200 rounded-full relative">
-              <PaletteIcons />
+              <PaletteIcons/>
             </div>
           </Menu.Button>
         </div>
@@ -52,39 +63,45 @@ export const ColorOptionDropdown = (props:{toggleMemoIsColor:(index:number,color
           bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-2 ">
               <Menu.Item>
-                    <div className="flex">
-                      {
-                        colorList.map((color)=>{
-                          return(
-                            <button
-                              onClick={(event: React.MouseEvent<HTMLButtonElement>)=> props.toggleMemoIsColor(props.memo.id, color.name,event)}
-                              className=" hover:stroke-2 stroke-blue-300 group relative" data-tooltip-text="赤">
-                              <svg width="50" height="50" >
-                                <circle cx="25" cy="25" r="15" stroke={color.stroke} strokeWidth="2" fill={color.fill} className=" hover:stroke-gray-600"/>
-                              </svg>
-                              <span className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-gray-500 group-hover:visible opacity-100 absolute top-[85%] -translate-x-1/2 z-20 ">
+                <div className="flex">
+                  {
+                    colorList.map((color) => {
+                      return (
+                        <button
+                          onClick={(event: React.MouseEvent<HTMLButtonElement>) => props.toggleMemoIsColor(props.memo.id, color.name, event)}
+                          className=" hover:stroke-2 stroke-blue-300 group relative"
+                          data-tooltip-text="赤">
+                          <svg width="50" height="50">
+                            <circle cx="25" cy="25" r="15" stroke={color.stroke} strokeWidth="2"
+                                    fill={color.fill} className=" hover:stroke-gray-600"/>
+                          </svg>
+                          <span
+                            className="invisible opacity-0 p-1 w-max rounded text-[12px] font-bold text-white  bg-gray-500 group-hover:visible opacity-100 absolute top-[85%] -translate-x-1/2 z-20 ">
                           {color.name}</span>
-                            </button>
-                          )
-                        })
-                      }
+                        </button>
+                      )
+                    })
+                  }
 
-                      <button>
-                        <svg width="50" height="50">
-                          <circle cx="25" cy="25" r="15" stroke="#f28b82" strokeWidth="2" fill="#f28b82" className=" hover:stroke-gray-600"/>
-                        </svg>
-                      </button>
-                      <button>
-                        <svg width="50" height="50">
-                          <circle cx="25" cy="25" r="15" stroke="#fbbc04" strokeWidth="2" fill="#fbbc04" className=" hover:stroke-gray-600"/>
-                        </svg>
-                      </button>
-                      <button>
-                        <svg width="50" height="50">
-                          <circle cx="25" cy="25" r="15" stroke="#fff475" strokeWidth="2" fill="#fff475" className=" hover:stroke-gray-600"/>
-                        </svg>
-                      </button>
-                    </div>
+                  <button>
+                    <svg width="50" height="50">
+                      <circle cx="25" cy="25" r="15" stroke="#f28b82" strokeWidth="2" fill="#f28b82"
+                              className=" hover:stroke-gray-600"/>
+                    </svg>
+                  </button>
+                  <button>
+                    <svg width="50" height="50">
+                      <circle cx="25" cy="25" r="15" stroke="#fbbc04" strokeWidth="2" fill="#fbbc04"
+                              className=" hover:stroke-gray-600"/>
+                    </svg>
+                  </button>
+                  <button>
+                    <svg width="50" height="50">
+                      <circle cx="25" cy="25" r="15" stroke="#fff475" strokeWidth="2" fill="#fff475"
+                              className=" hover:stroke-gray-600"/>
+                    </svg>
+                  </button>
+                </div>
 
               </Menu.Item>
               <Menu.Item>
