@@ -82,25 +82,6 @@ export const ColorOptionDropdown = (props: { toggleMemoIsColor: (index: number, 
                       )
                     })
                   }
-
-                  <button>
-                    <svg width="50" height="50">
-                      <circle cx="25" cy="25" r="15" stroke="#f28b82" strokeWidth="2" fill="#f28b82"
-                              className=" hover:stroke-gray-600"/>
-                    </svg>
-                  </button>
-                  <button>
-                    <svg width="50" height="50">
-                      <circle cx="25" cy="25" r="15" stroke="#fbbc04" strokeWidth="2" fill="#fbbc04"
-                              className=" hover:stroke-gray-600"/>
-                    </svg>
-                  </button>
-                  <button>
-                    <svg width="50" height="50">
-                      <circle cx="25" cy="25" r="15" stroke="#fff475" strokeWidth="2" fill="#fff475"
-                              className=" hover:stroke-gray-600"/>
-                    </svg>
-                  </button>
                 </div>
 
               </Menu.Item>
