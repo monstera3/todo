@@ -39,7 +39,7 @@ export const MemoList = (props: MemoListProps) => {
   }
 
 
-
+  //TODO 何番目を変更するか検知させたい
   const tailColor = (colorName: string) => {
     const color = colorList.find((c) => c.name === colorName);
     return color ? color.tailName : 'bg-red-200';
