@@ -42,7 +42,7 @@ export const MemoList = (props: MemoListProps) => {
 
   const tailColor = (colorName: string) => {
     const color = colorList.find((c) => c.name === colorName);
-    return color ? color.tailName : 'bg-white-200';
+    return color ? color.tailName : 'bg-red-200';
   }
 
   const memoDetail = (memo:Memo) => {

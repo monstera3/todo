@@ -5,7 +5,7 @@ import { Memo } from '../../App';
 
 type Color = {
   name: 'white' | 'red' | 'orange' | 'yellow',
-  tailName: 'bg-white-200' | 'bg-red-200' | '',
+  tailName: 'bg-white-200' | 'bg-red-200' | 'bg-orange-200' | 'bg-yellow-200',
   fill: '#fff' | '#f28b82' | '#fbbc04' | '#fff475',
   stroke: '#e0e0e0' | '#f28b82' | '#fbbc04' | '#fff475',
 }
@@ -26,13 +26,13 @@ export const colorList: Color[] = [
   },
   {
     name: 'orange',
-    tailName: 'bg-red-200',
+    tailName: 'bg-orange-200',
     fill: '#fbbc04',
     stroke: '#fbbc04',
   },
   {
     name: 'yellow',
-    tailName: 'bg-red-200',
+    tailName: 'bg-yellow-200',
     fill: '#fff475',
     stroke: '#fff475',
   }
@@ -45,7 +45,7 @@ export const ColorOptionDropdown = (props: { toggleMemoIsColor: (index: number, 
       <Menu as="div" className="relative inline-block ">
         <div>
           <Menu.Button>
-            <div className=" p-2 group hover:bg-gray-200 rounded-full relative">
+            <div className="p-2 group hover:bg-gray-200 rounded-full relative">
               <PaletteIcons/>
             </div>
           </Menu.Button>
