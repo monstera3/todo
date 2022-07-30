@@ -5,36 +5,36 @@ import { Memo } from '../../App';
 
 type Color = {
   name: 'white' | 'red' | 'orange' | 'yellow',
-  tailName: 'bg-white-200' | 'bg-red-200' | 'bg-orange-200' | 'bg-yellow-200',
-  fill: '#fff' | '#f28b82' | '#fbbc04' | '#fff475',
-  stroke: '#e0e0e0' | '#f28b82' | '#fbbc04' | '#fff475',
+  tailName: 'bg-white-300' | 'bg-red-300' | 'bg-orange-300' | 'bg-yellow-300',
+  fill: '#fff' | '#fca5a5' | '#fdba74' | '#fde047',
+  stroke: '#e0e0e0' | '#fca5a5' | '#fdba74' | '#fde047',
 }
 
 
 export const colorList: Color[] = [
   {
     name: 'white',
-    tailName: 'bg-white-200',
+    tailName: 'bg-white-300',
     fill: '#fff',
     stroke: '#e0e0e0',
   },
   {
     name: 'red',
-    tailName: 'bg-red-200',
-    fill: '#f28b82',
-    stroke: '#f28b82',
+    tailName: 'bg-red-300',
+    fill: '#fca5a5',
+    stroke: '#fca5a5',
   },
   {
     name: 'orange',
-    tailName: 'bg-orange-200',
-    fill: '#fbbc04',
-    stroke: '#fbbc04',
+    tailName: 'bg-orange-300',
+    fill: '#fdba74',
+    stroke: '#fdba74',
   },
   {
     name: 'yellow',
-    tailName: 'bg-yellow-200',
-    fill: '#fff475',
-    stroke: '#fff475',
+    tailName: 'bg-yellow-300',
+    fill: '#fde047',
+    stroke: '#fde047',
   }
 ]
 
