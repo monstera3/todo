@@ -30,10 +30,10 @@ export const MemoDetailModal = (props:MemoDetailModalType) => {
         <nav className="flex justify-between">
           <div>{memo.title}</div>
             {/*TODO 枠外のツールチップが表示されない*/}
-            <PinButton toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
+            <PinButton toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo}/>
         </nav>
         <div className=" whitespace-pre-wrap">{memo.body}</div>
-        <div contentEditable="true">
+        <div contentEditable={true} aria-multiline={true} role='textbox'>
           {memo.body}
         </div>
         <div className="flex justify-between">
