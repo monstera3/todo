@@ -9,7 +9,7 @@ export const OtherActionsDropdown = (props:{toggleMemoIsTrash:(index:number,even
       <Menu as="div" className="relative inline-block ">
         <div>
           <Menu.Button >
-            <div className=" p-2 group hover:bg-gray-200 rounded-full relative">
+            <div className=" p-2 group hover:bg-gray-500/[0.2]  rounded-full relative">
               <ThreeDotsVerticalIcon />
             </div>
           </Menu.Button>
