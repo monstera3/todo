@@ -33,6 +33,9 @@ export const MemoDetailModal = (props:MemoDetailModalType) => {
             <PinButton toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo} />
         </nav>
         <div className=" whitespace-pre-wrap">{memo.body}</div>
+        <div contentEditable="true">
+          {memo.body}
+        </div>
         <div className="flex justify-between">
           {
             memo.isTrashed ?
