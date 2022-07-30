@@ -7,7 +7,7 @@ export const PinButton = (props:{  toggleMemoIsFixed:(index:number, event: React
     //NOTE eventを削除するとモーダル時に反応しなくなる
     //TODO モーダルを閉じたい
     <button onClick={(event: React.MouseEvent<HTMLButtonElement>)=> props.toggleMemoIsFixed(props.memo.id, event)}
-            className=" p-2 group hover:bg-slate-200 rounded-full relative">
+            className=" p-2 group hover:bg-gray-500/[0.2] rounded-full relative">
       <PinIcon isFixed={props.memo.isFixed} />
     </button>
   );

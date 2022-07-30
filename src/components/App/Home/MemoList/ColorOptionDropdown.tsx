@@ -45,7 +45,7 @@ export const ColorOptionDropdown = (props: { toggleMemoIsColor: (index: number, 
       <Menu as="div" className="relative inline-block ">
         <div>
           <Menu.Button>
-            <div className="p-2 group hover:bg-gray-200 rounded-full relative">
+            <div className="p-2 group hover:bg-gray-500/[0.2] rounded-full relative">
               <PaletteIcons/>
             </div>
           </Menu.Button>
