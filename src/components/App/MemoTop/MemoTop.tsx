@@ -46,6 +46,7 @@ export const MemoTop = (props: { storedMemoList:Memo[] }) => {
     newMemos[index].body = body;
     setMemoList(newMemos);
     updateStoredMemos(newMemos);
+    debugger
   }
 
   const toggleMemoIsFixed = (id: number, event: React.MouseEvent<HTMLButtonElement>) => {

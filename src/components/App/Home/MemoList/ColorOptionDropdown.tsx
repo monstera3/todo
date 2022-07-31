@@ -68,6 +68,7 @@ export const ColorOptionDropdown = (props: { toggleMemoIsColor: (index: number, 
                     colorList.map((color) => {
                       return (
                         <button
+                          key={color.name}
                           onClick={(event: React.MouseEvent<HTMLButtonElement>) => props.toggleMemoIsColor(props.memo.id, color.name, event)}
                           className=" hover:stroke-2 stroke-blue-300 group relative"
                           data-tooltip-text="赤">
