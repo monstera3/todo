@@ -13,6 +13,7 @@ type MemoListContextType = {
   toggleMemoIsArchived: (index: number) => void,
   toggleMemoIsTrash: (index: number,event: React.MouseEvent<HTMLButtonElement>) => void,
   toggleMemoIsColor: (index: number,color:string, event: React.MouseEvent<HTMLButtonElement>) => void,
+  updateMemo:(id: number, title: string, body: string) => void,
 };
 
 export const MemoTop = (props: { storedMemoList:Memo[] }) => {
@@ -123,6 +124,7 @@ export const MemoTop = (props: { storedMemoList:Memo[] }) => {
             toggleMemoIsArchived: toggleMemoIsArchived,
             toggleMemoIsTrash: toggleMemoIsTrash,
             toggleMemoIsColor: toggleMemoIsColor,
+            updateMemo: updateMemo,
           }}/>
         </div>
       </div>

@@ -4,7 +4,7 @@ import React from 'react';
 import { MemoList } from '../Home/MemoList/MemoList';
 
 export const Archive = () => {
-  const { memoList, displayIsList, deleteCompletely, toggleMemoIsFixed, toggleMemoIsArchived, toggleMemoIsTrash,toggleMemoIsColor } = useMemoListContent();
+  const { memoList, displayIsList, deleteCompletely, toggleMemoIsFixed, toggleMemoIsArchived, toggleMemoIsTrash,toggleMemoIsColor, updateMemo } = useMemoListContent();
 
   const archivedMemoList = (memoList:Memo[]) => {
     return memoList.filter((memo)=> memo.isArchived && !memo.isTrashed)
@@ -20,6 +20,7 @@ export const Archive = () => {
       toggleMemoIsArchived={toggleMemoIsArchived}
       toggleMemoIsTrash={toggleMemoIsTrash}
       toggleMemoIsColor={toggleMemoIsColor}
+      updateMemo={updateMemo}
     />
   );
 }

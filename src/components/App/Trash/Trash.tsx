@@ -5,7 +5,7 @@ import { MemoList } from '../Home/MemoList/MemoList';
 
 
 export const Trash = () => {
-  const { memoList, displayIsList, deleteCompletely, toggleMemoIsFixed, toggleMemoIsArchived, toggleMemoIsTrash,toggleMemoIsColor } = useMemoListContent();
+  const { memoList, displayIsList, deleteCompletely, toggleMemoIsFixed, toggleMemoIsArchived, toggleMemoIsTrash,toggleMemoIsColor,updateMemo } = useMemoListContent();
 
   const trashMemoList = (memoList:Memo[]) => {
     return memoList.filter((memo)=> memo.isTrashed)
@@ -21,6 +21,7 @@ export const Trash = () => {
       toggleMemoIsArchived={toggleMemoIsArchived}
       toggleMemoIsTrash={toggleMemoIsTrash}
       toggleMemoIsColor={toggleMemoIsColor}
+      updateMemo={updateMemo}
     />
   );
 }

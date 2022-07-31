@@ -5,7 +5,7 @@ import { MemoList } from './MemoList/MemoList';
 
 
 export const Home = () => {
-  const { memoList, displayIsList, deleteCompletely, toggleMemoIsFixed, toggleMemoIsArchived, toggleMemoIsTrash,toggleMemoIsColor } = useMemoListContent();
+  const { memoList, displayIsList, deleteCompletely, toggleMemoIsFixed, toggleMemoIsArchived, toggleMemoIsTrash,toggleMemoIsColor, updateMemo } = useMemoListContent();
 
   const fixedMemoList = (memoList:Memo[])=>{
     return memoList.filter((memo) => memo.isFixed && !memo.isArchived && !memo.isTrashed)
@@ -27,6 +27,7 @@ export const Home = () => {
         toggleMemoIsArchived={toggleMemoIsArchived}
         toggleMemoIsTrash={toggleMemoIsTrash}
         toggleMemoIsColor={toggleMemoIsColor}
+        updateMemo={updateMemo}
       />
       <div className='mt-10'>
         <MemoList
@@ -38,6 +39,7 @@ export const Home = () => {
           toggleMemoIsArchived={toggleMemoIsArchived}
           toggleMemoIsTrash={toggleMemoIsTrash}
           toggleMemoIsColor={toggleMemoIsColor}
+          updateMemo={updateMemo}
         />
       </div>
 

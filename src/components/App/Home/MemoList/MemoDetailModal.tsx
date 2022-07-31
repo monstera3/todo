@@ -15,6 +15,7 @@ type MemoDetailModalType = {
   toggleMemoIsTrash:(index:number,event: React.MouseEvent<HTMLButtonElement>) => void,
   deleteCompletely: (index: number) => void,
   toggleMemoIsColor:(index:number,color:string, event: React.MouseEvent<HTMLButtonElement>) => void,
+  updateMemo:(index: number, title: string, body: string) => void,
 }
 
 export const MemoDetailModal = (props:MemoDetailModalType) => {
@@ -33,7 +34,8 @@ export const MemoDetailModal = (props:MemoDetailModalType) => {
             <PinButton toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo}/>
         </nav>
         <div className=" whitespace-pre-wrap">{memo.body}</div>
-        <div contentEditable={true} aria-multiline={true} role='textbox'>
+        <div contentEditable={true} aria-multiline={true} role='textbox'
+        onChange={()=> props.updateMemo(props.memo?.id ? props.memo.id : 0 , 'title' ,'body')}>
           {memo.body}
         </div>
         <div className="flex justify-between">
