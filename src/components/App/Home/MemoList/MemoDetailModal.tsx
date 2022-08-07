@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Memo } from '../../App';
 import { PinButton } from './PinButton';
@@ -19,10 +19,19 @@ type MemoDetailModalType = {
 }
 
 export const MemoDetailModal = (props: MemoDetailModalType) => {
-  const { memo, closeModal } = props;
+  const { memo, closeModal, updateMemo } = props;
+  const [body, setBody] = useState<string>(!!memo ? memo.body : '');
+
 
   const modalIsOpen = (): boolean => {
     return !!memo;
+  }
+
+  const updateMemoContent = () => {
+    if (!!memo) {
+      updateMemo(memo.id, 'title', body);
+      setBody('');
+    }
   }
 
   const content = (memo: Memo) => {
@@ -33,11 +42,12 @@ export const MemoDetailModal = (props: MemoDetailModalType) => {
           {/*TODO 枠外のツールチップが表示されない*/}
           <PinButton toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo}/>
         </nav>
-        <div className=" whitespace-pre-wrap">{memo.body}</div>
-        <div contentEditable={true} aria-multiline={true} role="textbox"
-             onChange={() => props.updateMemo(props.memo?.id ? props.memo.id : 0, 'title', 'body')}>
-          {memo.body}
-        </div>
+        {/*<div className=" whitespace-pre-wrap">{memo.body}</div>*/}
+        {/*<div contentEditable={true} aria-multiline={true} "*/}
+        {/*     onChange={() => props.updateMemo(props.memo?.id ? props.memo.id : 0, 'title', 'body')}>*/}
+        {/*  {memo.body}*/}
+        {/*</div>*/}
+        <input value={body} onChange={event => setBody(event.target.value)} type="textarea" />
         <div className="flex justify-between">
           {
             memo.isTrashed ?
@@ -50,6 +60,7 @@ export const MemoDetailModal = (props: MemoDetailModalType) => {
               </>
           }
           <button onClick={() => {
+            updateMemoContent();
             closeModal();
           }} type="button" className="px-4 hover:bg-gray-100">閉じる
           </button>
