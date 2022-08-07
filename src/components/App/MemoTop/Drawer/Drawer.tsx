@@ -78,7 +78,6 @@ export const Drawer = (props:{menuIsOpen:boolean,}) => {
 
         })
       }
-      <button >ラベルの編集</button>
     </div>
   );
 }
