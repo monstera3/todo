@@ -40,6 +40,7 @@ export const MemoDetailModal = (props: MemoDetailModalType) => {
         <nav className="flex justify-between">
           <div>{memo.title}</div>
           {/*TODO 枠外のツールチップが表示されない*/}
+          {/*TODO 背景色を反映させる*/}
           <PinButton toggleMemoIsFixed={props.toggleMemoIsFixed} memo={memo}/>
         </nav>
         {/*<div className=" whitespace-pre-wrap">{memo.body}</div>*/}
