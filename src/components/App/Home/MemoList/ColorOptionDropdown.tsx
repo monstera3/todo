@@ -4,7 +4,7 @@ import { PaletteIcons } from '../../../shared/atoms/PaletteIcons';
 import { Memo } from '../../App';
 
 type Color = {
-  name: 'white' | 'red' | 'orange' | 'yellow',
+  name: '白' | '赤' | 'オレンジ' | '黄色',
   tailName: 'bg-white-300' | 'bg-red-300' | 'bg-orange-300' | 'bg-yellow-300',
   fill: '#fff' | '#fca5a5' | '#fdba74' | '#fde047',
   stroke: '#e0e0e0' | '#fca5a5' | '#fdba74' | '#fde047',
@@ -13,25 +13,25 @@ type Color = {
 
 export const colorList: Color[] = [
   {
-    name: 'white',
+    name: '白',
     tailName: 'bg-white-300',
     fill: '#fff',
     stroke: '#e0e0e0',
   },
   {
-    name: 'red',
+    name: '赤',
     tailName: 'bg-red-300',
     fill: '#fca5a5',
     stroke: '#fca5a5',
   },
   {
-    name: 'orange',
+    name: 'オレンジ',
     tailName: 'bg-orange-300',
     fill: '#fdba74',
     stroke: '#fdba74',
   },
   {
-    name: 'yellow',
+    name: '黄色',
     tailName: 'bg-yellow-300',
     fill: '#fde047',
     stroke: '#fde047',
